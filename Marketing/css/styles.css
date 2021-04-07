@@ -1,0 +1,275 @@
+@font-face {
+    font-family: 'integral_cfbold';
+    src: url('./fonts/integralcf-bold-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfbold_oblique';
+    src: url('./fonts/integralcf-boldoblique-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-boldoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfdemi_bold';
+    src: url('./fonts/integralcf-demibold-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-demibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfdemi_bold_oblique';
+    src: url('./fonts/integralcf-demiboldoblique-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-demiboldoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfextra_bold';
+    src: url('./fonts/integralcf-extrabold-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfextra_bold_oblique';
+    src: url('./fonts/integralcf-extraboldoblique-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-extraboldoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfheavy';
+    src: url('./fonts/integralcf-heavy-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfheavy_oblique';
+    src: url('./fonts/integralcf-heavyoblique-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-heavyoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfmedium';
+    src: url('./fonts/integralcf-medium-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfmedium_oblique';
+    src: url('./fonts/integralcf-mediumoblique-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-mediumoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfregular';
+    src: url('./fonts/integralcf-regular-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'integral_cfregular_oblique';
+    src: url('./fonts/integralcf-regularoblique-webfont.woff2') format('woff2'),
+         url('./fonts/integralcf-regularoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.modales {
+    position: fixed;
+    z-index: 100000;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+}
+.modales.active {
+    display: block;
+}
+.texto-menu {
+    font-family: 'integral_cfregular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 91%;
+    letter-spacing: -.01em;
+    color: #a0aec0;
+    -webkit-transition: color .5s cubic-bezier(.5,0,.5,1);
+    transition: color .5s cubic-bezier(.5,0,.5,1);
+    position: relative;
+    padding: 20px 50px;
+    transition: all 0.5s;
+}
+ul li {
+    list-style: none;
+}
+.listado li{
+    margin-bottom:4rem;
+    box-sizing: border-box;
+}
+.texto-menu:hover {
+    color: #fe0089!important;
+    text-decoration: line-through;
+}
+.fuente-general {
+    font-family: 'integral_cfregular';
+}
+
+.banner {
+    width: 100%;
+    height: 200vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    /* background-attachment: fixed; */
+    -webkit-animation-name: cambia_fondo;
+    animation-name: cambia_fondo;
+    -webkit-animation-duration: 13s;
+    animation-duration: 13s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.intro-section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    position: relative;
+}
+.wrapper {
+    width: 90%;
+    max-width: 1720px;
+    margin: 0 auto;
+}
+.intro-section .wrapper {
+    z-index: 10;
+}
+.intro-section_top {
+    position: relative;
+}   
+.intro-section_top h2.huge {
+    font-family: 'integral_cfregular';
+    color: #fff;
+}
+.huge {
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 75.5%;
+}
+.intro-section_top h2.huge span {
+    display: block;
+}
+.intro-section_top h2.huge {
+    font-family: 'integral_cfregular';
+    color: #fff;
+}
+.huge {
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 75.5%;
+}
+.intro-section_top h1 {
+    position: absolute;
+    right: 10%;
+    top: -28px;
+    font-size: 1.7rem;
+    width: 329px;
+    font-family: Graphik;
+    text-transform: lowercase;
+    font-weight: 400;
+    line-height: 140%;
+    color: #fff;
+}
+.scroll-down {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    z-index: 50;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+.intro-section_bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    left: 0;
+}
+.button-wrapper {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+}
+a.button, button {
+    font-family: 'integral_cfregular';
+    border: 0;
+    font-size: 18px;
+    outline: none;
+    background: transparent;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    -webkit-transition: filter .5s cubic-bezier(.5,0,.5,1);
+    transition: filter .5s cubic-bezier(.5,0,.5,1);
+}
+a.button.primary, button.primary {
+    background-color: #fe0089;
+    color: #fff;
+}
+.button-wrapper .social-wrappers {
+    margin-left: 3rem;
+}
+.button-wrapper .social-wrappers img {
+    width: 100px;
+    height: 60px;
+    margin: 0 1rem;
+}
+@keyframes cambia_fondo {   
+    0% {
+        background-image: url('../images/fondo-1.jpg');
+    }
+    20% {
+        background-image: url('../images/fondo-2.jpg');
+    }
+    40% {
+        background-image: url('../images/fondo-3.jpg');
+    }
+    60% {
+        background-image: url('../images/fondo-4.jpg');
+    }
+    80% {
+        background-image: url('../images/fondo-1.jpg');
+    }
+    100% {
+        background-image: url('../images/fondo-2.jpg');
+    }
+}
+
+@media (max-width: 780px) {
+    .listado li{
+        margin-bottom:1rem;
+    }
+}
