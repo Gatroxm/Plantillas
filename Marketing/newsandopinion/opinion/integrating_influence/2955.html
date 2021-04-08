@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"653eb44421","applicationID":"267171507","transactionName":"YlQEbBcDVkoEAEUNDFseK24mTXZcEhBwCgd6QQ9WDA1WegoNRRYMWV0DSkotSFALCl4K","queueTime":0,"applicationTime":648,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgUBUFVQDxACUlZTAAACVlM=",licenseKey:"653eb44421",applicationID:"267171507"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(28),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{l?l-=1:o(c||new UncaughtException(t,e,n),!0)}catch(u){try{i("ierr",[u,s.now(),!0])}catch(d){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(29),c=t("ee"),s=t("loader"),u=t("gos"),f=window.onerror,d=!1,p="nr@seenError",l=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),s.xhrWrappable&&t(14),d=!0)}c.on("fn-start",function(t,e,n){d&&(l+=1)}),c.on("fn-err",function(t,e,n){d&&!n[p]&&(u(n,p,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){L++,T=g.hash,this[f]=y.now()}function o(){L--,g.hash!==T&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[f],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var c="-start",s="-end",u="-body",f="fn"+c,d="fn"+s,p="cb"+c,l="cb"+s,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),N=t(7),P=t(14),M=t(9),S=t("ee"),C=S.get("tracer");t(16),y.features.spa=!0;var T,L=0;S.on(f,r),b.on(p,r),M.on(p,r),S.on(d,o),b.on(l,o),M.on(l,o),S.buffer([f,d,"xhr-done","xhr-resolved"]),R.buffer([f]),O.buffer(["setTimeout"+s,"clearTimeout"+c,f]),P.buffer([f,"new-xhr","send-xhr"+c]),N.buffer([m+c,m+"-done",m+u+c,m+u+s]),E.buffer(["newURL"]),x.buffer([f]),b.buffer(["propagate",p,l,"executor-err","resolve"+c]),C.buffer([f,"no-"+f]),M.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(P,"send-xhr"+c),a(S,"xhr-resolved"),a(S,"xhr-done"),a(N,m+c),a(N,m+"-done"),a(M,"new-jsonp"),a(M,"jsonp-end"),a(M,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),c=t(12),s="learResourceTimings",u="addEventListener",f="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u in window.performance&&(window.performance["c"+s]?window.performance[u](f,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[u]("webkit"+f,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[u]("scroll",r,{passive:!0}),document[u]("keypress",r,!1),document[u]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(f);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[f,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),u=XMLHttpRequest,f="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(u.prototype)):u.prototype.hasOwnProperty(f)&&(o(window),o(u.prototype)),a.on(f+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return o.emit(n+"start",[t,a],c),c.then(function(t){return o.emit(n+"end",[null,t],c),t},function(t){throw o.emit(n+"end",[t],c),t})})}var o=t("ee").get("fetch"),i=t(29),a=t(28);e.exports=o;var c=window,s="fetch-",u=s+"body-",f=["arrayBuffer","blob","json","text","formData"],d=c.Request,p=c.Response,l=c.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(f,function(t,e){r(d[h],e,u),r(p[h],e,u)}),r(c,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){s.emit("jsonp-error",[],p),s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var f=c(a),d="function"==typeof f.parent[f.key];if(d){var p={};u.inPlace(f.parent,[f.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),s.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(f);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function c(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var s=t("ee").get("jsonp"),u=t("wrap-function")(s);if(e.exports=s,o()){var f=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,l,"dom-"):(u.inPlace(HTMLElement.prototype,l,"dom-"),u.inPlace(HTMLHeadElement.prototype,l,"dom-"),u.inPlace(HTMLBodyElement.prototype,l,"dom-")),s.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=i.context(),n=c(t,"executor-",e,null,!1),r=new u(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,c=o(i),s=t(28),u=NREUM.o.PR;e.exports=i,u&&(window.Promise=r,["all","race"].forEach(function(t){var e=u[t];u[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(u,arguments),c=u.resolve(a);return c}}),["resolve","reject"].forEach(function(t){var e=u[t];u[t]=function(t){var n=e.apply(u,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),u.prototype["catch"]=function(t){return this.then(null,t)},u.prototype=Object.create(u.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(u),function(t,e){try{r[e]=u[e]}catch(n){}}),o.wrapInPlace(u.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=c(n[0],"cb-",r,null,!1),n[1]=c(n[1],"cb-",r,null,!1);var s=t.apply(this,n);return r.nextPromise=s,i.emit("propagate",[e,!0],s,!1,!1),s}}),i.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this,null,!1),t[1]=c(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+u})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),c="setTimeout",s="setInterval",u="clearTimeout",f="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[u,"clearImmediate"],u+d),i.on(s+f,r),i.on(c+f,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=f.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,f.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var u=t("ee"),f=u.get("xhr"),d=t("wrap-function")(f),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=f;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{f.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}return e};if(s(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),f.on("send-xhr-start",function(t,e){r(t,e),i(e)}),f.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else u.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,u=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||s(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,u)),(t.sameOrigin&&!f()||!t.sameOrigin&&s(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,u)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",c=1,s="",u="";return o+"@nr="+i+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+u+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(c.d.tk=i),btoa(JSON.stringify(c))}function c(t){return u()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(25),h=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(17),u=t(15).generateTracePayload,f=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(21),m=t(20),v=t(18),w=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=u(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<p;c++)e.addEventListener(d[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),f.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=u(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||c),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(20);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[u.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(28),c=t(29),s=t("ee").get("tracer"),u=t("loader"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),f.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[u.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[u.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,u.now(),!1,e])}},{}],20:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],21:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],22:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,c=t(30);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],23:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],24:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!v){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),v=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,u,f,d=t("handle"),p=t("loader"),l=t(27),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,!1)})}l(c)}},{}],25:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<i.length;c++)o=i[c],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],26:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(o="Safari",i=s[1])}e.exports={agent:o,version:i,match:r}},{}],27:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[o]?"hidden":"visible")}"addEventListener"in document&&i&&document.addEventListener(i,e,!1)}e.exports=r;var o,i,a;"undefined"!=typeof document.hidden?(o="hidden",i="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",i="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",i="webkitvisibilitychange",a="webkitVisibilityState")},{}],28:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],29:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],30:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,s,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var c=e(o),s=m(n),u=s.length,f=0;f<u;f++)s[f].apply(c,r);var p=d[y[n]];return p&&p.push([x,n,r,c]),c}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:c,aborted:!1};return x}function i(t){return u(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var s="nr@context",u=t("gos"),f=t(28),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(22),c=t("handle"),s=t(28),u=t("ee"),f=t(26),d=t(23),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1208.min.js"},x=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:f};t(19),t(24),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,u){function nrWrapper(){var i,a,f,p;try{a=this,i=d(arguments),f="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,s],f],t)}c(n+"start",[i,a,s],f,u);try{return p=e.apply(a,i)}catch(h){throw c(n+"err",[i,a,h],f,u),h}finally{c(n+"end",[i,a,p],f,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var c,s,u,f="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],c=t[s],a(c)||(t[s]=n(c,f?s+r:r,o,s,i))}function c(n,r,i,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,i,e,a)}catch(s){o([s,n,r,i],t)}h=c}}return t||(t=f),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=f);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,i(t,n,f),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var f=t("ee"),d=t(29),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=u},{}]},{},["loader",2,16,5,3,4]);</script>
+<meta name="title" content="Integrating influence | WARC" />
+<meta name="description" content="Nearly two-thirds (65%) of advertisers plan to increase their influencer marketing spend this year, according to a recent survey by the World Federation of Advertisers. Yet despite this growth, confusion remains over how influencer marketing should be done to be most effective." />
+
+<meta property="og:title" content="Integrating influence | WARC" />
+<meta property="og:image" content="/images-site/warc-logo-opg.png" />
+<meta property="og:description" content="Nearly two-thirds (65%) of advertisers plan to increase their influencer marketing spend this year, according to a recent survey by the World Federation of Advertisers. Yet despite this growth, confusion remains over how influencer marketing should be done to be most effective." />
+<meta property="og:url" content="http://origin.warc.com/newsandopinion/opinion/integrating_influence/2955" />
+<meta name="theme-color" content="#ffffff">
+
+<title>Integrating influence | WARC</title>
+
+<link rel="preconnect" href="https://use.typekit.net" />
+<link rel="preconnect" href="https://p.typekit.net" />
+<link rel="preconnect" href="https://munchkin.marketo.net" />
+<link rel="preconnect" href="https://connect.facebook.net" />
+<link rel="preconnect" href="https://www.facebook.com" />
+
+<!-- From Layout -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.warc.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://cdn.warc.com/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://cdn.warc.com/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="https://cdn.warc.com/safari-pinned-tab.svg" color="#313678">
+<!--Sans-serif - Aktiv Grotesk-->
+<link rel="stylesheet" href="https://use.typekit.net/xtv3zgw.css">
+<!--Serif - Starling-->
+<link rel="stylesheet" href="https://use.typekit.net/dwj5fqn.css">
+
+<link rel="base" href="https://www.warc.com" />
+
+<!-- TODO review what is actually necessary for logged out and load styles conditionally -->
+<link rel='stylesheet' type='text/css' href='https://cdn.warc.com/css/bootstrap.min.css?v=0407142051' />
+
+<link rel='stylesheet' type='text/css' href='https://cdn.warc.com/styles/css/navigation.min.css?v=0407142052' />
+
+<!-- TODO review what is actually necessary for logged out and load scripts conditionally -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type='text/javascript' src='https://cdn.warc.com/JavaScript/Hotjar/Hotjar.js?v=0407142051'></script>
+<script>
+    let userLanguage = "en-GB";
+    let hasWarningMessage = false;
+</script>
+
+<script type='text/javascript' src='https://cdn.warc.com/JavaScript/ResourceLoader.min.js?v=0407142049'></script>
+<script type='text/javascript' src='https://cdn.warc.com/JavaScript/UserSettings.min.js?v=0407142051'></script>
+<script type='text/javascript' src='https://cdn.warc.com/JavaScript/UI/WarcWaitLogo2.min.js?v=0407142047'></script>
+<script type='text/javascript' src='https://cdn.warc.com/JavaScript/CommonFunctions.min.js?v=0407142053'></script>
+
+<script type="text/javascript">
+</script>
+<script type='text/javascript' src='https://cdn.warc.com/Scripts/Views/Shared/Layout/Head/Head.min.js?v=0407142049'></script>
+    
+
+    <link rel="canonical" href="https://www.warc.com/newsandopinion/opinion/integrating-influence/2955" />
+
+    <script type='text/javascript' src='https://cdn.warc.com/JavaScript/UI/Notification.min.js?v=0407142051'></script>
+
+    <link rel='stylesheet' type='text/css' href='https://cdn.warc.com/css/pages.min.css?v=0407142049' />
+    <link rel='stylesheet' type='text/css' href='https://cdn.warc.com/css/articles.min.css?v=0407142051' />
+
+    <script type="
+			text/javascript">
+		(function() {
+			window.dataLayer = window.dataLayer || [];
+
+			window.dataLayer.push({ "ContentID": "cb3620aa-67db-4734-b332-3b7597a25a72" });
+			window.dataLayer.push({ "ContentPublishDate": "31/01/2019 15:00:00" });
+			window.dataLayer.push({ "ContentType": "Opinion" });
+			window.dataLayer.push({ "ContentTitle": "Integrating influence" });
+			window.dataLayer.push({ "ContentSector": "News and Opinion" });
+			window.dataLayer.push({ "AccessType": undefined });
+            window.dataLayer.push({ "ReadTime": "4" });
+		})();
+    </script>
+
+</head>
+<body>
+    <div class="header-items-holder">
+        <header id="header-nav" data-user-logged-in="false">
+    <div id="mobileHeader" class="header">
+        <a href="/" class="logo">
+            <svg id="warc-only" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 403 100" preserveAspectRatio="xMidYMid meet"><g id="LOGO"><polygon id="W" class="cls-1" points="99.77 4.3 88.12 66.44 74.77 4.97 51.61 4.97 38.52 66.44 26.48 4.3 -0.21 4.3 24.78 99.5 49.64 99.5 62.86 38.57 76.34 99.5 101.47 99.5 125.68 4.3 99.77 4.3" /><path id="A" class="cls-1" d="M165.44,28,175,60.84H155.75ZM151.57,4.3,119.11,99.5h25.26l5.23-18.26h31.54l5.37,18.26h26L180.09,4.3Z" /><path id="R" class="cls-1" d="M300.29,34.43a35.45,35.45,0,0,1-3.4,15.94A26.76,26.76,0,0,1,286.42,61.5l19.11,38H279L263.65,66.7H250V99.5H226.09V4.3H263q10.86,0,18.06,2.54a30.19,30.19,0,0,1,11.45,6.73,23.62,23.62,0,0,1,6,9.67A36.11,36.11,0,0,1,300.29,34.43ZM250,46.84h12.3q7.59,0,10.66-3c2.05-2,3.08-4.86,3.08-8.59,0-3.56-1.09-6.31-3.27-8.27S266.87,24,261.55,24H250Z" /><path id="C" class="cls-1" d="M361.37,78.19a18.17,18.17,0,0,1-7.4-1.47,14.09,14.09,0,0,1-5.75-4.8,24.48,24.48,0,0,1-3.73-8.73,56.18,56.18,0,0,1-1.31-13.13q0-27.87,17.93-27.87h.26q13.74,0,15.7,15.2h25.65a47.38,47.38,0,0,0-3.27-14.67,34.56,34.56,0,0,0-7.85-11.8,36.17,36.17,0,0,0-12.7-7.86,49.43,49.43,0,0,0-17-2.85v0l-.3,0-.35,0v0a48.31,48.31,0,0,0-19.17,3.7,39.17,39.17,0,0,0-14.14,10.4,44,44,0,0,0-8.51,15.94,70.38,70.38,0,0,0-2.81,20.46,69.51,69.51,0,0,0,2.75,20.07,43.38,43.38,0,0,0,8.24,15.66,36.81,36.81,0,0,0,13.87,10.14,55.94,55.94,0,0,0,37.43.73,36.17,36.17,0,0,0,12.7-7.86,34.56,34.56,0,0,0,7.85-11.8A47.38,47.38,0,0,0,402.72,63H377.07q-2,15.2-15.7,15.2" /></g></svg>
+<svg id="warc-with-endorsement" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1009.57 358.31"><polygon id="W" class="cls-1" points="247.75 10.2 218.89 164.17 185.81 11.85 128.42 11.85 95.99 164.17 66.15 10.2 0 10.2 61.94 246.1 123.55 246.1 156.31 95.11 189.7 246.1 251.96 246.1 311.96 10.2 247.75 10.2" /><path id="A" class="cls-1" d="M410.49,69l23.68,81.29H386.49ZM376.12,10.2,295.69,246.1h62.59l13-45.26H449.4l13.3,45.26h64.53L446.81,10.2Z" /><path id="R" class="cls-1" d="M744.66,84.86q0,22.49-8.43,39.49t-26,27.59l47.35,94.16H691.8l-37.94-81.28H620.13V246.1H560.79V10.2h91.45q26.91,0,44.74,6.27t28.38,16.68a58.67,58.67,0,0,1,14.92,24A90,90,0,0,1,744.66,84.86ZM620.13,115.59h30.49q18.79,0,26.42-7.44t7.63-21.3q0-13.21-8.11-20.49t-27.89-7.27H620.13Z" /><path id="C" class="cls-1" d="M896,193.28a45.08,45.08,0,0,1-18.32-3.62,35.06,35.06,0,0,1-14.27-11.9q-6-8.25-9.24-21.65t-3.25-32.53q0-69.06,44.43-69.06H896q34.05,0,38.91,37.67h63.56a117.31,117.31,0,0,0-8.11-36.35A85.09,85.09,0,0,0,970.92,26.6Q958.26,14.23,939.46,7.11c-12.1-4.58-26.18-6.89-42.12-7l0-.06c-.25,0-.49,0-.75,0s-.56,0-.86,0V.07c-18.11.18-34,3.2-47.51,9.18a96.8,96.8,0,0,0-35,25.78q-14.1,16.52-21.08,39.48t-7,50.72q0,27.09,6.82,49.72t20.42,38.82a91.09,91.09,0,0,0,34.38,25.11q20.74,8.93,49,8.92,25,0,43.77-7.1t31.46-19.5A85,85,0,0,0,990.37,192a117.31,117.31,0,0,0,8.11-36.35H934.92q-4.86,37.66-38.91,37.66" /><path class="cls-2" d="M15.44,346,9.37,358.31H0l27.34-55.45,27.43,55.45H45.39L39.33,346Zm11.9-24.42L19.43,338h15.9Z" /><path class="cls-2" d="M73.08,323.44v34.87h-9V302.86l37.25,35.79V303.78h9v55.46Z" /><path class="cls-2" d="M153.31,346l-6.07,12.29h-9.37l27.34-55.45,27.42,55.45h-9.37L177.19,346Zm11.9-24.42L157.3,338h15.9Z" /><path class="cls-2" d="M199.5,345.18c3.53,3.38,10.6,5.61,16.51,5.61,6.15,0,9.84-2.62,9.84-6.76,0-3.69-2.08-6.53-7.15-8.14l-6.6-2.23c-8.76-2.69-12.6-8.14-12.6-15.52,0-9.68,7.68-15.28,18.66-15.28,6.23,0,10.6,1.38,13.06,2.69v9.13a27.45,27.45,0,0,0-13-3.37c-5.53,0-9.68,2.23-9.68,6.3s2.15,6.06,7.15,7.68l6.07,2c9.52,2.91,13.13,8.29,13.05,16.28-.07,10.14-7.76,15.67-19.2,15.67-6.68,0-12.21-1.46-16.13-4.07Z" /><path class="cls-2" d="M273.64,302.86a33.32,33.32,0,0,1,13.29,2.45v9.22a28.4,28.4,0,0,0-13-3c-12.75,0-20.66,8.68-20.66,19.51s7.91,19.51,20.66,19.51a28.39,28.39,0,0,0,13-3v9.22a33.3,33.3,0,0,1-13.29,2.46c-17.05,0-29.42-12.45-29.42-28.19S256.59,302.86,273.64,302.86Z" /><path class="cls-2" d="M299.86,303.78h32.8v8.6H308.85v14h16.74V335H308.85v14.74h23.81v8.6h-32.8Z" /><path class="cls-2" d="M354.88,323.44v34.87h-9V302.86l37.25,35.79V303.78h9v55.46Z" /><path class="cls-2" d="M419.21,312.38H403.38v-8.6h40.71v8.6h-15.9v45.93h-9Z" /><path class="cls-2" d="M455.25,303.78h9v54.53h-9Z" /><path class="cls-2" d="M489,346l-6.07,12.29h-9.37l27.34-55.45,27.42,55.45h-9.37L512.87,346Zm11.9-24.42L493,338h15.9Z" /><path class="cls-2" d="M537.63,303.78h9v45.93h25v8.6h-34Z" /><path class="cls-2" d="M627.38,302.86a33.32,33.32,0,0,1,13.29,2.45v9.22a28.4,28.4,0,0,0-13-3c-12.75,0-20.66,8.68-20.66,19.51s7.91,19.51,20.66,19.51a28.39,28.39,0,0,0,13-3v9.22a33.3,33.3,0,0,1-13.29,2.46c-17,0-29.42-12.45-29.42-28.19S610.33,302.86,627.38,302.86Z" /><path class="cls-2" d="M677,359.24a28.19,28.19,0,1,1,28.19-28.19A28,28,0,0,1,677,359.24Zm0-8.68c10.75,0,19.05-8.68,19.05-19.51s-8.3-19.51-19.05-19.51-19.13,8.68-19.13,19.51S666.2,350.56,677,350.56Z" /><path class="cls-2" d="M718.16,302.86l26.88,29,26.81-29v55.45h-9V324.75L745,344.26l-17.9-19.51v33.56h-9Z" /><path class="cls-2" d="M825.88,320.45c0,9.29-7.07,16.67-18.13,16.67H797.38v21.19h-9V303.78h19.35C818.81,303.78,825.88,311.15,825.88,320.45Zm-8.83,0c0-4.53-3.23-8.22-9.37-8.22h-10.3v16.44h10.3C813.82,328.67,817.05,325,817.05,320.45Z" /><path class="cls-2" d="M842.65,346l-6.07,12.29h-9.37l27.34-55.45L882,358.31h-9.37L866.54,346Zm11.9-24.42L846.64,338h15.9Z" /><path class="cls-2" d="M900.28,323.44v34.87h-9V302.86l37.25,35.79V303.78h9v55.46Z" /><path class="cls-2" d="M968.76,335.27,948,303.78h10.6l14.59,22.58,14.67-22.58h10.6l-20.74,31.57v23h-9Z" /></svg>
+        </a>
+        <div id="header-interaction" class="header-interaction">
+    <form id="mobile-search-form" action="/search" method="get" class="form-search-bar">
+        <div id="mobileSearchBar" class="search-logged-out-container">
+            <div class="mobile-search search-logged-out">
+                <input type="text" name="q" class="search-input-text" placeholder="What are you looking for today?" /><input type="submit" class="search-input-submit" value="&nbsp;" onclick="return onMobileSearchSubmitClicked();" />
+                <button type="button" class="button-search-close" onclick="ToggleSearch();">
+                    <svg class="svg-search-close" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Section/Menu" transform="translate(-1394.000000, -32.000000)" class="svg-stroke" stroke="#313678" stroke-width="2">
+            <g id="Menu">
+                <g id="Close" transform="translate(1374.000000, 12.000000)">
+                    <g id="cross" transform="translate(20.000000, 20.000000)">
+                        <line x1="-1.5" y1="7.5" x2="16.5" y2="7.5" id="Line" transform="translate(7.500000, 7.500000) rotate(-45.000000) translate(-7.500000, -7.500000) "></line>
+                        <line x1="-1.5" y1="7.5" x2="16.5" y2="7.5" id="Line" transform="translate(7.500000, 7.500000) rotate(45.000000) translate(-7.500000, -7.500000) "></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                </button>
+            </div>
+        </div>
+
+        <a href="/search/advanced" class="link-advanced-search">Advanced Search</a>
+    </form>
+
+<div class="search-screen"></div>
+<div class="header-links">
+    <a id="loginLinkMobile" href="/sign-in" class="link-item">Sign in</a>
+    <a href="/demo" class="link-accent link-item">Get a demo</a>
+    <a href="/newsandopinion/getnews" class="link-item">Get news</a>
+    <a onclick="window.location.href = 'https://content.ascential.com/do-i-have-access-to-warc.html'" class="link-item">Do I subscribe?</a>
+    <div class="header-language-toggle link-item">
+        <div class="language-selector" data-language-selector></div>
+        <div class="language-menu" data-language-menu>
+            <ul>
+                    <li data-language="en-GB"><a onclick="TrackEvent('Logged_out_header', 'Settings', 'Language');" href="/language/en-GB">English</a></li>
+                    <li data-language="zh-CN"><a onclick="TrackEvent('Logged_out_header', 'Settings', 'Language');" href="/language/zh-CN">中文</a></li>
+                    <li data-language="ko-KR"><a onclick="TrackEvent('Logged_out_header', 'Settings', 'Language');" href="/language/ko-KR">한국어</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="header-buttons">
+
+            <button class="button-image-round button-search" onclick="ToggleSearch();">
+                <svg preserveAspectRatio="xMidYMid meet" width="27px" height="29px" viewBox="0 0 27 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Icons/Search" transform="translate(0.000000, -1.000000)" stroke="#FFFFFF" class="svg-search" stroke-width="3">
+            <g id="Group" transform="translate(15.178606, 16.616978) rotate(-40.000000) translate(-15.178606, -16.616978) translate(5.678606, 2.116978)">
+                <path d="M9.5,19 C14.7467051,19 19,14.7467051 19,9.5 C19,4.25329488 14.7467051,-2.27373675e-12 9.5,-2.27373675e-12 C4.25329488,-2.27373675e-12 -4.54747351e-12,4.25329488 -4.54747351e-12,9.5 C-4.54747351e-12,14.7467051 4.25329488,19 9.5,19 Z M9.5,19.5 L9.5,29" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+            </button>
+            
+            <button class="button-image-round button-hamburger">
+                <svg preserveAspectRatio="xMidYMid meet" width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Buttons/Hamburger" transform="translate(-17.000000, -19.000000)" stroke="#313678" class="svg-hamburger" stroke-width="2">
+            <g id="Hamburger">
+                <g id="Group" transform="translate(18.000000, 20.000000)">
+                    <line x1="0.5" y1="14.5" x2="18.5" y2="14.5" id="Line"></line>
+                    <line x1="0.5" y1="7.5" x2="18.5" y2="7.5" id="Line"></line>
+                    <line x1="0.5" y1="0.5" x2="18.5" y2="0.5" id="Line"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+            </button>
+        </div>
+    </div>
+
+    <nav id="mobileMenu" class="skiptranslate">
+        <div id="mobileMenuContent">
+            <div class="screen"></div>
+            <div class="hamburger-menu">
+                <button class="button-image-round bg-white button-menu-close">
+                    <svg class="svg-search-close" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Section/Menu" transform="translate(-1394.000000, -32.000000)" class="svg-stroke" stroke="#313678" stroke-width="2">
+            <g id="Menu">
+                <g id="Close" transform="translate(1374.000000, 12.000000)">
+                    <g id="cross" transform="translate(20.000000, 20.000000)">
+                        <line x1="-1.5" y1="7.5" x2="16.5" y2="7.5" id="Line" transform="translate(7.500000, 7.500000) rotate(-45.000000) translate(-7.500000, -7.500000) "></line>
+                        <line x1="-1.5" y1="7.5" x2="16.5" y2="7.5" id="Line" transform="translate(7.500000, 7.500000) rotate(45.000000) translate(-7.500000, -7.500000) "></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                </button>
+
+<div class="mobile-top-level-menu single-level">
+    <a href="/about-core-warc">Core WARC</a></div>
+<div class="mobile-top-level-menu single-level">
+    <a href="/about-warc-data">WARC Data</a>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a href="/about-warc-rankings">WARC Rankings</a>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a href="/about-warc-advisory">WARC Advisory</a>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a href="/compare-plans">Compare Plans</a>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a href="/our-clients">Our Clients</a>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a href="/meet-the-experts">Meet the Experts</a>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a href="/feed">The Feed</a>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a href="https://content.warc.com/warc-talks.html">WARC Talks</a>
+</div>
+<div class="mobile-top-level-menu expand-level">
+    <a onclick="showMobileMenuItems('exploreMenuDiv');">Awards</a>
+    <div id="exploreMenuDiv" class="mobile-menu-item" style="display: none">
+        <ul>
+            <li><a href="/topics/awards.topic">Our Awards</a></li>
+            <li><a href="/topics/awards.topic?tab=Partner_Awards">Partner Awards</a></li>
+        </ul>
+    </div>
+</div>
+<div class="mobile-top-level-menu single-level">
+    <a id="contactUsLink" href="/topics">Explore by Topic</a>
+</div>
+
+<div class="hamburger-menu-header-links">
+    <div class="mobile-top-level-menu single-level">
+        <a id="loginLinkMobile" href="/demo" class="link-accent">Get a demo</a>
+    </div>
+    <div class="mobile-top-level-menu single-level">
+        <a href="/newsandopinion/getnews" class="link-item">Get news</a>
+    </div>
+    <div class="mobile-top-level-menu single-level">
+        <a href="/do-i-subscribe">Do I subscribe?</a>
+    </div>
+    <div class="mobile-top-level-menu single-level mobile-header-lang-toggle">
+        <div class="language-selector">English</div>
+        <div class="language-menu">
+            <ul>
+                <li><a onclick="TrackEvent('Logged_out_header', 'Settings', 'Language');" href="/language/zh-CN">中文</a></li>
+                <a onclick="TrackEvent('Logged_out_header', 'Settings', 'Language');" href="/language/ko-KR">한국어</a>
+                <li class="language-selected"><a onclick="TrackEvent('Logged_out_header', 'Settings', 'Language');" href="/language/en-GB">English</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </nav>
+</header>
+<script type='text/javascript' src='https://cdn.warc.com/Scripts/Views/Shared/Layout/Header/Header.js?v=0407142052'></script>
+
+
+    </div>
+
+    <main id="mainContent" class="styled-links">
+        
+
+
+
+<script type="text/javascript">
+	$(function() {
+		TrackEvent("Opinion_Article_viewer", "Page_Hit", "Integrating influence");
+	});
+
+	$(document).ready(function ($) {
+
+		var url = window.location;
+		if (navigator.userAgent.indexOf("Firefox") != -1) {
+			$('.FbookShare').attr('href', "http://www.facebook.com/sharer/sharer.php?u=" + url + "&display=popup&ref=plugin','Facebook','width=500,height=300'");
+		}
+		else {
+			$('.FbookShare').attr('onclick', "TrackEvent('Opinion_Article_viewer', 'Top_buttons', 'Facebook');javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=" + url + "&display=popup&ref=plugin','Facebook','width=500,height=300')");
+		}
+
+		try {
+
+			var jTitle = document.getElementsByTagName('h1');
+
+			jTitle = jTitle[0].innerHTML;
+
+			$('.LIShare').attr('href', "http://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(url) + "&title=" + jTitle);
+			$('.TShare').attr('href', "https://twitter.com/intent/tweet?text=" + jTitle.trim() + " %7C via @warceditors &url=https://" + document.domain + "/NewsAndOpinion/Opinion/2955");
+		}
+		catch (err) {
+
+		}
+	});
+</script>
+
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Integrating influence"
+    }
+</script>
+
+<section id="news-opinion-tools" class="container">
+
+    <div class="social-wrapper">
+
+        <div class="social-icon">
+            <a class="FbookShare" target="_blank" href="#" data-actionbutton-name="facebook" onclick="TrackEvent('Opinion_Article_viewer', 'Top_buttons', 'Facebook');"><img class="tool-icon-img" src="https://cdn.warc.com/images-site/logos/facebook-col.svg" alt="Facebook" /></a>
+        </div>
+        <div class="social-icon">
+            <a class="TShare" target="_blank" href="#" data-actionbutton-name="twitter" onclick="TrackEvent('Opinion_Article_viewer', 'Top_buttons', 'Twitter');"><img class="tool-icon-img" src="https://cdn.warc.com/images-site/logos/twitter-col.svg" alt="Twitter" /></a>
+        </div>
+        <div class="social-icon">
+            <a class="LIShare" href="#" data-actionbutton-name="linkedin" target="popup" onclick="TrackEvent('Opinion_Article_viewer', 'Top_buttons', 'LinkedIn'); window.open(this.href, 'PopUpWindow', 'width=620 height=470'); return false;" onfocus="    this.blur()"><img class="tool-icon-img" src="https://cdn.warc.com/images-site/logos/linkedin-col.svg" alt="LinkedIn" /></a>
+        </div>
+
+    </div>
+
+    <div id="google_translate_element"></div>
+
+	<div class="tools-wrapper">
+				<div class="tool-icon">
+			<img class="tool-icon-img" data-actionbutton-name="print" src="https://cdn.warc.com/images-site/actions/print.svg" onclick="window.print();TrackEvent('Opinion_Article_viewer', 'Top_buttons', 'Print');" alt="Print" />
+		</div>
+	</div>
+
+</section>
+
+<header id="article-header" class="container article-section news-opinion-header">
+
+    <h1>Integrating influence</h1>
+
+    <section id="article-metadata" class="authorInfo">
+        <div class="row">
+            <div class="read-time col-auto order-md-2">4 min read</div>
+            <div class="article-source col-auto order-md-3">
+                Opinion, 31/01/2019
+            </div>
+            <div class="article-authors opinion-authors col-md-auto order-md-1 mt-3 mt-md-0">
+                <div class="opinion-author-image">
+                    <img alt="Blog author" id="AuthorAvatarImage"
+                         class="BlogAuthorAvatarImage" src="https://cdn.warc.com/images/WarcSiteContent/Blogs/Authors/425.jpg" />
+                </div>
+                <div class="opinion-author">
+                    Neil Waller, Whalar
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<section class="container article-section article-topics">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="label article-section-title">
+                Topics
+            </div>
+        </div>
+        <div class="col-md-10 col-xl-8">
+            <ul class="label article-topics-list">
+                    <li><a href="/search/Influencers/Influencers,%20KOLs" onclick="TrackEvent('Opinion_Article_viewer', 'Topics', 'Top');">Influencers, KOLs</a></li>
+                    <li><a href="/search/Europe/United%20Kingdom" onclick="TrackEvent('Opinion_Article_viewer', 'Topics', 'Top');">United Kingdom</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="container news-opinion-reader clearfix" id="ContentSection">
+
+    <div class="row row-block">
+
+        <div id="mainContent" class="col-md-8 col-xl-9 with-spotlight">
+
+            <section id="article-body" class="article-body">
+
+                <div class="article-content">
+
+                    <p><em>
+Money is being poured into influencer marketing, often without a proper understanding of the channel. Whalar&rsquo;s Neil Waller explains how influencer marketing can make advertising more personable, culturally relevant and more effective.</em>
+</p>
+<p>
+Nearly two-thirds (65%) of advertisers plan to increase their influencer marketing spend this year, according to a recent survey by the World Federation of Advertisers. Yet despite this growth, confusion remains over how influencer marketing should be done to be most effective.</p>
+<p><strong>
+Beyond the numbers</strong></p>
+<p>
+It has often fallen back on vanity metrics &ndash; a popularity contest of just getting whoever has the most followers, with little consideration given to the context, audience suitability or what&rsquo;s actually being published. This reduces it to nothing more than a game of follower numbers. As a result, people have tried to game the system and marketers are, rightfully, starting to question the ROI.
+</p>
+<p>
+Thankfully, the days of the Wild West are behind us. What&rsquo;s more, as evidenced by some of the 2018 IPA Effectiveness Awards winners, when properly approached, influencer marketing can be a powerful tool to help create advertising that&rsquo;s led from consumer insight, that feels trustworthy and that is culturally relevant to both the brand and the audience.
+</p>
+<p>
+Take L&rsquo;Or&eacute;al. It <a href="https://www.warc.com/content/article/How_Lamp;39;Oramp;233;al_Paris_UK_True_Match_climbed_to_No.1_by_making_everyone_feel_amp;39;Worth_itamp;39;/122380" target="_blank">used influencers to promote inclusion</a> and ramped up its UK market share as a result, at the same time as spinning its &lsquo;Because you&rsquo;re worth it&rsquo; into a new iteration &lsquo;Because we&rsquo;re all worth it&rsquo;. Genius. Ella&rsquo;s Kitchen <a href="https://www.warc.com/content/article/Ellaamp;39;s_Kitchen_Selling_up_doesnamp;39;t_mean_selling_out/122378" target="_blank">tapped into the huge power of WOM among parents</a>, successfully transforming them into vocal advocates for the brand. Barclays <a href="https://www.warc.com/content/article/Barclays_Purpose_pays/122395" target="_blank">enlisted the help of &lsquo;Digital Eagles&rsquo;</a> from within its business to help customers understand internet safety, a step which helped galvanise its workforce. The Starbucks campaign <a href="https://www.warc.com/content/article/Starbucks_and_social_How_Starbucks_created_the_fourth_place_in_coffee_culture/122396" target="_blank">used influencers in a very natural way</a> to turn the cups into an iconic social media post. SK-II <a href="https://www.warc.com/content/article/SK-II_The_Marriage_Market_Takeover_How_giving_%E2%80%98leftover%E2%80%99_women_in_China_a_voice_transformed_a_luxury_skin_care_brand/122383" target="_blank">enlisted influencers to rally behind its message</a>, something that was a million miles away from the celebrity-studded 15-second TV ads that tend to typify advertising in the Chinese skincare category.</p>
+<p><strong>
+Not just box-ticking</strong></p>
+<p>
+What all of the most effective influencer campaigns have in common is that they&rsquo;re not just using influencers as an audience rental opportunity that&rsquo;s been bolted onto a campaign with a bit of leftover budget to tick the influencer marketing box.
+</p>
+<p>
+These campaigns have actually been allowed to be shaped, in part, by the influencers, with the messaging and insights they help develop being integrated across all the media involved. They have not only driven incredible business outcomes to date, they are also continuing to live on through the ongoing conversations that consumers and influencers are now having with and around the brand.
+</p>
+<p>
+Here are five tips on including influencers:
+</p>
+<p><strong>
+1. Define your business objective </strong></p>
+<p>
+Make sure you are crystal clear on this because how else can you make decisions and brief people properly, let alone ascertain if influencer marketing has worked for you?
+</p>
+<p><strong>
+2. Have a clear insight and brief </strong></p>
+<p>
+This is central to any advertising strategy and is no different with influencer marketing. The brief shouldn&rsquo;t be to create a photo and promote a product. You need a clearly defined understanding of the message and concept that you&rsquo;re trying to land with your marketing strategy. Of course, one part of your influencer marketing campaign could be to do research with influencers to help actually uncover and establish the insights. The brief should then be clear on what you are wishing to achieve along with setting all the visual parameters and guidelines which need to be followed to ensure what gets produced is going to be both on brand and capable of delivering on your objectives.
+</p>
+<p><strong>
+3. Carefully select influencers </strong></p>
+<p>
+One of the key challenges when thinking about the influencer space is the fact that the term &lsquo;influencer&rsquo; describes such a vast landscape of individuals, from globally known celebrities to the social media famous to the micro and nano influencers. The simplest approach is to think of every influencer as a publisher. They will have a topic in which they are a thought leader, they will have a clear point of view and a defined audience demographic and size. For instance, you wouldn&rsquo;t advertise an everyday cooking utensil in Vogue.
+</p>
+<p><strong>
+4. Trust, listen and learn </strong></p>
+<p>
+Having done the hard part of setting the objective, creating the brief and having carefully chosen the influencers, you can risk throwing away a lot of the benefits of influencer marketing by then not trusting the influencers to do their thing. With the right influencers you&rsquo;ll have an individual that represents your consumers. They will be seen as a taste-maker to their audience and have learnt the craft of speaking and publishing to that audience through the channels where they wield some influence. Resist the temptation to micromanage them. If you&rsquo;ve set the objective, articulated the insight through a clear brief and selected the right influencers, then their creativity and opinions are exactly the value they represent to you.
+</p>
+<p><strong>
+5. Take a fully-integrated approach </strong></p>
+<p>
+Avoid having influencer marketing as a bolt-on channel that&rsquo;s simply using up some leftover budget. Make influencer marketing an integrated part of your entire marketing strategy for the campaign. Leverage the insights, utilise the creative across all your channels and tie up the messaging. Influencer marketing&rsquo;s ability to help break down the walls between marketers and their consumers is where the 0true power of this marketing channel exists. Embraced fully, it can help make advertising more personable, more culturally relevant and, crucially, more effective.
+</p>
+<p><em>This is an extract from the 2018 IPA Effectiveness Awards Report, available <a href="https://www.warc.com/content/article/2018_IPA_Effectiveness_Awards_Insights_from_the_winning_campaigns/124817" target="_blank">in full for subscribers here </a> or <a href="https://content.warc.com/download-a-sample-of-the-ipa-effectiveness-awards-2018-report" target="_blank">read a sample of the report here</a>. Influencer marketing is the focus of the February issue of Admap, published Monday 4th.</em></p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+<div id="LastestNewsOpinion" class="col-md-4 col-xl-3 sidebar-spotlight">
+    <h3>Latest</h3>
+    <ul class="page-section-list">
+
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/how-data-impoverishment-continues-to-deepen-the-digital-divide/4169" data-newsandopinion-text="How data impoverishment continues to deepen the digital divide" data-newsandopinion-position="1"> How data impoverishment continues to deepen the digital divide</a>
+            </li>
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/three-steps-to-study-how-brands-can-think-about-non-fungible-tokens/4165" data-newsandopinion-text="Three steps to study: How brands can think about non-fungible tokens" data-newsandopinion-position="2"> Three steps to study: How brands can think about non-fungible tokens</a>
+            </li>
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/the-future-that-was-reading-the-future-culture-coming-our-way/4168" data-newsandopinion-text="The future that was: Reading the future culture coming our way" data-newsandopinion-position="3"> The future that was: Reading the future culture coming our way</a>
+            </li>
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/the-journey-to-become-transformational/4167" data-newsandopinion-text="The Journey to Become Transformational" data-newsandopinion-position="4"> The Journey to Become Transformational</a>
+            </li>
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/effective-channel-integration-right-place-right-time-right-message/4166" data-newsandopinion-text="Effective channel integration: Right place, right time, right message" data-newsandopinion-position="5"> Effective channel integration: Right place, right time, right message</a>
+            </li>
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/the-benefits-of-using-media-to-surprise-and-delight/4162" data-newsandopinion-text="The benefits of using media to surprise and delight" data-newsandopinion-position="6"> The benefits of using media to surprise and delight</a>
+            </li>
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/participation-is-having-a-moment-in-brand-marketing/4161" data-newsandopinion-text="Participation is having a moment in brand marketing" data-newsandopinion-position="7"> Participation is having a moment in brand marketing</a>
+            </li>
+            <li class="page-section-item">
+                <p class="label blue-grey">Opinion</p>
+                <a href="/newsandopinion/opinion/how-lifebuoy-vietnam-navigated-covid-19-an-interview-with-amit-thakur-and-ngoc-nhan-mai/4158" data-newsandopinion-text="How Lifebuoy Vietnam navigated COVID-19: An interview with Amit Thakur and Ngọc Nh&#226;n Mai" data-newsandopinion-position="8"> How Lifebuoy Vietnam navigated COVID-19: An interview with Amit Thakur and Ngọc Nh&#226;n Mai</a>
+            </li>
+        <li class="page-section-item page-section-links">
+            <a href="/NewsAndOpinion/" data-newsandopinion-text="View more News and Opinion">View more News and Opinion</a>
+        </li>
+    </ul>
+</div>
+
+
+    </div>
+
+    <div id="about-the-author" class="news-opinion-about-author">
+
+        <h2>About the author</h2>
+
+        <div class="author-details row">
+
+            <div class="col-md-4 author-metadata">
+
+                <p>
+                    <span class="author-name">
+                        Neil Waller
+                    </span><br />
+                    <span class="job-title">Co-Founder, Whalar</span>
+                </p>
+
+                    <p><a href="/NewsAndOpinion/Author/Neil Waller" onclick="TrackEvent('Opinion_Article_viewer', 'About_the_author', 'View_all');"> View all of Neil Waller's Opinion posts</a></p>
+                <p>
+                    <img alt="Blog author" id="AuthorAvatarImage" class="BlogAuthorAvatarImage" src="https://cdn.warc.com/images/WarcSiteContent/Blogs/Authors/425.jpg" />
+                </p>
+
+            </div>
+
+            <div class="col-md-8 author-bio">
+                
+            </div>
+
+        </div>
+
+    </div>
+
+        <div class="containing-box-links get-demo">
+            <a href="/demo" class="box-links pink" onclick="TrackEvent('Opinion_Article_viewer', 'Buttons', 'Get_a_demo');">Get a demo</a>
+        </div>
+
+</section>
+
+
+
+
+
+<section class="container article-section article-topics">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="label article-section-title">
+                Topics
+            </div>
+        </div>
+        <div class="col-md-10 col-xl-8">
+            <ul class="label article-topics-list">
+                    <li><a href="/search/Influencers/Influencers,%20KOLs" onclick="TrackEvent('Opinion_Article_viewer', 'Topics', 'Bottom');">Influencers, KOLs</a></li>
+                    <li><a href="/search/Europe/United%20Kingdom" onclick="TrackEvent('Opinion_Article_viewer', 'Topics', 'Bottom');">United Kingdom</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section id="feedback-copyright">
+
+    <div class="container">
+
+        
+
+<form action="/Content/submitFeedback" id="submitFeedbackForm" method="post">    <div id="feedbackContainer" class="row" style="display: none;">
+        <div class="col-md-6">
+            <textarea class="form-control" cols="51" data-val="true" data-val-required="Please enter your feedback" id="feedbackTextArea" name="Feedback" placeholder="Enter your feedback here" rows="10">
+</textarea>
+            <p><span class="field-validation-valid field-validation-error" data-valmsg-for="Feedback" data-valmsg-replace="false" id="submitFeedbackFormEmptyMessage">Please enter your feedback.</span></p>
+        </div>
+        <div class="col-md-12">
+            <a href="javascript:void(0);" class="box-links blue" onclick="onSendFeedbackSubmitClicked();">Submit</a>
+        </div>
+    </div>
+<input Length="5" id="Title" name="Title" type="hidden" value="integrating_influence" /><input Length="9" id="ArticleId" name="ArticleId" type="hidden" value="" /><input Length="6" id="NewsId" name="NewsId" type="hidden" value="2955" /></form>
+<div class="article-feedback">
+    <a href="javascript:void(0);" class="box-links blue" onclick="$('#feedbackContainer').show(); $(this).hide();">Send feedback</a>
+</div>
+
+<script type="text/javascript">
+
+	function onSendFeedbackSubmitClicked() {
+
+		if ($("#feedbackTextArea").val() === "") {
+			$("#submitFeedbackFormEmptyMessage").show();
+			return;
+		}
+
+		$("#submitFeedbackFormEmptyMessage").hide();
+
+		TrackEvent('Opinion_Article_viewer', 'Send_feedback', '');
+
+		var form = $("#submitFeedbackForm");
+
+		$.ajax({
+			type: "POST",
+			url: form.attr('action'),
+			data: form.serialize(),
+			error: function (xhr, status, error) {
+				WarcNotification.NotificationManager.addNotification(new WarcNotification.ToastRenderer($("#toaster"),
+					WarcNotification.ToastNotificationTypes.errorClass, "An error occurred.")).show();
+			},
+			success: function (response) {
+				WarcNotification.NotificationManager.addNotification(new WarcNotification.ToastRenderer($("#toaster"),
+					WarcNotification.ToastNotificationTypes.checkClass, "Feedback Sent")).show();
+
+				$('#feedbackContainer').hide();
+			}
+		});
+	}
+
+
+</script>
+
+
+
+
+        <div class="article-copyright">
+
+            <p><a href="http://www.warc.com">www.warc.com</a></p>
+
+            <p>&copy; Copyright 2021</p>
+
+            <p>All rights reserved including database rights. This electronic file is for the personal use of authorised users based at the subscribing company's office location. It may not be reproduced, posted on intranets, extranets or the internet, e-mailed, archived or shared electronically either within the purchaser's organisation or externally without express written permission from WARC.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="modal fade" id="emailSelectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Email this content</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <label id="emailSelectionHeader">
+                        Send colleagues a link to this content.<br />
+                        To send to more than one recipient, put a comma between email addresses.
+                    </label>
+                </p>
+                <div class="form-standard">
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label" for="inputName">Recipient name:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputName" placeholder="Name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label" for="inputEmail">Recipient email:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email address" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label"
+                               for="inputMessage">
+                            Message (optional):
+                        </label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="inputMessage" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-8">
+                            <div class="checkbox">
+                                <input type="checkbox" id="selfSend" />
+                                <label for="selfSend">
+                                    <span></span>
+                                    Send me a copy of this email as well.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label id="validationMessage" class="col-12"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer submit-links">
+
+                <button type="button" class="btn-text-link" data-dismiss="modal">
+                    Cancel
+                </button>
+
+                <button type="button" class="box-links pink" onclick="emailSelectionClicked();">
+                    Email
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+	var selectedContent;
+
+	function showEmailPopup(content) {
+		selectedContent = content;
+
+		$("#emailSelectionModal").modal();
+	}
+
+	function emailSelectionClicked() {
+
+		ResourceLoader.requireScript("warc_waitLogo", function () {
+
+			$("#validationMessage").empty();
+			if ($("#inputName").val().trim() === "") {
+				$("#validationMessage").text("Please enter a recipient name");
+				return;
+			}
+			if ($("#inputEmail").val().trim() === "") {
+				$("#validationMessage").text("Please enter a recipient Email");
+				return;
+			}
+			if (selectedContent.length === 0) {
+				$("#validationMessage").text("Please ensure you have some content selected");
+				return;
+			}
+
+			$("#emailSelectionModal").modal("hide");
+
+			waitLogo.show();
+
+			var recipName = $("#inputName").val().trim();
+			var msg = $("#inputMessage").val().trim();
+			var recipEmail = $("#inputEmail").val().trim();
+			var self = $("#selfSend").prop("checked");
+
+			var share = new UserSettings.WarcShare($("#warcUid").val());
+			var details = new UserSettings.EmailShareSettings(UserSettings.ShareType.ContentReference, recipName, msg, self, recipEmail);
+			details.contentReferences = selectedContent;
+			share.shareEmail(details).done(function() {
+				waitLogo.hide();
+
+				WarcNotification.NotificationManager.addNotification(new WarcNotification.ToastRenderer($("#toaster"),
+					WarcNotification.ToastNotificationTypes.checkClass, "Email sent.")).show();
+			}).fail(function() {
+				waitLogo.hide();
+
+				WarcNotification.NotificationManager.addNotification(new WarcNotification.ToastRenderer($("#toaster"),
+					WarcNotification.ToastNotificationTypes.errorClass, "Unable to send email, please try again.")).show();
+			});
+		});
+
+
+			
+
+	}
+</script>
+
+
+
+<script type='text/javascript' src='https://cdn.warc.com/javascript/GoogleTranslate.min.js?v=0407142049'></script>
+
+    </main>
+
+    <div id="category-reminder-modal" data-backdrop="static" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        
+<style>
+    #closeModal {
+    color: #3d46c4;
+    border: none;
+    padding: 0.7em 1em;
+    }
+    #closeModal:hover {
+    background: none;
+    }
+</style>
+<div class="modal-content">
+<div class="modal-body">
+<p><strong>Welcome back to WARC!</strong></p>
+<p>We&rsquo;ve made some exciting changes since your last visit, bringing you:</p>
+<ul class="checklist">
+    <li>Latest category insights straight to your homepage</li>
+    <li>A new Evidence series on key marketing questions</li>
+    <li>Category campaign data from recent case studies</li>
+</ul>
+</div>
+<div class="modal-footer">
+<button type="button" onclick="disableBrandOwnerModal(true);return false;" class="box-links" data-dismiss="modal">Explore all these new features</button>
+<button id="closeModal" type="button" onclick="disableBrandOwnerModal();return false;" class="no-box-links" data-dismiss="modal">Maybe later</button>
+</div>
+</div>
+    </div>
+</div>
+
+
+    <div id="toaster" style="display: none;"></div>
+
+<div id="cookieMessage" style="display: none;">
+    <div id="cookieInner" class="cookieInner container">
+        <div id="cookieText">
+            <p>By continuing to use the site, you agree to the use of cookies. You can change this and find out more <a href="/cookies">here</a></p>
+        </div>
+        <div id="cookieNotice_acceptCookies" class="acceptCookies box-links white on-electric-blue ">
+            Hide message
+            <input type="button" name="ctl00$cookieNotice$CookieButton" value="Button" onclick="" id="cookieNotice_CookieButton" style="display: none;">
+        </div>
+    </div>
+</div>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK44K6C"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="hide-desktop" id="bootstrap-breakpoint-mobile"></div>
+
+<input id="warcUid" name="uid" type="hidden" value="" />
+
+    <footer>
+    <div class="footer-brand button-images">
+
+    <a href="/"><img src="https://cdn.warc.com/images-site/logos/warc-white-endorsement.svg" alt="WARC An Ascential Company" height="56" class="footer-logo" /></a>
+
+    
+    <p>&copy; 2021 Copyright and Database Rights owned by Ascential Events (Europe) Limited</p>
+
+    
+<ul class="footer-social">
+        <li><a href="http://www.facebook.com/warc.hub"><img src="https://cdn.warc.com/images-site/logos/facebook.svg" alt="Facebook" height="24"></a></li>
+        <li><a href="http://twitter.com/WarcEditors"><img src="https://cdn.warc.com/images-site/logos/twitter.svg" alt="Twitter" height="24"></a></li>
+        <li><a href="https://www.linkedin.com/company/warc"><img src="https://cdn.warc.com/images-site/logos/linkedin.svg" alt="LinkedIn" height="24"></a></li>
+        <li><a href="https://www.youtube.com/user/WarcWebmaster"><img src="https://cdn.warc.com/images-site/logos/youtube.svg" alt="YouTube" height="24"></a></li>
+        <li><a href="https://www.instagram.com/makeitwarc/"><img src="https://cdn.warc.com/images-site/logos/instagram-icon.svg" alt="Instagram" height="24"></a></li>
+      </ul>
+
+</div>
+
+<div class="footer-links styled-links">
+
+    
+<div class="footer-col-1">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/about-core-warc">WARC Core</a></li>
+<li><a href="/about-warc-data">WARC Data</a></li>
+<li><a href="/about-warc-rankings">WARC Rankings</a></li>
+<li><a href="/about-warc-advisory">WARC Advisory</a></li>
+<li><a href="/feed">The Feed</a></li>
+<li><a href="https://content.warc.com/warc-talks.html">WARC Talks</a></li>
+<li><a href="/topics/awards.topic">Awards</a></li>
+<li><a href="/topics">Explore by Topic</a></li>
+</ul>
+</div>
+
+<div class="footer-col-2">
+<ul>
+<li><span>About</span></li>
+<li><a href="/about">About WARC</a></li>
+<li><a href="/meet-the-experts">Meet the Experts</a></li>
+<li><a href="/work-for-warc">Work for WARC</a></li>
+<li><a href="/press">Press</a></li>
+<li><a href="/Partners">Partners</a></li>
+<li><a href="/write-for-warc">Write for WARC</a></li>
+<li><a href="/sitemap">Sitemap</a></li>
+</ul>
+</div>
+
+<div class="footer-col-3">
+<ul>
+<li><span>Support</span></li>
+<li><a href="/clientservices">Help</a></li>
+<li><a href="/contact-us">Contacts</a></li>
+<li><a href="https://content.warc.com/do-i-have-access-to-warc.html">Do I Subscribe?</a></li>
+<li><a href="/NewsAndOpinion/GetNews">Newsletter</a></li>
+</ul>
+</div>
+
+<div class="footer-col-4">
+<ul>
+<li><span>Legal</span></li>
+<li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+<li><a href="/copyright-policy">Copyright Policy</a></li>
+<li><a href="/privacy">Privacy</a></li>
+<li><a href="/cookies">Cookies</a></li>
+</ul>
+</div>
+
+</div>
+
+</footer>
+
+<div class="modal fade" id="weChatModal" tabindex="-1" role="dialog" aria-labelledby="weChatModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="weChatModalLabel">
+Please scan the QR code</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="https://cdn.warc.com/images/WARCSiteContent/Home/WeChat_WARC-QR-code.jpg" alt="QR code for WeChat" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="box-links" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <script type="text/javascript">
+
+
+        var folderListVisible = false;
+
+        function onAddToFolderClicked() {
+            if (folderListManager === undefined) {
+                return;
+            }
+
+            folderListManager.updateFolderList($("#folderPopup"), "cb3620aa-67db-4734-b332-3b7597a25a72");
+        }
+
+    </script>
+
+    <script type='text/javascript' src='https://cdn.warc.com/Scripts/Views/Shared/Layout/Scripts.js?v=0407142051'></script>
+
+</body>
+</html>

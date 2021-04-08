@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html lang="en-US" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"9537276cb2",applicationID:"6974453"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+            var wpdm_site_url = 'https://www.socialmediaexaminer.com/';
+            var wpdm_home_url = 'https://www.socialmediaexaminer.com/';
+            var ajax_url = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var ajaxurl = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var wpdm_ajax_url = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var wpdm_ajax_popup = '0';
+        </script>
+<style id="aoatfcss" media="all">input{overflow:visible}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{margin:.67em 0;font-size:2em}a{background-color:transparent}strong{font-weight:bolder}img{border-style:none}input{margin:0;font-family:inherit;font-size:100%;line-height:1.15}[type=submit]{-webkit-appearance:button}[type=submit]::-moz-focus-inner{padding:0;border-style:none}[type=submit]:-moz-focusring{outline:ButtonText dotted 1px}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}.clearfix:before,.entry-content:before,.entry:before,.nav-primary:before,.site-container:before,.site-header:before,.site-inner:before,.widget:before,.wrap:before{display:table;content:" "}.clearfix:after,.entry-content:after,.entry:after,.nav-primary:after,.site-container:after,.site-header:after,.site-inner:after,.widget:after,.wrap:after{display:table;clear:both;content:" "}html{overflow-y:scroll;font-size:62.5%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}body,html{overflow-x:hidden}body>div{font-size:17px;font-size:1.7rem}@media (min-width:768px){body>div{font-size:18px;font-size:1.8rem}}@media (min-width:1024px){body>div{font-size:20px;font-size:2rem}}body{margin:0;font-family:sans-serif;font-weight:400;line-height:1.4;color:#31251c;letter-spacing:-.2px;background-color:#fff;font-size:16px;font-size:1.6rem}@media (min-width:768px){body{font-size:18px;font-size:1.8rem}}@media (min-width:1024px){body{font-size:20px;font-size:2rem}}a{color:#c94f31;text-decoration:none}p{padding:0;margin:0 0 20px}ul{padding:0;margin:0}li{list-style-type:none}strong{font-weight:700}i{font-style:italic}h1,h2,h4{margin:0 0 10px;font-family:sans-serif;font-weight:900;line-height:1.33}h1{letter-spacing:-1px;font-size:32px;font-size:3.2rem}@media (min-width:768px){h1{font-size:48px;font-size:4.8rem}}@media (min-width:1024px){h1{font-size:64px;font-size:6.4rem}}@media (min-width:768px){h1{letter-spacing:-2px}}h2{letter-spacing:-.5px;font-size:28px;font-size:2.8rem}@media (min-width:768px){h2{font-size:32px;font-size:3.2rem}}@media (min-width:1024px){h2{font-size:36px;font-size:3.6rem}}@media (min-width:768px){h2{letter-spacing:-1px}}h4{font-size:18px;font-size:1.8rem}@media (min-width:768px){h4{font-size:20px;font-size:2rem}}@media (min-width:1024px){h4{font-size:22px;font-size:2.2rem}}img{max-width:100%}img{height:auto;vertical-align:top}.screen-reader-shortcut{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);word-wrap:normal!important;border:0}.genesis-skip-link{margin:0}.genesis-skip-link li{width:0;height:0;list-style:none}.free-tag{position:relative;z-index:10;display:block}.free-tag::before{position:absolute;top:-25px;left:-10px;z-index:-1;display:block;padding:8px 10px 7px;font-size:17px;font-size:1.7rem;font-weight:600;line-height:1;color:#fff;letter-spacing:2px;content:'FREE';background-color:#3e8c66;border-radius:5px;transform:rotate(-7deg)}@media (min-width:768px){.free-tag::before{left:-17px;padding:10px 17px 8px;font-size:22px;font-size:2.2rem}}input{width:100%;padding:14px 14px 12px 14px;font-size:14px;font-size:1.4rem;font-weight:400;color:#31251c;background-color:#fff;border:1px solid #9ab2a4;border-radius:3px}@media (min-width:768px){input{padding:20px 20px 18px}}::-moz-placeholder{font-size:14px;font-size:1.4rem;color:#c1bdba;text-transform:uppercase;letter-spacing:.78px;opacity:1}::-webkit-input-placeholder{font-size:14px;font-size:1.4rem;color:#c1bdba;text-transform:uppercase;letter-spacing:.78px}.button,input[type=submit]{width:auto;padding:14px 14px 12px 14px;font-weight:400;color:#fff;text-align:center;text-decoration:none;letter-spacing:1px;white-space:normal;background-color:#c94f31;border:0;border-radius:3px;font-size:16px;font-size:1.6rem}@media (min-width:768px){.button,input[type=submit]{font-size:16px;font-size:1.6rem}}@media (min-width:1024px){.button,input[type=submit]{font-size:17px;font-size:1.7rem}}@media (min-width:1024px){.button,input[type=submit]{padding:15px 30px;letter-spacing:2px}}input[type=submit]{font-weight:600;text-transform:uppercase}.button{display:inline-block}.site-container{word-wrap:break-word}.site-container{position:relative}@media (min-width:1500px){.site-container::after{background-color:rgba(0,0,0,0);content:"";background-size:100% auto!important;display:block;position:absolute;bottom:0;right:0;left:0;top:20%;z-index:-4}}@media screen and (min-width:1500px) and (-webkit-min-device-pixel-ratio:2),screen and (min-width:1500px) and (-moz-min-device-pixel-ratio:2),screen and (min-width:1500px) and (min-device-pixel-ratio:2),screen and (min-width:1500px) and (min-resolution:192dpi),screen and (min-width:1500px) and (min-resolution:2dppx){.site-container::after{background-size:3849px 1946px;background-color:rgba(0,0,0,0)}}.site-inner{clear:both;margin:0 auto;padding:20px 5% 0}@media (min-width:768px){.site-inner{padding:20px 2.5% 0}}@media (min-width:1240px){.site-inner{margin-top:70px;max-width:1200px;padding:0}}.archive .site-inner{margin:0 auto}@media (min-width:1024px){.archive .site-inner{margin-top:40px}}.home .site-inner{margin-top:0}.wrap{margin:0 auto;max-width:100%}@media (min-width:1240px){.wrap{margin:0 auto;max-width:1200px;padding:0}}.content{margin:0 auto;max-width:790px}@media (min-width:1024px){.content{float:left;max-width:790px;width:100%}}.full-width-content .content{margin:0 auto;max-width:100%;width:100%}@media (min-width:1024px){.full-width-content .content{float:none;margin:0 auto;max-width:100%;padding:0;width:100%}}@media (min-width:1240px){.full-width-content .content{max-width:1200px}}.archive.full-width-content .content .entry{border:1px solid #efe0b9;border-radius:5px;padding:32px;position:relative;float:none;clear:both}.archive.full-width-content .content .entry:nth-child(2){background-color:#fcf9f1;border:none;padding:2%}@media (min-width:960px){.archive.full-width-content .content .entry{clear:none;padding:32px 32px 64px;float:left;margin-right:2%;width:49%;font-size:18px;font-size:1.8rem}.archive.full-width-content .content .entry:nth-of-type(odd){margin-right:0}.archive.full-width-content .content .entry:nth-child(1){width:66%}.archive.full-width-content .content .entry:nth-child(1) .entry-content{max-height:250px}.archive.full-width-content .content .entry:nth-child(1) .entry-title{font-size:20px;font-size:2rem}}@media (min-width:960px) and (min-width:768px){.archive.full-width-content .content .entry:nth-child(1) .entry-title{font-size:40px;font-size:4rem}}@media (min-width:960px) and (min-width:1024px){.archive.full-width-content .content .entry:nth-child(1) .entry-title{font-size:40px;font-size:4rem}}@media (min-width:960px) and (min-width:1240px){.archive.full-width-content .content .entry:nth-child(1) .entry-title{font-size:44px;font-size:4.4rem}}@media (min-width:960px){.archive.full-width-content .content .entry:nth-child(2){margin-left:2%;padding:42px;width:32%}}@media (min-width:1240px){.archive.full-width-content .content .entry{padding:40px 72px 96px}}.archive.full-width-content .content .entry .entry-content{max-height:220px;overflow:hidden}.avatar{border-radius:50%;float:left}.entry-title{font-size:30px;font-size:3rem;line-height:1;margin-bottom:10px;text-align:center}@media (min-width:768px){.entry-title{font-size:46px;font-size:4.6rem}}@media (min-width:1024px){.entry-title{font-size:58px;font-size:5.8rem}}@media (min-width:1240px){.entry-title{font-size:64px;font-size:6.4rem}}.archive.full-width-content .content .entry .entry-title{font-size:24px;font-size:2.4rem;line-height:1.055;margin-bottom:25px;text-align:left}@media (min-width:768px){.archive.full-width-content .content .entry .entry-title{font-size:28px;font-size:2.8rem}}@media (min-width:1024px){.archive.full-width-content .content .entry .entry-title{font-size:36px;font-size:3.6rem}}.entry-title a{color:#222;text-decoration:none}.widget{margin-bottom:20px}@media (min-width:1024px){.widget{margin-bottom:0}}.widget p:last-child{margin-bottom:0}.home-top-cta{position:relative;z-index:99;margin:-40px 0 200px}@media (min-width:768px){.home-top-cta{margin:-25px 0 110px}}@media (min-width:1024px){.home-top-cta{margin:-30px 0 110px}}@media (min-width:1240px){.home-top-cta{margin:-10px 0 140px}}@media (max-width:768px){.home-top-cta{margin:-40px 0 90px}.home-top-cta .main-cta-inner .sub-title{margin-bottom:6px}.home-top-cta .main-cta-inner .widget:first-child p{line-height:1.4}.home-top-cta .main-cta-inner .widget:last-child .textwidget{padding:3.5% 2% 1.5%}.home-top-cta .main-cta-inner .widget:last-child .textwidget p{margin-bottom:8px}.home-top-cta .inner-border-radius{padding:20px 0 0 0;background-color:transparent}.home-top-cta .main-cta-content{width:111%;padding:5%;margin:0 -6%;background-color:#efe0b9;background-image:linear-gradient(20deg,#f7efdc 0,#fcf9f1 100%)}}@media (max-width:768px){.home-top-cta .free-tag::before{content:none}}.main-cta-inner{position:relative;float:left}.main-cta-content{position:relative;z-index:9;margin-bottom:-120px;line-height:1.1}@media (min-width:768px){.main-cta-content{border:4px solid #efe0b9;border-radius:9px}}@media (min-width:1024px){.main-cta-content{float:left;padding:9px;margin-bottom:-70px;background-color:#efe0b9}}.inner-border-radius{padding:60px 0 0 0;background-color:#fff;border-radius:5px}@media (min-width:768px){.inner-border-radius{padding:40px 10px 10px 30px}}@media (min-width:1024px){.inner-border-radius{padding:80px 60px 40px 60px}}@media (min-width:1240px){.inner-border-radius{padding:90px 60px 50px 70px}}@media (min-width:768px){.main-cta-inner .widget:first-child{float:left;width:50%}}@media (min-width:1024px){.main-cta-inner .widget:first-child{width:56%}}.main-cta-inner .widget:first-child p{line-height:1.58;font-size:16px;font-size:1.6rem}@media (min-width:768px){.main-cta-inner .widget:first-child p{font-size:16px;font-size:1.6rem}}@media (min-width:1024px){.main-cta-inner .widget:first-child p{font-size:17px;font-size:1.7rem}}@media (min-width:768px){.main-cta-inner .widget:first-child p{padding:0 9% 0 1%}}.main-cta-inner .widget:last-child{position:relative;margin-bottom:-60px;text-align:center}@media (min-width:768px){.main-cta-inner .widget:last-child{z-index:3;float:right;width:47%}}@media (min-width:1024px){.main-cta-inner .widget:last-child{width:40%}}.main-cta-inner .widget:last-child .textwidget{padding:5% 3% 2%;background-image:linear-gradient(22deg,#d9e3cd 0,#f4faf2 100%);border:3px solid #fff;border-radius:5px;box-shadow:0 18px 24px 0 rgba(49,37,28,.1)}@media (min-width:768px){.main-cta-inner .widget:last-child .textwidget{position:absolute;top:-10px;padding:25px 28px;border:5px solid #fff;border-radius:10px}}@media (min-width:1024px){.main-cta-inner .widget:last-child .textwidget{top:-40px}}@media (min-width:1240px){.main-cta-inner .widget:last-child .textwidget{top:-50px;padding:46px 55px 50px}}.main-cta-inner .widget:last-child .textwidget p{font-size:18px;font-size:1.8rem}@media (min-width:768px){.main-cta-inner .widget:last-child .textwidget p{font-size:20px;font-size:2rem}}@media (min-width:1024px){.main-cta-inner .widget:last-child .textwidget p{font-size:22px;font-size:2.2rem}}@media (min-width:1024px){.main-cta-inner .widget:last-child .textwidget::after{position:absolute;top:-24px;right:-140px;z-index:-3;display:block;width:359px;height:401px;content:'';background-repeat:no-repeat;background-position:center;background-size:359px 401px}}@media (min-width:1240px){.main-cta-inner .widget:last-child .textwidget::after{top:-10px;right:-190px}}.main-cta-inner .widget input{width:100%;margin-top:7px;text-align:center}@media (min-width:1024px){.main-cta-inner .widget input{margin-top:15px}}.main-cta-inner h4{margin-bottom:0;line-height:1;letter-spacing:-1.8px;font-size:29px;font-size:2.9rem}@media (min-width:768px){.main-cta-inner h4{font-size:46px;font-size:4.6rem}}@media (min-width:1024px){.main-cta-inner h4{font-size:58px;font-size:5.8rem}}.main-cta-inner .sub-title{display:block;margin-bottom:25px;font-weight:600;color:#88786c;text-transform:uppercase;letter-spacing:1.8px;font-size:24px;font-size:2.4rem}@media (min-width:768px){.main-cta-inner .sub-title{font-size:28px;font-size:2.8rem}}@media (min-width:1024px){.main-cta-inner .sub-title{font-size:32px;font-size:3.2rem}}.home .podcast-section .widget{width:100%;text-align:center}@media (min-width:600px){.home .podcast-section .widget{float:left;width:32%;margin-right:2%;margin-bottom:0}}@media (min-width:960px){.home .podcast-section .widget{float:none;width:100%;margin-bottom:35px}}.home .podcast-section .widget img{-webkit-filter:grayscale(0);filter:grayscale(0)}.site-header{position:relative;z-index:9999;height:auto;background-color:#efe0b9;background-repeat:no-repeat;background-position:center top;background-size:300%;border-bottom:6px solid #efe0b9}@media (min-width:500px){.site-header{background-size:250%;border-bottom:10px solid #efe0b9}}@media (min-width:768px){.site-header{height:230px;background-size:cover}}@media (min-width:1024px){.site-header{height:315px}}@media (min-width:1240px){.site-header{max-width:1225px;margin:0 auto}}.site-header>.wrap{max-width:1225px;padding:0}@media (min-width:1240px){.site-header::before{position:absolute;top:0;left:-260px;z-index:3;display:block;width:296px;height:431px;content:'';background-color:rgba(0,0,0,0)}}@media screen and (min-width:1240px) and (-webkit-min-device-pixel-ratio:2),screen and (min-width:1240px) and (-moz-min-device-pixel-ratio:2),screen and (min-width:1240px) and (min-device-pixel-ratio:2),screen and (min-width:1240px) and (min-resolution:192dpi),screen and (min-width:1240px) and (min-resolution:2dppx){.site-header::before{background-size:296px 431px;background-color:rgba(0,0,0,0)}}@media (min-width:1240px){.site-header::after{position:absolute;top:0;right:-260px;z-index:3;display:block;width:296px;height:431px;content:'';background-color:rgba(0,0,0,0)}}@media screen and (min-width:1240px) and (-webkit-min-device-pixel-ratio:2),screen and (min-width:1240px) and (-moz-min-device-pixel-ratio:2),screen and (min-width:1240px) and (min-device-pixel-ratio:2),screen and (min-width:1240px) and (min-resolution:192dpi),screen and (min-width:1240px) and (min-resolution:2dppx){.site-header::after{background-size:296px 431px;background-color:rgba(0,0,0,0)}}@media (max-width:767px){.site-header .mobile-header-wrap{position:fixed;z-index:99999;display:block;float:left;width:100%;clear:both;background-size:100%;box-shadow:0 2px 4px 0 rgba(49,37,28,.63)}}.title-area{float:left;width:139px;height:43px;margin:15px 0 0 10px}@media (min-width:400px){.title-area{width:191px;height:59px;margin:15px 0 0 30px}}@media (min-width:768px){.title-area{width:272px;height:91px;margin:30px 0 0 30px}}@media (min-width:1024px){.title-area{width:353px;height:118px;margin:80px 0 0 60px}}.site-title{margin-bottom:0;text-indent:-999999px}.site-title a{display:block;width:191px;height:59px}@media (max-width:767px){.site-title a{background-color:rgba(0,0,0,0)}}@media screen and (max-width:767px) and (-webkit-min-device-pixel-ratio:2),screen and (max-width:767px) and (-moz-min-device-pixel-ratio:2),screen and (max-width:767px) and (min-device-pixel-ratio:2),screen and (max-width:767px) and (min-resolution:192dpi),screen and (max-width:767px) and (min-resolution:2dppx){.site-title a{background-size:191px 59px;background-color:rgba(0,0,0,0)}}@media (max-width:380px){.site-title a{width:139px;height:43px;background-color:rgba(0,0,0,0)}}@media screen and (max-width:380px) and (-webkit-min-device-pixel-ratio:2),screen and (max-width:380px) and (-moz-min-device-pixel-ratio:2),screen and (max-width:380px) and (min-device-pixel-ratio:2),screen and (max-width:380px) and (min-resolution:192dpi),screen and (max-width:380px) and (min-resolution:2dppx){.site-title a{background-size:139px 43px;background-color:rgba(0,0,0,0)}}@media (min-width:768px){.site-title a{display:block;width:272px;height:91px;background-repeat:no-repeat;background-position:center;background-size:272px 91px}}@media (min-width:1024px){.site-title a{width:353px;height:118px;background-repeat:no-repeat;background-position:center;background-size:353px 118px}}.site-title a{color:#484848;text-decoration:none}.site-description{font-weight:700;line-height:0;text-indent:-999999px;text-shadow:0 1px 1px #31251c}@media (min-width:768px){.site-description{margin-left:8px;line-height:24px;color:#fff;text-indent:0;letter-spacing:-.41px;font-size:16px;font-size:1.6rem}}@media (min-width:768px) and (min-width:768px){.site-description{font-size:17px;font-size:1.7rem}}@media (min-width:768px) and (min-width:1024px){.site-description{font-size:22px;font-size:2.2rem}}@media (min-width:768px) and (min-width:1240px){.site-description{font-size:22px;font-size:2.2rem}}@media (min-width:1024px){.site-description{margin-left:12px}}.header-promo{display:flex;flex-basis:50%;align-content:space-around;align-items:center;align-items:center;justify-content:center;justify-content:center;float:left;width:100%;margin-top:90px}@media (min-width:768px){.header-promo{display:block;float:right;width:auto;margin:25px 2% 0 0}}@media (min-width:1024px){.header-promo{margin:50px 3% 0 0}}@media (min-width:1240px){.header-promo{margin:50px 70px 0 0}}.header-promo>a{flex-basis:50%;max-width:50%}.header-promo img{position:relative;z-index:9;float:left;max-width:100%}@media (min-width:450px){.header-promo img{max-width:200px}}@media (min-width:768px){.header-promo img{max-width:220px;margin-right:10px}}@media (min-width:1024px){.header-promo img{max-width:272px;max-height:170px;margin-right:-15px}}.header-promo-content{float:right;padding:10px 10px;margin:15px 2.5% 0 0;text-align:center;background-color:rgba(8,34,36,.8);border-radius:5px}@media (min-width:768px){.header-promo-content{float:right;padding:15px 20px;margin:0}}@media (min-width:1024px){.header-promo-content{padding:19px 30px;margin:0}}.header-promo-content span{display:block;color:#fff}.header-promo-content .promo-title{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-weight:700;line-height:1;font-size:26px;font-size:2.6rem}@media (min-width:768px){.header-promo-content .promo-title{font-size:26px;font-size:2.6rem}}@media (min-width:1024px){.header-promo-content .promo-title{font-size:26px;font-size:2.6rem}}@media (min-width:1240px){.header-promo-content .promo-title{font-size:32px;font-size:3.2rem}}.header-promo-content .promo-content{margin-bottom:5px;font-size:16px;font-size:1.6rem}@media (min-width:1024px){.header-promo-content .promo-content{margin-bottom:12px}}.header-promo-content .button{padding:8px 16px 7px;font-size:14px;font-size:1.4rem;font-weight:700}.genesis-nav-menu{width:100%;clear:both;line-height:1}.genesis-nav-menu .menu-item{position:relative;display:block;float:none}@media (min-width:768px){.genesis-nav-menu .menu-item{display:inline-block}}.genesis-nav-menu a{display:block;padding:20px 0 20px 20px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;letter-spacing:.5px;border-top:2px solid #ab4329;outline-offset:-1px;font-size:16px;font-size:1.6rem}@media (min-width:768px){.genesis-nav-menu a{font-size:16px;font-size:1.6rem}}@media (min-width:1024px){.genesis-nav-menu a{font-size:16px;font-size:1.6rem}}@media (min-width:1240px){.genesis-nav-menu a{font-size:18px;font-size:1.8rem}}@media (min-width:768px){.genesis-nav-menu a{padding:20px 2px 17px;margin:0 8px;color:#222;border-top:0;border-bottom:3px solid transparent}}@media (min-width:1024px){.genesis-nav-menu a{padding:20px 2px 14px;margin:0 10px;border-bottom:3px solid transparent}}@media (min-width:1240px){.genesis-nav-menu a{padding:20px 4px 14px;margin:0 12px}}.genesis-nav-menu .current-menu-item>a{color:#fff;text-decoration:none}@media (min-width:768px){.genesis-nav-menu .current-menu-item>a{color:#c94f31;border-bottom:3px solid #fff}}.genesis-nav-menu .sub-menu,.genesis-nav-menu .sub-menu a{width:100%}.genesis-nav-menu .sub-menu{position:static;left:-9999px;z-index:99;display:none;clear:both;background-color:#ab4329;border-left:15px solid rgba(0,0,0,.1);opacity:1}@media (min-width:768px){.genesis-nav-menu .sub-menu{position:absolute;padding-left:0;margin:0;border-bottom:1px solid #c1bdba;border-left:0;opacity:0}}.genesis-nav-menu .sub-menu a{position:relative;margin:0;line-height:1.5;word-wrap:break-word;background-color:#ab4329;border-top:2px solid rgba(0,0,0,.1);font-size:10px;font-size:1rem}@media (min-width:768px){.genesis-nav-menu .sub-menu a{font-size:12px;font-size:1.2rem}}@media (min-width:1024px){.genesis-nav-menu .sub-menu a{font-size:12px;font-size:1.2rem}}@media (min-width:768px){.genesis-nav-menu .sub-menu a{padding-top:10px;padding-bottom:10px;padding-left:15px;border-bottom:0;box-shadow:none}}@media (min-width:768px){.genesis-nav-menu .sub-menu .sub-menu{margin:-43px 0 0 199px}}.nav-primary{position:absolute;top:85px;z-index:99999;width:100%;clear:both}@media (min-width:1240px){.nav-primary::after,.nav-primary::before{position:absolute;left:-11px;z-index:-1;display:block;width:12px;height:100%;content:'';background-size:contain}.nav-primary::after{top:0;right:-11px;left:auto;z-index:-1;content:'';background-size:contain}}@media (min-width:767px){.nav-primary{top:auto;bottom:-10px;z-index:2}}.nav-primary>.wrap{max-width:none;padding:0;background-color:#311b1c;border-bottom:7px solid #efe0b9}@media (min-width:768px){.nav-primary>.wrap{padding:0 15px}}@media (min-width:1024px){.nav-primary>.wrap{padding:0 35px;border-bottom:10px solid #efe0b9}}@media (min-width:1240px){.nav-primary>.wrap{padding:0 25px 0 45px}}.nav-primary .genesis-nav-menu a{font-weight:600;color:#fff;text-shadow:1px 1px 1px rgba(49,28,31,.2);font-size:16px;font-size:1.6rem}@media (min-width:768px){.nav-primary .genesis-nav-menu a{font-size:16px;font-size:1.6rem}}@media (min-width:1024px){.nav-primary .genesis-nav-menu a{font-size:16px;font-size:1.6rem}}@media (min-width:1240px){.nav-primary .genesis-nav-menu a{font-size:18px;font-size:1.8rem}}.nav-primary .genesis-nav-menu a:first-child{margin-left:0}.nav-primary .genesis-nav-menu .current-menu-item>a{font-weight:900}@media (min-width:768px){.nav-primary .genesis-nav-menu .current-menu-item>a{border-bottom:3px solid #fff}}.nav-primary .genesis-nav-menu .menu-item-has-children>a::after{display:block;float:right;width:8px;height:5px;margin:7px 0 0 6px;content:'';background-size:contain}.site-header .mobile-search-header a{position:relative;z-index:99;display:block;display:block;float:right;width:49px;height:48px;margin:19px 10px 0 0;text-indent:-9999999px;background-size:21px 21px;border-radius:5px}.site-header .mobile-search-header{display:block}@media (min-width:768px){.site-header .mobile-search-header{display:none}}.back-to-top{position:fixed;right:15px;bottom:15px;z-index:99999;display:none;width:40px;height:40px;margin:0;color:#fff;text-decoration:none;background-color:#111;background-size:18px 15px;border-radius:50%;opacity:.4}@media (min-width:768px){.register-button{display:block;float:right!important;margin:10px 50px 8px 0;border:none!important}.register-button a{padding:10px 20px 8px;font-size:14px!important;font-weight:700!important;color:#fff!important;text-transform:uppercase;letter-spacing:1px;background-color:#e67d37;border:none!important;border-radius:3px}}.register-button.register-button-inline{float:none!important;margin:10px 0 8px 0}.register-button.register-button-alt a{color:#0a382d!important;background-color:#ffd345}.entry{margin-bottom:25px}@media (min-width:1024px){.entry{margin-bottom:25px}}.archive .content .entry-header{margin-bottom:0;position:relative}.archive .content .entry-header::before{content:"";background-color:#efe0b9;border-top-right-radius:5px;border-bottom-right-radius:5px;position:absolute;width:5px;height:100%;left:-32px}@media (min-width:1240px){.archive .content .entry-header::before{left:-72px}}p.entry-meta{color:#c1bdba;font-size:15px;font-size:1.5rem;margin-bottom:0}@media (min-width:768px){p.entry-meta{font-size:16px;font-size:1.6rem}}@media (min-width:1024px){p.entry-meta{font-size:17px;font-size:1.7rem}}.entry-header .entry-meta{margin-bottom:10px}.entry-meta .avatar{border:3px solid #f7efdc;border-radius:50%;float:none;margin:-5px 10px 0 0}.entry-meta .entry-author-link,.entry-meta .entry-time{font-size:13px;font-size:1.3rem;font-weight:900;letter-spacing:.57px;margin-right:12px;text-decoration:none;text-transform:uppercase}@media (min-width:768px){.entry-meta .entry-author-link,.entry-meta .entry-time{font-size:14px;font-size:1.4rem}}@media (min-width:1024px){.entry-meta .entry-author-link,.entry-meta .entry-time{font-size:14px;font-size:1.4rem}}.entry-meta .entry-time{font-size:12px;font-size:1.2rem}@media (min-width:768px){.entry-meta .entry-time{font-size:13px;font-size:1.3rem}}@media (min-width:1024px){.entry-meta .entry-time{font-size:13px;font-size:1.3rem}}.entry-meta .entry-time{color:#88786c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-weight:600;letter-spacing:.25px;margin-left:12px}.entry-meta .byline{margin-right:4px}.footer-widgets-1 img{max-width:288px;margin-bottom:20px}.content-promo-outer img{padding:0;border:none;border-radius:0}.main-cta input{height:auto;margin-bottom:0;padding:20px 20px 18px}.main-cta form{margin:0}.sub-menu-toggle {  display: none;   visibility: hidden; }
+.menu-toggle {
+    position: relative;
+    z-index: 1000;
+    float: right;
+    padding: 8px 12px;
+    margin: 19px 5% 18px 0;
+    line-height: 20px;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+    background-color: #C94F31;
+    border-radius: 5px;
+}
+.menu-toggle, .sub-menu-toggle {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #222;
+    text-align: center;
+    visibility: visible;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+}</style><link rel="preload" href="https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/fonts/ionicons.woff2?v=4.1.1" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://use.typekit.net/hvy7swx.css?ver=0.4.5" as="style"><link rel="stylesheet" media="print" href="https://www.socialmediaexaminer.com/wp-content/uploads/autoptimize/css/aggregated_064f8c9a3319884b15505c80b43277c4.css" onload="this.onload=null;this.media='all';" /><noscript id="aonoscrcss"><link media="all" href="https://www.socialmediaexaminer.com/wp-content/uploads/autoptimize/css/aggregated_064f8c9a3319884b15505c80b43277c4.css" rel="stylesheet" /></noscript><title>26 Tactics, Tools and Tips to Create a Strong Social Media Content Strategy</title>
+<style type="text/css">
+	.site-header { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/Society21_Masthead-1.png)!important; }
+	.site-title a { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2019/08/logo.png); }
+
+	.main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2020/05/marketing_cover_2020.png);
+	}
+
+	.above-footer-cta .main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2020/05/marketing_cover_2020-border.png);
+	}
+
+	.category-cta::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2020/05/marketing_cover_2020.png);
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1240px), not all, not all, not all, not all, screen and (min-resolution: 192dpi) and (min-width: 1240px), screen and (min-resolution: 2dppx) and (min-width: 1240px) {
+		.site-header { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/Society21_Masthead@2x-1.png)!important; }
+		.site-title a { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2019/08/logo@2x.png); }
+
+	}
+	.header-promo-content { background-color:; }
+	.header-promo-content .promo-title { color:#ffd34c; }
+	.header-promo-content .promo-content { color:#ffffff; }
+	.header-promo-content .button { background-color:#ffd345; color: #0a382d }
+
+
+
+
+	.main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2020/05/marketing_cover_2020@2x.png);
+	}
+
+	.above-footer-cta .main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2020/05/marketing_cover_2020-border@2x.png);
+	}
+
+	.category-cta::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2020/05/marketing_cover_2020@2x.png);
+	}
+
+	</style><meta name='robots' content='max-image-preview:large' />
+
+<meta name="description" content="Social media tips: how to strengthen the impact of the content you create and generate the buzz you’re looking for." />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.socialmediaexaminer.com/#organization","name":"Social Media Examiner","url":"https://www.socialmediaexaminer.com/","sameAs":["https://www.facebook.com/smexaminer","https://www.instagram.com/smexaminer/","https://www.linkedin.com/company/576649","https://www.youtube.com/user/socialmediaexaminer","https://www.pinterest.com/smexaminer/","https://twitter.com/smexaminer"],"logo":{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/#logo","inLanguage":"en-US","url":false,"caption":"Social Media Examiner"},"image":{"@id":"https://www.socialmediaexaminer.com/#logo"}},{"@type":"WebSite","@id":"https://www.socialmediaexaminer.com/#website","url":"https://www.socialmediaexaminer.com/","name":"Social Media Examiner | Social Media Marketing","inLanguage":"en-US","description":"Your Guide to the Social Media Jungle","publisher":{"@id":"https://www.socialmediaexaminer.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.socialmediaexaminer.com/?s={search_term_string}","query-input":"required name=search_term_string"}]},{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#primaryimage","inLanguage":"en-US","url":"https://www.socialmediaexaminer.com/images/how-to-pose.png"},{"@type":"WebPage","@id":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#webpage","url":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/","name":"26 Tactics, Tools and Tips to Create a Strong Social Media Content Strategy","isPartOf":{"@id":"https://www.socialmediaexaminer.com/#website"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#primaryimage"},"datePublished":"2013-06-25T10:00:07+00:00","dateModified":"2019-05-03T16:57:22+00:00","description":"Social media tips: how to strengthen the impact of the content you create and generate the buzz you\u2019re looking for.","potentialAction":[{"@type":"ReadAction","target":["https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/"]}]},{"@type":"Article","@id":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#article","isPartOf":{"@id":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#webpage"},"author":{"@id":"https://www.socialmediaexaminer.com/#/schema/person/8217ad6c88468b75a9c78a123623d6a0"},"headline":"26 Tips to Create a Strong Social Media Content Strategy","datePublished":"2013-06-25T10:00:07+00:00","dateModified":"2019-05-03T16:57:22+00:00","commentCount":0,"mainEntityOfPage":{"@id":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#webpage"},"publisher":{"@id":"https://www.socialmediaexaminer.com/#organization"},"image":{"@id":"https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#primaryimage"},"keywords":"Social Media Strategy","articleSection":"How To","inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#respond"]}]},{"@type":["Person"],"@id":"https://www.socialmediaexaminer.com/#/schema/person/8217ad6c88468b75a9c78a123623d6a0","name":"Debbie Hemley","image":{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/#authorlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/1f68ec6539db029f3b2d3b32e9f6b256?s=96&d=mm&r=g","caption":"Debbie Hemley"},"description":"Debbie Hemley is a freelance writer and social media coach. She helps businesses develop and maintain social media content strategies. Follow her on Twitter @dhemley &amp; <a href=\"https://www.facebook.com/debbiehemley\">Facebook</a>.","sameAs":[]}]}</script>
+
+<link rel='dns-prefetch' href='//www.socialmediaexaminer.com' />
+<link rel='dns-prefetch' href='//ca9707.socialmediaexaminer.com' />
+<link rel='dns-prefetch' href='//use.typekit.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link href='https://connect.facebook.net' rel='preconnect' />
+<link href="https://www.google.com" rel='preconnect' />
+<link href="https://www.googleadservices.com" rel='preconnect' />
+<link href='https://www.googletagmanager.com' rel='preconnect' />
+<link href='https://fonts.gstatic.com' crossorigin='anonymous' rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; Feed" href="https://www.socialmediaexaminer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; Comments Feed" href="https://www.socialmediaexaminer.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; 26 Tips to Create a Strong Social Media Content Strategy Comments Feed" href="https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/feed/" />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.socialmediaexaminer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<noscript><link rel='stylesheet'  href='https://use.typekit.net/hvy7swx.css?ver=0.4.5' type='text/css' media='all' /></noscript><link rel='stylesheet' id='sme-calluna-font-css' href='https://use.typekit.net/hvy7swx.css?ver=0.4.5' type='text/css' media='print' onload="this.onload=null;this.media='all';" />
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' id='affwp-erl-js-extra'>
+/* <![CDATA[ */
+var affwp_erl_vars = {"cookie_expiration":"30","referral_variable":"aff","url":"https:\/\/known.socialmediaexaminer.com"};
+/* ]]> */
+</script>
+<link rel="https://api.w.org/" href="https://www.socialmediaexaminer.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.socialmediaexaminer.com/wp-json/wp/v2/posts/40511" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.socialmediaexaminer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.socialmediaexaminer.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.7" />
+<link rel='shortlink' href='https://www.socialmediaexaminer.com/?p=40511' />
+<link rel="alternate" type="application/json+oembed" href="https://www.socialmediaexaminer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.socialmediaexaminer.com%2F26-tips-to-create-a-strong-social-media-content-strategy%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.socialmediaexaminer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.socialmediaexaminer.com%2F26-tips-to-create-a-strong-social-media-content-strategy%2F&#038;format=xml" />
+<style type="text/css"><!--
+			.backtick{background:#e3e3ff;color:#000;}
+			div.backtick{max-height:20em;width:90%;margin-left:auto;margin-right:auto;overflow:auto;border:#88a 1px solid;padding:1em;}
+			div.backtick pre{padding:0;margin:0;}
+		// -->
+		</style>
+
+<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-N8VWT4':true});</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8VWT4');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1481434622174394";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+ <style type="text/css" id="wp-custom-css">
+			body.page-id-139821 li.smmworld_register,
+body.page-id-139475 li.smmworld_register,
+body.page-id-150898 li.smmworld_register,
+body.page-id-58061 li.smmworld_register,
+body.page-id-24160 li.smmworld_register,
+body.page-id-24587 li.smmworld_register,
+body.page-id-35864 li.smmworld_register,
+body.page-id-34595 li.smmworld_register,
+body.page-id-58091 li.smmworld_register,
+body.page-id-139821 .header-promo-content .smmw_register_button,
+body.page-id-139475 .header-promo-content .smmw_register_button,
+body.page-id-150898 .header-promo-content .smmw_register_button,
+body.page-id-58061 .header-promo-content .smmw_register_button,
+body.page-id-24160 .header-promo-content .smmw_register_button,
+body.page-id-24587 .header-promo-content .smmw_register_button,
+body.page-id-35864 .header-promo-content .smmw_register_button,
+body.page-id-34595 .header-promo-content .smmw_register_button,
+body.page-id-58091 .header-promo-content .smmw_register_button,
+/* course register page */
+body.page-id-202197 .smmworld_register ,
+body.page-id-202197 .course_four_register_button
+/* course register page end */
+{
+    display: none !important;
+}
+
+/* Preventing GSC overlay transition flash on load */
+.gsc-results-wrapper-overlay {
+	transition: none !important;
+}
+
+.header-promo img {
+	z-index: 1;
+}
+/* remove CTA and nav button from thanks page and child pages */
+.page-template-template-coursetwo.conference.page-child .header-promo,
+.page-template-template-coursetwo.conference.page-child .menu a,.page-id-207652.conference.page-child .header-promo,.page-id-207652.conference.page-child .menu a,
+.page-template-template-coursetwo.conference.page-child .sme-top-banner, .page-id-178382 .header-promo, .page-id-178382 .menu a, .page-id-212608 .header-promo, .page-id-212608 .menu a, .page-id-212570 .header-promo, .page-id-212570 .menu a
+{
+	display:none !important;
+}
+.page-template-template-coursetwo.conference.page-child .menu,.page-id-207652.conference.page-child .header-promo,.page-id-207652.conference.page-child .menu, .page-id-178382 .menu,.page-id-212608 .menu, .page-id-212570 .menu
+	{height:50px}
+/* remove CTA and nav button from thanks page and child pages */
+
+.w3eden .btn-danger {
+	background-color:#ba342b;
+	border-color:#ba342b;
+}
+.addeventatc {z-index:1 !important;}
+
+
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+		margin-bottom: 1em;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+/* CTA adjustments 12/20 */
+
+@media (min-width: 1240px) {
+.content-promo-right-top {
+    font-size: 2.6rem !important;
+	}}
+@media (min-width: 1024px) {
+.content-promo-right-top {
+    font-size: 2.6rem !important;
+	}}
+@media (min-width: 1240px){
+.promo-sale-highlight {
+    font-size: 2.6rem !important;
+}}
+@media (min-width: 1024px){
+.promo-sale-highlight {
+    font-size: 2.6rem !important;
+}}
+@media (min-width: 768px){
+.promo-sale-highlight {
+    font-size: 2.4rem !important;
+}}
+/* End CTA adjustments */
+@media (min-width: 768px) {.single-format-standard .entry-header .entry-meta {margin-bottom:30px !important;}}
+.stack-two {
+	width: 50%; float: left;
+}
+@media (max-width: 767px) {
+.stack-two {
+	width: 100%; float: left;
+}}
+.sme-alert-div-tan {padding:10px 25px 25px 25px;}		</style>
+<meta name="generator" content="WordPress Download Manager 5.0.93" />
+
+
+<meta property="og:site_name" content="Social Media Examiner | Social Media Marketing" />
+<meta property="og:title" content="26 Tactics, Tools and Tips to Create a Strong Social Media Content Strategy" />
+<meta property="og:url" content="https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Social media tips: how to strengthen the impact of the content you create and generate the buzz you’re looking for." />
+<meta property="og:image" content="https://www.socialmediaexaminer.com/wp-content/uploads/2018/11/NewBack.png" />
+<meta property="og:image:url" content="https://www.socialmediaexaminer.com/wp-content/uploads/2018/11/NewBack.png" />
+<meta property="og:image:secure_url" content="https://www.socialmediaexaminer.com/wp-content/uploads/2018/11/NewBack.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="article:publisher" content="https://www.facebook.com/smexaminer" />
+<meta property="fb:app_id" content="417952779368030" />
+
+
+<meta name="twitter:title" content="26 Tactics, Tools and Tips to Create a Strong Social Media Content Strategy" />
+<meta name="twitter:url" content="https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/" />
+<meta name="twitter:description" content="Social media tips: how to strengthen the impact of the content you create and generate the buzz you’re looking for." />
+<meta name="twitter:image" content="https://www.socialmediaexaminer.com/wp-content/uploads/2018/11/NewBack.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@smexaminer" />
+
+
+
+
+<style>
+        /* WPDM Link Template Styles */
+
+
+        </style>
+<style>
+
+            :root {
+                --color-primary: #4a8eff;
+                --color-primary-rgb: 74, 142, 255;
+                --color-primary-hover: #4a8eff;
+                --color-primary-active: #4a8eff;
+                --color-secondary: #6c757d;
+                --color-secondary-rgb: 108, 117, 125;
+                --color-secondary-hover: #6c757d;
+                --color-secondary-active: #6c757d;
+                --color-success: #18ce0f;
+                --color-success-rgb: 24, 206, 15;
+                --color-success-hover: #18ce0f;
+                --color-success-active: #18ce0f;
+                --color-info: #2CA8FF;
+                --color-info-rgb: 44, 168, 255;
+                --color-info-hover: #2CA8FF;
+                --color-info-active: #2CA8FF;
+                --color-warning: #FFB236;
+                --color-warning-rgb: 255, 178, 54;
+                --color-warning-hover: #FFB236;
+                --color-warning-active: #FFB236;
+                --color-danger: #ff5062;
+                --color-danger-rgb: 255, 80, 98;
+                --color-danger-hover: #ff5062;
+                --color-danger-active: #ff5062;
+                --color-green: #30b570;
+                --color-blue: #0073ff;
+                --color-purple: #8557D3;
+                --color-red: #ff5062;
+                --color-muted: rgba(69, 89, 122, 0.6);
+                --wpdm-font:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .wpdm-download-link.btn.btn-danger.btn-lg {
+                border-radius: 4px;
+            }
+
+
+        </style>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body class="post-template-default single single-post postid-40511 single-format-standard header-full-width full-width-content-narrow genesis-breadcrumbs-hidden genesis-footer-widgets-visible"><div class="site-container"><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li><li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul><header class="site-header"><div class="wrap"><div class="mobile-header-wrap"><div class="title-area"><p class="site-title"><a href="https://www.socialmediaexaminer.com/">Social Media Examiner | Social Media Marketing</a></p><p class="site-description">Your Guide to the Social Media Jungle</p></div><nav class="nav-primary" aria-label="Main" id="genesis-nav-primary"><div class="wrap"><ul id="menu-top-menu" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-12804" class="main menu-item menu-item-type-custom menu-item-object-custom menu-item-12804"><a title="Social Media Examiner main page" href="/"><span>Home</span></a></li>
+<li id="menu-item-163511" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-163511"><a title="Rich content for marketers" href="#"><span>Articles</span></a>
+<ul class="sub-menu">
+<li id="menu-item-163512" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-163512"><a title="Discover the latest tactics" href="https://www.socialmediaexaminer.com/category/how-to/"><span>How To</span></a>
+<ul class="sub-menu">
+<li id="menu-item-215017" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215017"><a href="https://www.socialmediaexaminer.com/tag/clubhouse/"><span>Clubhouse</span></a></li>
+<li id="menu-item-167676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167676"><a href="https://www.socialmediaexaminer.com/tag/instagram/"><span>Instagram Marketing</span></a></li>
+<li id="menu-item-167675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167675"><a href="https://www.socialmediaexaminer.com/tag/facebook-ads/"><span>Facebook Ads</span></a></li>
+<li id="menu-item-167673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167673"><a href="https://www.socialmediaexaminer.com/tag/facebook/"><span>Facebook Marketing</span></a></li>
+<li id="menu-item-167678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167678"><a href="https://www.socialmediaexaminer.com/tag/youtube/"><span>YouTube Marketing</span></a></li>
+<li id="menu-item-167677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167677"><a href="https://www.socialmediaexaminer.com/tag/linkedin/"><span>LinkedIn Marketing</span></a></li>
+<li id="menu-item-178106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-178106"><a href="https://www.socialmediaexaminer.com/tag/tiktok/"><span>TikTok Marketing</span></a></li>
+</ul>
+</li>
+<li id="menu-item-182387" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-182387"><a href="https://www.socialmediaexaminer.com/category/view-points/"><span>View Points</span></a></li>
+<li id="menu-item-163513" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-163513"><a title="Learn from experts" href="https://www.socialmediaexaminer.com/category/expert-interviews/"><span>Expert Interviews</span></a></li>
+<li id="menu-item-163514" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-163514"><a title="Discover helpful tools" href="https://www.socialmediaexaminer.com/category/tools/"><span>Tools</span></a></li>
+</ul>
+</li>
+<li id="menu-item-204594" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-204594"><a title="Check out our video tutorials" href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank"><span>Videos</span></a>
+<ul class="sub-menu">
+<li id="menu-item-215018" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215018"><a href="https://www.youtube.com/watch?v=o7gv7U-rZl8&#038;list=PLyqdnWmgSb_ZPcCYKqK1ZNZl5VlWKn72E&#038;index=1" class="external" target="_blank"><span>Clubhouse</span></a></li>
+<li id="menu-item-204595" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204595"><a href="https://www.youtube.com/watch?v=bgNmS2Pdooc&#038;list=PLyqdnWmgSb_ZdMIrpffuFf9eNlFUVN_l0" class="external" target="_blank"><span>Instagram Marketing</span></a></li>
+<li id="menu-item-215034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215034"><a href="https://www.youtube.com/watch?v=9XrQM7p-aQg&#038;list=PLyqdnWmgSb_ah86dGUZMOf0rknNutskbL&#038;index=1" class="external" target="_blank"><span>Instagram Ads</span></a></li>
+<li id="menu-item-215019" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215019"><a href="https://www.youtube.com/playlist?list=PLyqdnWmgSb_a49AhGFDVQXVMcnzYL_TQb" class="external" target="_blank"><span>Facebook Marketing</span></a></li>
+<li id="menu-item-204597" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204597"><a href="https://www.youtube.com/watch?v=N8M5-FqJw-o&#038;list=PLyqdnWmgSb_a49AhGFDVQXVMcnzYL_TQb&#038;index=1" class="external" target="_blank"><span>Facebook Ads</span></a></li>
+<li id="menu-item-204599" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204599"><a href="https://www.youtube.com/watch?v=j2FS5-Kh1xY&#038;list=PLyqdnWmgSb_ajPnCIRsJFtUQ-KuSBE3Mn&#038;index=1" class="external" target="_blank"><span>LinkedIn Ads</span></a></li>
+<li id="menu-item-204598" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204598"><a href="https://www.youtube.com/watch?v=74TBuT7lZSE&#038;list=PLyqdnWmgSb_ZT8ZIQw8i5hREskurr1BzI&#038;index=1" class="external" target="_blank"><span>TikTok</span></a></li>
+</ul>
+</li>
+<li id="menu-item-23650" class="main menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-23650"><a title="Discover our weekly shows" href="https://www.socialmediaexaminer.com/shows/"><span>Shows</span></a>
+<ul class="sub-menu">
+<li id="menu-item-167681" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167681"><a title="Top 50 Business Podcast" href="https://www.socialmediaexaminer.com/shows/"><span>Social Media Marketing Podcast</span></a></li>
+<li id="menu-item-163520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163520"><a title="Weekly live show and podcast" href="https://www.socialmediaexaminer.com/social-media-marketing-talk-show/"><span>Social Media Marketing Talk Show</span></a></li>
+<li id="menu-item-193628" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193628"><a title="Original videos each week" href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank"><span>Our YouTube Channel</span></a></li>
+</ul>
+</li>
+<li id="menu-item-215242" class="register-button register-button-inline menu-item menu-item-type-custom menu-item-object-custom menu-item-215242"><a title="Social Media Marketing Society" href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-navbar"><span>UP YOUR VALUE</span></a></li>
+<li id="menu-item-12806" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12806"><a title="Check out these social media events" href="https://www.socialmediaexaminer.com/upcoming-events/"><span>Events</span></a>
+<ul class="sub-menu">
+<li id="menu-item-179498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-179498"><a href="https://www.socialmediaexaminer.com/smmworld/?smesite=world21-site-navbar-events"><span>Social Media Marketing World</span></a></li>
+</ul>
+</li>
+<li id="menu-item-12808" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12808"><a title="All about Social Media Examiner" href="https://www.socialmediaexaminer.com/about/"><span>About</span></a>
+<ul class="sub-menu">
+<li id="menu-item-12822" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-12822"><a title="Get updates when our future articles publish" href="https://www.socialmediaexaminer.com/subscribe/"><span>Newsletter</span></a></li>
+<li id="menu-item-213565" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-213565"><a title="Get your business in front of our audience" href="https://www.socialmediaexaminer.com/sponsor/"><span>Sponsorship Opportunities</span></a>
+<ul class="sub-menu">
+<li id="menu-item-213566" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-213566"><a title="Get your business on our podcast!" href="https://www.socialmediaexaminer.com/sponsor/podcast/"><span>Podcast Sponsorship</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="desktop-search right google-site-search menu-item"><div class="sme-cse-menu-search"> <gcse:searchbox-only enableAutoComplete="true" resultsUrl="#"></gcse:searchbox-only><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"> <div class="gsc-results-wrapper-overlay"> <div class="gsc-results-close-btn gsc-results-close-btn-visible" tabindex="0"></div> <div style="display: none;" class="gsc-above-wrapper-area"> <div class="sme-cse-count">About <span id="sme-cse-search-results-count"></span> results</div>
+<div class="sme-cse-select">
+<label class="sme-cse-select-label">Sort By:</label>
+<select class="sme-cse-select-text">
+<option value="" selected>Relevance</option>
+<option value="date">Date</option>
+</select>
+<span class="sme-cse-select-highlight"></span>
+</div> </div> <div class="sme-cse-search-no-results" style="display: none;">No Results</div><div id="sme-cse-search-results"></div> <div id="sme-cse-pagination"></div> </div> <div class="gsc-modal-background-image" tabindex="0"></div></div></div></div></li><li class="mobile-search right menu-item"><a href="/search-site/">Search</a></li></ul></div></nav><li class="mobile-search-header"><a href="/search-site/">Search</a></li></div><div class="header-promo"><a href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-masthead"><img srcset="https://www.socialmediaexaminer.com/wp-content/uploads/2021/01/Society21_Logo_SME_masthead.png, https://www.socialmediaexaminer.com/wp-content/uploads/2021/01/Society21_Logo_SME_masthead@2x.png 2x" /></a><div class="header-promo-content"><span class="promo-title">Get Ahead!</span><span class="promo-content">Improve Your Marketing Value...</span><a href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-masthead" class="button">LEARN MORE</a></div></div></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-40511 post type-post status-publish format-standard category-how-to tag-social-media-strategy entry"><header class="entry-header"><h1 class="entry-title">26 Tips to Create a Strong Social Media Content Strategy</h1>
+<p class="entry-meta"><img alt='' src='https://secure.gravatar.com/avatar/1f68ec6539db029f3b2d3b32e9f6b256?s=35&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/1f68ec6539db029f3b2d3b32e9f6b256?s=70&#038;d=mm&#038;r=g 2x' class='avatar avatar-35 photo' height='35' width='35' loading='lazy' /><i class="byline">by</i> <span class="entry-author"><a href="https://www.socialmediaexaminer.com/author/debbie-hemley/" class="entry-author-link" rel="author"><span class="entry-author-name">Debbie Hemley</span></a></span> / <time class="entry-time">June 25, 2013</time> / <span class="entry-comments-link"><a href="https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/#disqus_thread">79 Comments</a></span></p></header><div class="entry-content"><p><a href="https://www.socialmediaexaminer.com/category/how-to/" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="alignright" style="margin-left: 5px; margin-right: 5px;" title="social media how to" alt="social media how to" width="190" height="166" srcset="https://www.socialmediaexaminer.com/images/how-to-pose.png, https://www.socialmediaexaminer.com/images/how-to-pose@2x.png 2x" /></a>Are you looking for ways to strengthen the impact of the content you create?</p>
+<p>It isn’t always easy to <strong>generate the buzz you’re looking for</strong>.</p>
+<p>Knowing what to publish, when and where can greatly <strong>increase the visibility and reach of your content</strong>.</p>
+<p>In this article, you will find <strong>26 topics, an A-Z guide, with key points that will help you create a social media content strategy</strong> that resonates with your audience.</p>
+<h2>#1: Align Content Development With Social Media Metrics and Goals</h2>
+<p><strong>Understand the goals of your company’s social media content delivery</strong> to help you develop a more attainable strategy.</p>
+<p><a href="http://www.audiencebloom.com/2013/04/why-you-should-track-social-media-analytics-and-how-it-affects-your-roi/" target="_blank" rel="noopener noreferrer" class="external">Jayson DeMers</a> suggests, “First you need to <strong>know what to measure</strong>. The end goals dictate the measurement metric.”</p>
+<p>He offers metrics for <a href="https://www.socialmediaexaminer.com/4-social-media-goals/" target="_blank" rel="noopener noreferrer">four social media goals</a>:</p>
+<ul>
+<li>If you’re looking to <strong>generate traffic</strong>, your metric should be: unique visitors from social websites where you’ve run your social media campaigns.</li>
+<li>If you’re looking to <strong>create a following</strong>, your metric should be: subscribers, followers on your social channels (Facebook, Twitter, etc.).</li>
+<li>If you’re looking to <strong>generate interaction</strong>, your metric should be: quantity and type of commentary (Facebook comments, Twitter replies/mentions).</li>
+<li>If you’re looking to <strong>generate revenue</strong> (which is the ultimate purpose), your metric should be: the precise dollar value of every lead a social post generates.</li>
+</ul>
+<p><span id="more-40511"></span></p>
+<p><strong>Keep this information in mind when crafting your social media content</strong>.</p>
+<h2>#2: Beef Up Your Content Strategy With a Big-Brand Mindset</h2>
+<p>Small businesses can <strong>learn valuable lessons from the big-brand approach</strong> to social media.</p>
+
+<div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="3" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="content-promo-border" style="background-color: #342a25">
+<div class="content-promo-outer clearfix" style="background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/Society21_Midpage_Version1@2x.png;">
+<div class="content-promo-left">
+<a href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-midpage-ad-upper"><img srcset="https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/society21-midpagev5.png, https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/society21-midpagev5@2x.png 2x" /></a>
+</div>
+<div class="content-promo-right">
+<div class="content-promo-right-top" style="color: ;">
+<b>Improve your marketing confidence and accelerate your career</b>. Get advanced marketing training and support in the Social Media Marketing Society! </div>
+<div class="content-promo-right-bottom">
+<div class="content-promo-bottom-sale">
+<span class="promo-sale-highlight" style="color: #ffd341;">ONLINE TRAINING</span>
+<span class="promo-sale-desc" style="color: ;">SALE ENDS WEDNESDAY!</span>
+</div>
+<div class="content-promo-bottom-button">
+<a href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-midpage-ad-upper" class="button small" style="background-color: ; color: ;" ">
+LEARN MORE </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Rick Mulready suggests three things big brands do very well that small businesses can emulate:</p>
+<ul>
+<li><strong>Find where their customers talk</strong> and “go deep.”</li>
+<li><strong>Create content that people want to talk about</strong>.</li>
+<li><strong>Use social media to listen to customers</strong>.</li>
+</ul>
+<p>Starbucks, with over 34 million fans on Facebook, is a good example.</p>
+<p>On Thursday, June 6, they posted a Facebook offer “Enjoy a Grande Iced Coffee, Iced Tea, or Starbucks Refreshers Beverage for $1 on June 7.” The update was shared by 13,931 people and received 1,553 comments. The offer was not tweeted to their 3,852,454 Twitter followers.</p>
+<p>By promoting the offer on Facebook, where they have a significantly larger following, Starbucks leveraged the promotion on a platform where they were sure to get higher visibility, giving followers an incentive to follow the brand.</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-facebook-offer.png" alt="starbucks facebook offer" width="480" height="527" /><figcaption class="wp-caption-text">Starbucks knows where and what their customers will talk about!</figcaption></figure>
+<p>Use a big-brand approach to <strong>engage your social media followers</strong>.</p>
+<h2>#3: Concentrate on Increasing Daily Updates</h2>
+<p>Ensuring that your posts and updates have a good chance to be seen by your target audience is an integral part of a content strategy.</p>
+<p><a href="http://blog.bufferapp.com/social-media-metrics-improve" class="external" target="_blank">Leo Widrich</a> offers 3 key tactics:</p>
+<ul>
+<li>Frequency: <strong>Post around 5-10 times a day on Twitter and 1-4 times a day on Facebook</strong> for optimal outcome.</li>
+<li>Timing: Almost all <a href="http://www.mediabistro.com/alltwitter/best-and-worst-times-to-post_b28320" target="_blank" rel="noopener noreferrer" class="external">research studies</a> highlight the main work hours from 8 am to 8 pm as good times to <strong>tweet and post to Facebook</strong>.</li>
+<li>Multiple sites: <strong>Post to multiple social sites</strong>, in addition to your own blog or website.
+<p><figure style="width: 347px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-mouse-istock-17417258.jpg" alt="computer mouse" width="347" height="346" /><figcaption class="wp-caption-text">Create a frequent and reliable presence on social networks. Image source: iStockPhoto.</figcaption></figure></li>
+</ul>
+<p><strong>Pay attention to frequency, timing and multiple sites</strong>, and you’ll increase the odds of achieving higher levels of social engagement.</p>
+<h2>#4: Delve Into Data From Social Media Channels</h2>
+<p>Data from social channels (e.g., Twitter, Facebook, LinkedIn, Google+ and blogs) can be overwhelming unless you have clear goals to guide what you’re looking for and what you’ll do with the information once you find it.</p>
+<p><a href="http://socialmediatoday.com/douglaskarr/1405341/5-insights-social-data-can-reveal-your-business" target="_blank" rel="noopener noreferrer" class="external">Douglas Karr</a> points out, “The sheer volume of social media data makes it incredibly difficult to analyze.”</p>
+<p>He offers <strong>five practical ways you can use social data to benefit your business</strong>:</p>
+<ul>
+<li><strong>Gauge the real-time market mood</strong>.</li>
+<li><strong>Identify relevant issues and content</strong>.</li>
+<li><strong>Determine user interests</strong>.</li>
+<li><strong>Provide internal operational metrics</strong>.</li>
+<li><strong>Execute competitive research</strong>.</li>
+</ul>
+<p><strong>Explore social data with an actionable plan in mind</strong>.</p>
+<h2>#5: Engage in Real Interactions</h2>
+<p><a href="http://technorati.com/social-media/article/social-media-engagement-still-matters/" target="_blank" rel="noopener noreferrer" class="external">Lana Bandoim</a> writes, “Social media engagement is often defined as the real interactions that happen on these networks.” She points out that social media engagement relies on daily interactions among users to survive. While <a href="http://blog.aceofsales.com/the-top-3-social-media-auto-posting-tools-compared/" target="_blank" rel="noopener noreferrer" class="external">autoposting</a> tools are one way to communicate, more businesses are beginning to understand that engaging with their audiences in real conversations will bring them better results and add more value to their social streams.</p>
+<figure style="width: 425px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-conversations-istock-23789284.jpg" alt="conversations" width="425" height="282" /><figcaption class="wp-caption-text">Engage with users in real-time conversations. Image source: iStockPhoto.</figcaption></figure>
+<p><strong>Be available to your audience in real time</strong>, when you can <strong>have more meaningful back-and-forth conversations</strong>.</p>
+<h2>#6: Follow Facebook’s Changes</h2>
+<p>Got the hang of your Facebook Page? Enjoy it while you can, because based on Facebook’s history, the only thing that’s certain is that Facebook will change.</p>
+<p>A Google search for the words “Facebook changes” brings up a great number of results with a range of topics such as changes to timeline, cover photo policy, implications for merchants, mobile layout and much more.</p>
+<p><a href="https://www.socialmediaexaminer.com/5-ways-marketers-can-keep-updated-on-facebook-changes/" target="_blank" rel="noopener noreferrer">Rachel Sprung</a> suggests <strong>5 ways marketers can keep updated on Facebook changes</strong>:</p>
+<ul>
+<li><strong>Follow Facebook’s business changes</strong> for regular <a href="https://www.facebook.com/business/news" class="external" target="_blank">updates</a>.</li>
+<li><strong>Follow the <a href="https://techcrunch.com/tag/facebook/" target="_blank" rel="noopener noreferrer" class="external">Facebook tag on TechCrunch</a></strong>.</li>
+<li><strong>Set a <a href="https://www.google.com/alerts" target="_blank" rel="noopener noreferrer" class="external">Google Alert</a> for Facebook updates</strong>.</li>
+<li><strong>Follow new posts</strong> on <a href="http://allfacebook.com/" target="_blank" rel="noopener noreferrer" class="external">AllFacebook</a>.</li>
+<li><strong>Follow social media and tech experts</strong>.</li>
+</ul>
+<p>No one wants to have their Page change features on them without having ample time to prepare. <strong>Keep up to date with Facebook developments</strong> to make sure you don’t miss out on the changes coming down the pike.</p>
+<h2>#7: Get Acquainted With the New Google Analytics Social Reports</h2>
+<p><a href="https://analytics.blogspot.com/2013/03/improving-activity-stream-in-social.html" target="_blank" rel="noopener noreferrer" class="external">Google</a>&#8216;s new standalone reports, Data Hub Activity and Trackbacks, give marketers more in-depth insights into social networks and how users respond to a business’s content.</p>
+<p><strong>As Google describes</strong>:</p>
+<p>The <a href="https://support.google.com/analytics/answer/1683971?hl=en" target="_blank" rel="noopener noreferrer" class="external">Data Hub Activity</a> report shows you how people are talking about and engaging with your site content on social networks. You can <strong>see the most recent URLs people shared</strong>, <strong>how and where they shared</strong> (via a “reshare” on Google+, for example), and what they said.</p>
+<p>The <a href="https://support.google.com/analytics/answer/1683971?hl=en" target="_blank" rel="noopener noreferrer" class="external">Trackbacks</a> report shows the sites that are linking to your content, and in which context. This can help you <strong>replicate successful content</strong> and <strong>build relationships with those users who frequently link to your site</strong>.</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-google-social-reports.png" alt="google social reports" width="480" height="234" /><figcaption class="wp-caption-text">Discover what and where your visitors are sharing.</figcaption></figure>
+<p><strong>Check out the new Google Analytics reports</strong> and <strong>apply what you’ve learned to your content development strategy</strong>.</p>
+<h2>#8: Help Users Find Your Content With Hashtags</h2>
+<p>Why should businesses care about hashtags? <a href="https://www.forbes.com/sites/stevecooper/2013/03/31/5-reasons-businesses-should-care-about-hashtags/" target="_blank" rel="noopener noreferrer" class="external">Steve Cooper</a> sums it up with five reasons:</p>
+<ul>
+<li>Promotions—hashtags make it easy to <strong>track a promotion’s activity across many social platforms</strong>.</li>
+<li>Unification—you can <strong>track a hashtag across all the major networks</strong> or <strong>filter them individually</strong> using new tools such as <a href="https://tagboard.com/" target="_blank" rel="noopener noreferrer" class="external">Tagboard</a>.</li>
+<li>Conversations—giving a customer your website URL doesn’t make it easy to begin a conversation, but hashtags do.</li>
+<li>Targeting—unlike going after a general web surfer on the open web, people who use hashtags are likely to engage in social conversations and therefore are more likely to share a positive experience they’ve had with your brand once you’ve broken through.</li>
+<li>Innovation—because they’re so flexible, simple and ubiquitous, more businesses are able to <strong>find creative ways to add power behind the hashtag</strong>.
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-tagboard-1.png" alt="search on tagboard" width="480" height="222" /><figcaption class="wp-caption-text">A hashtag search on Tagboard will help you follow all the conversations.</figcaption></figure>
+<p><figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-tagboard-2.png" alt="tagboard filters hashtags" width="480" height="248" /><figcaption class="wp-caption-text">Tagboard filters hashtags on major networks.</figcaption></figure></li>
+</ul>
+<p><strong>Use hashtags to include your content in active public conversations</strong>.</p>
+<h2>#9: Introduce Content With Infographics</h2>
+<p><a href="https://en.wikipedia.org/wiki/Infographic" target="_blank" rel="noopener noreferrer" class="external">Infographics</a> are defined as graphic visual representations of information, data or knowledge intended to <strong>present complex information quickly and clearly</strong>.</p>
+<p><a href="http://inblurbs.com/blog/why-everybody-loves-infographics/" target="_blank" rel="noopener noreferrer" class="external">Dragan Mestrovic</a> illuminates the benefits of infographics in four persuasive points:</p>
+<ul>
+<li>Infographics are shared on the web, Twitter and Facebook more often than other content online.</li>
+<li>Infographics are easy to understand, consume and share.</li>
+<li>On Twitter, LinkedIn and StumbleUpon, infographics get more shares than other content.</li>
+<li>Marketers love infographics because they offer an easy and powerful viral marketing tool to spread the word about your company’s products and services.
+<p><figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-infographic.png" alt="infographic" width="480" height="298" /><figcaption class="wp-caption-text">Infographic of infographics</figcaption></figure></li>
+</ul>
+<p>Infographics are a great way to <strong>synthesize information simply and visually</strong> as seen in the above image from <a href="http://visual.ly/" target="_blank" rel="noopener noreferrer" class="external">Vsual.ly</a>. When done well, an infographic is a perfect poster-child for quick and effective dissemination of information via social media.</p>
+<h2>#10: Justify Frequent Updates and Posts</h2>
+<p>Why is it that some businesses are posting fast and furiously and others are crawling far behind? Chances are that the businesses posting more frequently had to justify to management the importance of maintaining an active presence.</p>
+<p>As we discussed in #5, autoposting does not offer a suitable alternative to real-live human beings who can <strong>respond to comments and post breaking news updates</strong>.</p>
+<p>A tool such as <a href="http://www.howoftendoyoutweet.com/" target="_blank" rel="noopener noreferrer" class="external">How often do you tweet</a> could shed some insight:</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-is-this-you.png" alt="is this you" width="480" height="97" /><figcaption class="wp-caption-text">Does this look like you?</figcaption></figure>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-is-this-your-competitor.png" alt="is this your competitor" width="480" height="112" /><figcaption class="wp-caption-text">Is this your competitor? Eye-opening, isn’t it?</figcaption></figure>
+<p><strong><a href="https://www.socialmediaexaminer.com/5-social-media-monitoring-tools-to-simplify-your-marketing/" target="_blank" rel="noopener noreferrer">Monitor</a> your social media engagement compared with your competitors</strong>’. Share the results with management to help justify a request to dedicate more time and resources to the company’s social media efforts.</p>
+<h2>#11: Keep Klout in Perspective</h2>
+<p><a href="https://en.wikipedia.org/wiki/Klout" target="_blank" rel="noopener noreferrer" class="external">Klout</a> utilizes <a href="https://en.wikipedia.org/wiki/Twitter" target="_blank" rel="noopener noreferrer" class="external">Twitter</a>, <a href="https://en.wikipedia.org/wiki/Facebook" target="_blank" rel="noopener noreferrer" class="external">Facebook</a>, <a href="https://en.wikipedia.org/wiki/Google%2B" target="_blank" rel="noopener noreferrer" class="external">Google+</a>, <a href="https://en.wikipedia.org/wiki/LinkedIn" target="_blank" rel="noopener noreferrer" class="external">LinkedIn</a>, <a href="https://en.wikipedia.org/wiki/Foursquare" target="_blank" rel="noopener noreferrer" class="external">Foursquare</a>, <a href="https://en.wikipedia.org/wiki/Wikipedia" target="_blank" rel="noopener noreferrer" class="external">Wikipedia</a> and <a href="https://en.wikipedia.org/wiki/Instagram" target="_blank" rel="noopener noreferrer" class="external">Instagram</a> data to create a Klout user profile that is assigned a “Klout score,” a numerical value between 1 and 100.</p>
+<p>Many critics suggest <a href="https://www.socialmediaexaminer.com/does-your-klout-score-determine-your-value/" target="_blank" rel="noopener noreferrer">Klout scores</a> aren’t representative of the influence a person has and discount the scores, as well as the thinking behind Klout.</p>
+<p><a href="http://www.businessesgrow.com/2011/09/12/why-klout-matters-a-lot/" target="_blank" rel="noopener noreferrer" class="external">Mark Schaefer</a> offers an alternate view: “The ability to <strong>create and move content</strong> is the absolute key to online influence. So think about this—to the extent that you could actually measure that, wouldn’t you also be creating an indicator of relative influence?”</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-klout.png" alt="klout" width="480" height="235" /><figcaption class="wp-caption-text">Klout gets a lot of buzz on social media.</figcaption></figure>
+<p>When it comes to Klout scores, don’t throw the baby out with the bath water. Instead, <strong>ask what you can learn from your competitor’s higher score</strong> and how you can do what they’re doing with their content.</p>
+<h2>#12: Look to the Future of Social Media</h2>
+<p>The question of social media’s ability to capture leads has been at the forefront of marketers’ minds from the beginning. Twitter is the latest network to offer an approach that will let marketers <strong>be more proactive with <a href="https://blog.hubspot.com/twitter-introduces-lead-generation-cards-collect-leads" target="_blank" rel="noopener noreferrer" class="external">lead generation cards</a></strong>.</p>
+<p>Twitter describes <a href="https://advertising.twitter.com/2013/05/Capture-user-interest-with-the-Lead-Generation-Card.html" target="_blank" rel="noopener noreferrer" class="external">lead generation cards</a> this way: “[The cards] make it easy for users to express interest in what your brand offers. Users can easily and securely share an email address with your business without leaving Twitter or having to fill out a cumbersome form.</p>
+
+<div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="7" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="conference-table-extend">
+<h2 style="text-align: left;"> Social Media Marketing Society (Ongoing Online Training)</h2>
+<a title="Social Media Marketing Society" href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-midpage-text-ad"><img class="alignright wp-image-213228" alt="Social Media Marketing Society" width="255" srcset="https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/society21-midpage.png, https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/society21-midpage@2x.png 2x" /></a>
+<p style="text-align: left;">Want to gain more marketing confidence and accelerate your career? Is your mission to bring in more revenue, attract better leads, or increase exposure for your company or clients? The Social Media Marketing Society is the ultimate resource for marketers—a place where you can <b>discover new marketing ideas, improve your results, get support, and become indispensable</b>. Join thousands of your peers and receive ongoing training, support from pros, and access to a community of supportive marketers who understand your struggle.
+</p>
+<div class="ujic-hold ujic_center"> <div class="ujiCountdown ujic-classic" id="ujiCountdown"></div></div><br />
+<a class="button button-2" href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-midpage-text-ad">JOIN NOW - SALE ENDS APRIL 7TH!</a>
+</div>
+</div>
+<p>“When someone expands your Tweet, they see a description of the offer and a call to action. Their name, @username, and email address are already pre-filled within the card. The user simply clicks a button to send this information directly (and securely) to you.”</p>
+<p>At the time of this writing, Twitter stated, “Currently lead generation cards will only be available to our managed clients; we have plans to launch this card globally and to small- and medium-sized businesses soon.”</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-twitter-lead-generation-card.png" alt="twitter lead generation card" width="480" height="477" /><figcaption class="wp-caption-text">Information is shared securely on a Twitter lead generation card without users having to leave Twitter.</figcaption></figure>
+<p><a href="https://twitter.com/twitter" class="external" target="_blank">Stay updated</a> on the availability of Twitter’s lead generation cards so you’ll be ready to use them.</p>
+<h2>#13: Make Your Blog Mobile-Friendly</h2>
+<p>I don’t know about you, but I seem to be visiting more and more websites on my mobile phone these days. If I land on a page that isn’t mobile-friendly and it’s slow and difficult to navigate, I’m out of there.</p>
+<p><a href="http://www.infotex.co.uk/library/view/8-tips-to-make-your-business-mobile-friendly" target="_blank" rel="noopener noreferrer" class="external">Jon Young</a> provides <strong>8 tips to <a href="https://www.socialmediaexaminer.com/9-tips-for-optimizing-your-website-for-mobile-users/" target="_blank" rel="noopener noreferrer">make your website mobile-friendly</a></strong>:</p>
+<ul>
+<li>Only <strong>give visitors content they need</strong>.</li>
+<li>Carefully <strong>plan your layout</strong>.</li>
+<li>Landing pages should be simple.</li>
+<li><strong>Design for multiple browsers and device compatibility</strong>.</li>
+<li>Always <strong>include social media icons</strong>.</li>
+<li>Automate the experience and <strong>use mobile redirects</strong>.</li>
+<li><strong>Provide a link to your full site</strong>.</li>
+<li>Usability should be top priority.
+<p><figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-mobile-meter.png" alt="mobile meter" width="480" height="279" /><figcaption class="wp-caption-text">By using Mobile Meter, we can see what Social Media Examiner looks like on mobile devices.</figcaption></figure></li>
+</ul>
+<p>Don’t give readers any reason to leave your site. <strong>Be mobile-ready and -friendly</strong>.</p>
+<h2>#14: Network in All the Right Places</h2>
+<p>What social networks do your customers favor? Are they on Twitter and Facebook, but haven’t embraced Google+ yet?</p>
+<p><a href="https://mashable.com/2013/05/26/social-network-enough/" target="_blank" rel="noopener noreferrer" class="external">Ryan Little</a> writes, “One <a href="http://www.radicati.com/wp/wp-content/uploads/2012/05/Social-Media-Market-2012-2016-Executive-Summary.pdf" target="_blank" rel="noopener noreferrer" class="external">recent study</a> on social media usage revealed that the average user has two social media accounts. While some users find pleasure in multiple networks, there are people who have found a single community they love and stick with it, even when the temptations of a new social network arise. And there are others who have used various networks and narrowed their usage down until only one platform remained.”</p>
+<p>The situation gets a little more complex for businesses. It’s important to keep in mind that your customers may favor one network today and in six months discover that another meets their needs better.</p>
+<p><strong>Follow your customers and prospects</strong> so you can network in all the right places.</p>
+<h2>#15: Outsource Content Development as Needed</h2>
+<p>Can your business keep up to date with all the tasks associated with maintaining social presences (e.g., reading and sharing good content, responding to users’ comments, asking questions to help engage your audience)?</p>
+<p><a href="https://www.forbes.com/sites/capitalonespark/2013/03/19/should-you-outsource-social-media-or-do-it-yourself/" target="_blank" rel="noopener noreferrer" class="external">Tim Devaney and Tom Stein</a> write, “Studies show it takes a midsize company about 32 hours a month to capably handle a single social media platform.”</p>
+<p>According to <a href="http://www.theoutsourcing-guide.com/article/social-media-outsourcing/" target="_blank" rel="noopener noreferrer" class="external">Eve Mayer</a>, “The companies that have the most effective social media communications are those that have a combination of internal and external people doing social media.” She advises businesses to take several steps toward a successful social campaign:</p>
+<ul>
+<li><strong>Decide what you want to achieve</strong>.</li>
+<li>Don’t spread yourself too thin.</li>
+<li><strong>Keep some social media in-house</strong>.</li>
+<li><strong>Send some social media to a consultant</strong>, someone who understands social media and can apply that knowledge across many different platforms.</li>
+</ul>
+<p>How many hours a month does it realistically take for your business to maintain social presences? Don’t let the shortage of internal resources hamper your online capabilities. <strong>Outsource social media to cover your bases</strong>.</p>
+<h2>#16: Present Your Human Side With Photos</h2>
+<p>Photos and other types of visual content are highly shareable on social networks. <a href="http://socialmediatoday.com/pammoore/1242011/talk-human-me-20-tips-humanize-your-brand" target="_blank" rel="noopener noreferrer" class="external">Pam Moore</a> suggests that when you <strong>post photos of your team</strong>, it helps to <strong>show your business as a human brand</strong> and <strong>build relationships with your community</strong>.</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-human-side.png" alt="human side" width="480" height="324" /><figcaption class="wp-caption-text">Humans need breaks!</figcaption></figure>
+<p>Social media has made it possible for you to share information about your business in a multitude of ways. Photos can show your serious, productive, silly, creative, successful and charitable sides—but above all, <strong>be sure to expose your human side</strong>.</p>
+<h2>#17: Question Readers for More Engagement</h2>
+<p>Questions are a good example of engaging content and have become a frequent go-to tactic, especially on platforms such as Facebook. <a href="http://www.socialbakers.com/how-to/215-how-to-use-facebook-questions-to-increase-engagements-and-fans" target="_blank" rel="noopener noreferrer" class="external">Belinda Whittaker</a> suggests three types of good questions to ask:</p>
+<ul>
+<li>Pure fan engagement questions to help <strong>tap into the interests and lifestyles of your fans</strong>.</li>
+<li>Market and competitive analysis questions to <strong>generate conversations</strong> and <strong>engage with possible leads</strong> who are interested in buying that product.</li>
+<li>Product/service feedback questions that can serve as a fast focus group to <strong>find what people like most</strong> and what areas you can expand into.</li>
+</ul>
+<p>Are you asking your readers questions? When they answer, do you reply?</p>
+<h2>#18: Replicate Your Brand Identity From Platform to Platform</h2>
+<p>Let’s say you joined Facebook in 2008 and Google+ in 2012. A difference of four years can seem like eternity in the world of social media. Regardless of the year, you’ll want to <strong>make sure you have a consistent brand identity today</strong>.</p>
+<p><a href="https://blog.hubspot.com/blog/tabid/6307/bid/34231/8-Businesses-That-Nail-Social-Media-Brand-Consistency.aspx" target="_blank" rel="noopener noreferrer" class="external">Desmond Wong</a> examined how Google, Target, Etsy, Coca-Cola, Disney, Amazon, <em>New Yorker</em> magazine and SEOmoz approach brand consistency across multiple social media platforms. Factors included how they use design and graphics in unison across platforms, and whether they use consistent colors, fonts, icon styles and logos.</p>
+<p>If you’re in doubt about whether you <strong>demonstrate a consistent brand experience</strong>, take a look at all of your pages side by side and see if there are any changes you need to make.</p>
+<h2>#19: Strengthen In-Person Events With Social Media Promotion</h2>
+<p>At times you may wonder about the relationship between in-person events and social media, and how they’re able to coexist.</p>
+<p><a href="http://www.convinceandconvert.com/social-media-marketing/7-ways-to-use-social-media-to-create-buzzworthy-events/" target="_blank" rel="noopener noreferrer" class="external">Jay Baer</a> describes <strong>7 ways to use social media to promote in-person events</strong>:</p>
+<ul>
+<li>Engage—<strong>encourage potential attendees to interact with you</strong> early on by crowdsourcing feedback.</li>
+<li>Intrigue—<strong>create an event page</strong> on event listing sites (e.g., Facebook events, <a href="https://www.eventbrite.com/" target="_blank" rel="noopener noreferrer" class="external">Eventbrite</a>).</li>
+<li><strong>Invigorate potential attendees</strong> with videos, blog posts, press releases, Twitter list of attendees, etc.</li>
+<li>Integrate—<strong>pick a hashtag for the event</strong> to get people talking.</li>
+<li>Inform—<strong>ask attendees to vote on session suggestions</strong> via text messages, consider QR codes on badges.</li>
+<li>Propagate—<strong>stream live video of your event</strong>.</li>
+<li>Aggregate—<strong>spread the conference presentations as widely as possible</strong>; use email links on your website and publish on SlideShare.
+<p><figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-smmw13.png" alt="live conference" width="480" height="160" /><figcaption class="wp-caption-text">SMMW13 highly invigorated attendees.</figcaption></figure></li>
+</ul>
+<p>In-person events, combined with online social networking, provide terrific opportunities for businesses to reap the benefits of both worlds.</p>
+<h2>#20: Talk With Team Members to Keep Up Momentum and Morale</h2>
+<p>None of us should work in a vacuum. We need to know what’s working and what isn’t. But sometimes the people seeing the analytics aren’t necessarily the ones who are managing the company’s online presences.</p>
+<p><a href="http://www.landscapeleadership.com/blog/bid/202358/How-to-Build-a-Social-Media-Team-11-Guidelines-for-Engaging-Your-Employees" target="_blank" rel="noopener noreferrer" class="external">Chris Heiler</a> suggests that one critical way to <strong>keep your social media team engaged</strong> is to <strong>provide them with updates on goals</strong>. As he says, “You need to keep them updated by sharing your successes with them. Has your website traffic increased significantly since putting together your social media team? Is your blog generating more qualified leads?”</p>
+<p>To garner support, <strong>show team members the results of their efforts</strong>.</p>
+<h2>#21: Use a Conversational Tone to Engage Readers</h2>
+<p>Social media has changed the way businesses communicate publicly. In fact, we’re often advised to avoid stiff and stodgy business writing and encouraged to adopt a more conversational tone. And yet sometimes we’re at a loss to know what that means for our business.</p>
+<p><a href="http://marketingland.com/20-great-social-media-voices-and-how-to-develop-your-own-18057" target="_blank" rel="noopener noreferrer" class="external">Courtney Seiter</a> suggests you explore your culture, community and conversation as you <strong>develop your social media voice</strong>. As she says, “Take us inside your brand’s experience… <strong>listen to the way your community voices their feelings</strong>, <strong>speak their language, on their terms</strong>… and then <strong>communicate with personality and authenticity</strong>. No strong-arming or hard selling, just talking in a way that’s comfortable, conversational and relatable.”</p>
+<figure style="width: 425px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-listenng-istock-12716675.jpg" alt="listening ear" width="425" height="282" /><figcaption class="wp-caption-text">Listen to your community.  Image source: iStockPhoto.</figcaption></figure>
+<p><strong>Use a conversational tone</strong> to <strong>make your content feel more authentic and engaging</strong> to readers.</p>
+<h2>#22: Visit a Number of Search Engines to Find the Perfect Image</h2>
+<p>With all the attention images receive on social media, it stands to reason that businesses will <strong>be on the lookout for interesting visuals</strong>.</p>
+<p><a href="https://www.makeuseof.com/tag/top-6-visual-search-engines-for-finding-the-image-you-want/" target="_blank" rel="noopener noreferrer" class="external">Joshua Lockhart</a> provides a list of six visual search engines to help you find the image you want. He suggests <a href="https://www.tineye.com/" target="_blank" rel="noopener noreferrer" class="external">TinEye</a>, <a href="https://search.creativecommons.org/" target="_blank" rel="noopener noreferrer" class="external">CC Search</a>, <a href="http://compfight.com/" target="_blank" rel="noopener noreferrer" class="external">Compfight</a>, <a href="http://www.zoo-m.com/flickr-storm/" target="_blank" rel="noopener noreferrer" class="external">FlickrStorm</a>, <a href="http://www.wesee.com/" target="_blank" rel="noopener noreferrer" class="external">WeSEE</a> and <a href="https://www.google.com/imghp?hl=en&amp;tab=wi" target="_blank" rel="noopener noreferrer" class="external">Google Image Search</a>.</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-visual-search.png" alt="visual search" width="480" height="300" /><figcaption class="wp-caption-text">Visual search engines expand your search capability (e.g., on TinEye you can even search for images by color!).</figcaption></figure>
+<p>Take a few minutes and <strong>check out the visual search engines</strong>. When you find one great image you hadn’t previously come across, it will make a difference.</p>
+<h2>#23: Widen Your Writing Style With Online Tools</h2>
+<p>When you’re busy writing online content, it may feel like you don’t have the time to stop and <strong>look into new writing tools</strong>. But when you do, you’re apt to <strong>find a treasure trove of useful tips</strong>.</p>
+<p>That’s how I felt when I came across <a href="https://blog.crazyegg.com/2013/05/21/tools-for-writers/" target="_blank" rel="noopener noreferrer" class="external">Sherice Jacob</a>&#8216;s unique list of apps, websites and software programs for online writers: <a href="https://itunes.apple.com/us/app/wordcounter.net/id638045383" target="_blank" rel="noopener noreferrer" class="external">WordCounter</a>, <a href="http://www.westegg.com/cliche/" target="_blank" rel="noopener noreferrer" class="external">Cliche Finder</a>, <a href="http://www.creativity-portal.com/prompts/imagination.prompt.html" target="_blank" rel="noopener noreferrer" class="external">Creativity Portal</a>, <a href="http://unstuck.com/index.html" target="_blank" rel="noopener noreferrer" class="external">Unstuck</a>, <a href="http://www.beenokle.com/zenwriter.html" target="_blank" rel="noopener noreferrer" class="external">ZenWriter</a>, <a href="http://bywordapp.com/" target="_blank" rel="noopener noreferrer" class="external">Byword</a>, Readability, and <a href="http://www.synchroedit.com/" target="_blank" rel="noopener noreferrer" class="external">SychroEdit</a>.</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-word-counter.png" alt="wordcounter" width="480" height="351" /><figcaption class="wp-caption-text">With Wordcounter, you can count words on your iPhone.</figcaption></figure>
+<p>Writing tools can help recharge your battery while fulfilling specific needs.</p>
+<h2>#24: (E)xpand Your Article With Relevant Tips</h2>
+<p>Online readers often gravitate to tips-related articles. A search on the keyword “tips” produced 30,400,000 global monthly searches. Suggested keyword terms included every imaginable type of “tips;” for example, photography, makeup, Sudoku, travel, weight loss. Regardless of the industry, people are often looking for tips.</p>
+<p><strong>Include tips articles in your content marketing plan</strong> for your business to interest new readers.</p>
+<h2>#25: Yield to Your Customer’s Journey</h2>
+<p>Social channels differ in the roles they play in the customer’s journey towards making a purchase.</p>
+<p>Lee Odden writes, “Understanding the customer experience from awareness to consideration to purchase folds well into the core principle of <a href="http://optimizebook.com/" target="_blank" rel="noopener noreferrer" class="external">Optimize</a>—to <strong>empathize with your customer</strong> and <strong>understand how they discover, consume and act on information</strong>. By doing so, you can <strong>create a practical digital marketing plan</strong> that optimizes for attraction, engagement and conversion.”</p>
+<figure style="width: 480px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2013/06/dh-channels.png" alt="channels" width="480" height="352" /><figcaption class="wp-caption-text">Social channels differ in their roles in the customer’s journey towards purchase.</figcaption></figure>
+<p><a href="https://www.google.com/think/tools/customer-journey-to-online-purchase.html" target="_blank" rel="noopener noreferrer" class="external">Check out Google’s Customer Journey tool</a> to see the differences by channels and industries.</p>
+<h2>#26: Zero In on Your Customer’s Interests and Needs</h2>
+<p>What do your customers care about? What information will help them in their day-to-day work or make their lives easier and more successful?</p>
+<p>If you’re going to go to great lengths to craft and publish content, <strong>keep your customer’s interests and needs front of mind</strong>.</p>
+<p><strong>Your Turn</strong></p>
+<p>There’s a lot going on in the world of social media marketing today. We’ve covered some solid ways to help ground your efforts and explored some of the innovative changes that can affect your presence.</p>
+<p><strong>What do you think? Have you tried any of these? Do you want to add any to the list?</strong> Please leave your questions and comments in the box below.</p>
+<h5 style="text-align: right;">Images from <a href="http://www.istockphoto.com/" target="_blank" rel="noopener noreferrer" class="external">iStockPhoto</a>.</h5>
+<p></p>
+
+<div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="1" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="content-promo-border" style="background-color: #342a25">
+<div class="content-promo-outer clearfix" style="background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/Society21_Midpage_Version2@2x.png;">
+<div class="content-promo-left">
+<a href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-midpage-ad-lower"><img srcset="https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/society21-midpage.png, https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/society21-midpage@2x.png 2x" /></a>
+</div>
+<div class="content-promo-right">
+<div class="content-promo-right-top" style="color: ;">
+Want to <b>Improve Your Value and Your Marketing Results?</b> The Society is a place where you can discover new ideas, improve your results, get support, and become indispensable! </div>
+<div class="content-promo-right-bottom">
+<div class="content-promo-bottom-sale">
+<span class="promo-sale-highlight" style="color: ;">ONLINE TRAINING</span>
+<span class="promo-sale-desc" style="color: ;">SALE ENDS WEDNESDAY!</span>
+</div>
+<div class="content-promo-bottom-button">
+<a href="https://www.socialmediaexaminer.com/society/?smesite=society21-site-midpage-ad-lower" class="button small" style="background-color: ; color: ;" ">
+LEARN MORE </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div></div><footer class="entry-footer"><p class="entry-meta"><span class="entry-tags">Tags: <a href="https://www.socialmediaexaminer.com/tag/social-media-strategy/" rel="tag">Social Media Strategy</a></span></p></footer></article><section class="author-box"><img alt='' src='https://secure.gravatar.com/avatar/1f68ec6539db029f3b2d3b32e9f6b256?s=65&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/1f68ec6539db029f3b2d3b32e9f6b256?s=130&#038;d=mm&#038;r=g 2x' class='avatar avatar-65 photo' height='65' width='65' loading='lazy' /><h4 class="author-box-title"><span>About the author</span><a href="http://debbiehemley.com/" title="Visit Debbie Hemley&#8217;s website" rel="author external" class="external" target="_blank">Debbie Hemley</a></h4><div class="author-box-content" itemprop="description">Debbie Hemley is a freelance writer and social media coach. She helps businesses develop and maintain social media content strategies. Follow her on Twitter @dhemley &amp; <a href="https://www.facebook.com/debbiehemley" class="external" target="_blank">Facebook</a>.<div class="other-posts-link"><a href="https://www.socialmediaexaminer.com/author/debbie-hemley/">Other posts by Debbie Hemley »</a></div></div></section><div class="after-entry widget-area"><section id="custom_html-13" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div class="after-entry-left">
+<h4> Get Social Media Examiner’s Future Articles in Your Inbox! </h4>
+<p> Get our latest articles delivered to your email inbox and get the <strong>FREE Social Media Marketing Industry Report</strong> (46 pages, 60+ charts)! </p>
+</div>
+<div class="after-entry-right"> <img src="https://www.socialmediaexaminer.com/wp-content/uploads/2020/04/Report2020Cover.png" alt="Industry Report Cover" /> </div>
+<div class="clearfix"> </div>
+<div class="after-entry-bottom">
+<form action="https://www.getdrip.com/forms/50814357/submissions" method="post" data-drip-embedded-form="50814357">
+<input type="text" value="Enter your first name" onfocus="if (this.value == 'Enter your first name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your first name';}" id="callout-name" name="fields[first_name]">
+<input type="text" value="Email" onfocus="if (this.value == 'Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Email';}" id="callout-email" name="fields[email]">
+<div style="display: none;" aria-hidden="true">
+<label for="website">Website</label>
+<br />
+<input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="" />
+</div>
+<input type="submit" id="subscribeSubmit" alt="Send me Updates" name="Submit" data-drip-attribute="sign-up-button">
+</form>
+</div>
+</div></div></section>
+</div><h2 class="screen-reader-text">Reader Interactions</h2><div class="entry-comments" id="comments">
+<div id="disqus_thread"></div>
+<script>
+				 var disqus_config = function () {
+				 this.page.url = 'https://www.socialmediaexaminer.com/26-tips-to-create-a-strong-social-media-content-strategy/';
+				 this.page.identifier = '40511 http://www.socialmediaexaminer.com/?p=40511';
+				 };
+
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = '//smexaminer.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow" class="external" target="_blank">comments powered by Disqus.</a></noscript>
+</main></div></div><div class="wrap"><div class="worth-exploring-section entry"><section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h3 class="widgettitle widget-title">Worth Exploring:</h3>
+<div class="textwidget custom-html-widget"><a href="https://www.socialmediaexaminer.com/tag/facebook/" class="worth-exploring-item facebook">
+<h4>Facebook</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/instagram/" class="worth-exploring-item instagram">
+<h4>Instagram</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/youtube/" class="worth-exploring-item youtube">
+<h4>YouTube</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/linkedin/" class="worth-exploring-item linkedin">
+<h4>Linkedin</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/facebook-ads/" class="worth-exploring-item facebook">
+<h4>Facebook Ads</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/social-media-marketing-industry-report-2020/" class="worth-exploring-item industry">
+<h4>Social Media Marketing Industry Report</h4>
+<span class="link">Get Free Report →</span>
+<span class="worth-exploring-image"></span>
+</a></div></div></section>
+</div></div><div class="main-cta above-footer-cta"><div class="wrap"><div class="main-cta-inner abover-footer-cta-inner"><div class="main-cta-content above-footer-cta-content"><div class="inner-border-radius clearfix"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><h4 class="free-tag">
+Social Media Marketing
+</h4>
+<span class="sub-title">
+Industry Report
+</span>
+<p>
+In our 12th annual social media study <strong>(46 pages, 60+ charts)</strong> of 5,200+ marketers, you'll discover which social networks marketers most plan on using, organic social activities, paid social media plans, and much more! Get this <strong>free report</strong> and never miss another great article from Social Media Examiner.
+</p></div></div></section>
+<section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><p>
+Enter your email to get<br />
+our <strong>free report:</strong>
+</p>
+<form action="https://www.getdrip.com/forms/65459763/submissions" method="post" data-drip-embedded-form="65459763" id="drip-ef-65459763">
+<input type="text" value="Enter your first name" onfocus="if (this.value == 'Enter your first name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your first name';}" id="callout-name" name="fields[first_name]"><input type="text" value="Email" onfocus="if
+(this.value == 'Email') {this.value = '';}" onblur="if (this.value == '')
+{this.value = 'Email';}" id="callout-email" name="fields[email]">
+<div style="display: none;" aria-hidden="true"> <label for="website">Website</label><br /> <input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="" /> </div>
+<input type="submit" alt="SEND ME A COPY" value="SEND ME A COPY" name="Submit" id="callout-submit" data-drip-attribute="sign-up-button"></form></div></div></section>
+</div></div></div></div></div><div class="footer-widgets" id="genesis-footer-widgets"><h2 class="genesis-sidebar-title screen-reader-text">Footer</h2><div class="wrap"><div class="widget-area footer-widgets-1 footer-widget-area"><section id="custom_html-11" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><img srcset="https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/images/logo.png, https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/images/logo@2x.png 2x" />
+<span class="footer-tag">
+Your Guide to the Social Media Jungle
+</span></div></div></section>
+<section id="custom_html-10" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget">Copyright © 2021 Social Media Examiner®<br />
+All Rights Reserved. <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy/">Privacy Policy</a>.</div></div></section>
+</div><div class="widget-area footer-widgets-2 footer-widget-area"><section id="nav_menu-4" class="widget widget_nav_menu"><div class="widget-wrap"><h3 class="widgettitle widget-title">Helpful Links</h3>
+<div class="menu-footer-links-container"><ul id="menu-footer-links" class="menu"><li id="menu-item-192784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-192784"><a href="https://www.socialmediaexaminer.com/about/">About us</a></li>
+<li id="menu-item-95057" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95057"><a href="https://www.socialmediaexaminer.com/subscribe/">Our content via email</a></li>
+<li id="menu-item-110706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110706"><a href="https://www.socialmediaexaminer.com/shows/">Our podcasts</a></li>
+<li id="menu-item-139031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139031"><a href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank">Our YouTube channel</a></li>
+<li id="menu-item-110705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110705"><a href="https://www.socialmediaexaminer.com/social-media-marketing-talk-show/">Our live show</a></li>
+<li id="menu-item-123595" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-123595"><a href="https://www.socialmediaexaminer.com/social-media-marketing-industry-report-2020/">Our industry report</a></li>
+<li id="menu-item-95056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95056"><a href="https://www.socialmediaexaminer.com/sponsor/">Sponsorship opportunities</a></li>
+<li id="menu-item-95055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95055"><a href="https://www.socialmediaexaminer.com/writers/">Write for us&#8230;</a></li>
+<li id="menu-item-168981" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168981"><a href="https://www.socialmediaexaminer.com/feed/">RSS</a></li>
+<li id="menu-item-200104" class="show-userway menu-item menu-item-type-custom menu-item-object-custom menu-item-200104"><a title="Turn on accessibility menu" href="?accessibility=enabled">Accessibility</a></li>
+</ul></div></div></section>
+</div><div class="widget-area footer-widgets-3 footer-widget-area"><section id="custom_html-12" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><a href="https://www.facebook.com/smexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" srcset="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/facebook.png, https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/facebook@2x.png 2x" />
+</a>
+<a href="https://twitter.com/smexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" srcset="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/twitter.png, https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/twitter@2x.png 2x" />
+</a>
+<a href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" target="_blank" rel="noopener" class="external">
+<img width="44" srcset="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/youtube.png, https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/youtube@2x.png 2x" />
+</a>
+<a href="https://www.instagram.com/smexaminer/" target="_blank" rel="noopener" class="external">
+<img width="44" srcset="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/instagram.png, https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/instagram@2x.png 2x" />
+</a>
+<a href="https://www.linkedin.com/company/576649" target="_blank" rel="noopener" class="external">
+<img width="44" srcset="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/linkedin.png, https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/linkedin@2x.png 2x" />
+</a>
+<a href="https://www.joinclubhouse.com/club/socialmediaexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" srcset="https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/clubhouse_code.png, https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/clubhouse_code@2x.png 2x" />
+</a>
+</div></div></section>
+</div></div></div> <a href="#" class="back-to-top">
+</a>
+</div> <script>
+                jQuery(function($){
+                                        try {
+                        $('a.wpdm-lightbox').nivoLightbox();
+                    } catch (e) {
+
+                    }
+                });
+            </script>
+<div id="fb-root"></div>
+<script type="text/javascript" src="https://a.omappapi.com/app/js/api.min.js" data-campaign="bsdm1jzjjigswzchj9zt" data-user="100" async></script> <script type="text/javascript">
+			document.addEventListener("userway:init_completed", function(event) {
+			    UserWay.widgetOpen();
+			});
+		</script>
+<script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='hnettihys3ykimy7ks56';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='pgfozdcetvfz5sriccpd';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='bcatypb5i6v5sehhm0yz';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='xvhh5zw4q2qjna8nshme';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='dzugpznjtw1vvferbkxt';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='v20fd21yz2yx38aqu4pa';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='cntmysc4bcaqxdmmvb7r';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><script>(function(d){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.campaign='uma2rxjkoqpsljuwurt9';s.dataset.user='100';s.dataset.api='aa9705';d.getElementsByTagName('head')[0].appendChild(s);})(document);</script><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="I WANT MY FREE COPY"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;I WANT MY FREE COPY&quot;]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="DOWNLOAD MY FREE PDF COPY"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;DOWNLOAD MY FREE PDF COPY&quot;]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="I WANT THESE SECRETS"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;I WANT THESE SECRETS&quot;]</div></div><div style="position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0"><div class="omapi-shortcode-helper">[title="I Want These Secrets"]</div><div class="omapi-shortcode-parsed omapi-encoded">[title=&quot;I Want These Secrets&quot;]</div></div> <script type="text/javascript">
+		var hnettihys3ykimy7ks56_shortcode = true;var pgfozdcetvfz5sriccpd_shortcode = true;var bcatypb5i6v5sehhm0yz_shortcode = true;var xvhh5zw4q2qjna8nshme_shortcode = true;var dzugpznjtw1vvferbkxt_shortcode = true;var v20fd21yz2yx38aqu4pa_shortcode = true;var cntmysc4bcaqxdmmvb7r_shortcode = true;var uma2rxjkoqpsljuwurt9_shortcode = true;		</script>
+<script type='text/javascript' id='sme-cse-search-js-extra'>
+/* <![CDATA[ */
+var cse = {"cseApiURL":"https:\/\/www.socialmediaexaminer.com\/wp-json\/sme-api\/v1\/search","cseApiNonce":"603c7067d9","cseCX":"partner-pub-7276056843916800:3917716579","cseWPNonce":""};
+/* ]]> */
+</script>
+<script type='text/javascript' id='sme-responsive-menu-js-extra'>
+/* <![CDATA[ */
+var genesis_responsive_menu = {"mainMenu":"","menuIconClass":"ionicons-before ion-ios-menu","subMenu":"Submenu","subMenuIconClass":"ionicons-before ion-ios-arrow-down","menuClasses":{"combine":[".nav-primary"],"others":[]}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/min/jquery.matchHeight.min.js?ver=0.4.5' id='sme-match-height-js'></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/uploads/autoptimize/js/aggregated_single_ce35a4eae19a77f045d28b19dc03f5f4.js?ver=0.4.5' id='sme-top-banner-js'></script>
+<script>(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://ca9707.socialmediaexaminer.com/app/js/api.min.js";s.async=true;s.id="omapi-script";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script>
+<script type='text/javascript' id='uji-countdown-init-js-extra'>
+/* <![CDATA[ */
+var ujiCount = {"ajaxUrl":"https:\/\/www.socialmediaexaminer.com\/wp-admin\/admin-ajax.php","uji_plugin":"https:\/\/www.socialmediaexaminer.com\/wp-content\/plugins","uji_style":"classic","expire":"2021\/04\/07 23:59","exp_days":"877","Years":"Years","Year":"Year","Months":"Months","Month":"Month","Weeks":"Weeks","Week":"Week","Days":"Days","Day":"Day","Hours":"Hours","Hour":"Hour","Minutes":"Minutes","Minute":"Minute","Seconds":"Seconds","Second":"Second","ujic_txt_size":"18","ujic_thick":null,"ujic_col_dw":"#000000","ujic_col_up":"#4c4141","ujic_col_txt":"#f7c744","ujic_col_sw":"#000000","ujic_col_lab":"#000000","ujic_lab_sz":"12","ujic_txt":"true","ujic_ani":null,"ujic_url":"","ujic_goof":"Archivo Black","uji_center":" ujic-classic","ujic_d":"true","ujic_h":"true","ujic_m":"true","ujic_s":"true","ujic_y":null,"ujic_o":null,"ujic_w":null,"uji_time":"Apr 7, 2021 21:55:54+0000","uji_hide":"true","ujic_rtl":"","uji_utime":""};
+/* ]]> */
+</script>
+<script type="text/javascript">var omapi_localized = { ajax: 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php?optin-monster-ajax-route=1', nonce: 'c1a1d51d3e', slugs: {"hnettihys3ykimy7ks56":{"slug":"hnettihys3ykimy7ks56","mailpoet":false},"pgfozdcetvfz5sriccpd":{"slug":"pgfozdcetvfz5sriccpd","mailpoet":false},"bcatypb5i6v5sehhm0yz":{"slug":"bcatypb5i6v5sehhm0yz","mailpoet":false},"xvhh5zw4q2qjna8nshme":{"slug":"xvhh5zw4q2qjna8nshme","mailpoet":false},"dzugpznjtw1vvferbkxt":{"slug":"dzugpznjtw1vvferbkxt","mailpoet":false},"v20fd21yz2yx38aqu4pa":{"slug":"v20fd21yz2yx38aqu4pa","mailpoet":false},"cntmysc4bcaqxdmmvb7r":{"slug":"cntmysc4bcaqxdmmvb7r","mailpoet":false},"uma2rxjkoqpsljuwurt9":{"slug":"uma2rxjkoqpsljuwurt9","mailpoet":false}} };</script>
+<script type="text/javascript">var omapi_data = {"wc_cart":[],"object_id":40511,"object_key":"post","object_type":"post","term_ids":[1,175]};</script>
+<script defer src="https://www.socialmediaexaminer.com/wp-content/uploads/autoptimize/js/aggregated_8b7b856f346a9f01e62108a682bc3293.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"9537276cb2","applicationID":"6974453","transactionName":"ZlFUYkBYXRcDUkNcX18bd1VGUFwKTUJeW1ddUQ==","queueTime":0,"applicationTime":1324,"atts":"ShZXFAhCThk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'63c8e7fb7e42b58e',m:'7a5d9575bc67f61f95e7b299a3024287b16bbca2-1617857755-1800-AcvWckP8ceY2tmNMUJwvVQqp9dURCh5GTl6Nk5rK6ZnCiGTc9cMlBFOiM8fMnQ72kmwLucDiVW/RIpXimsP7lLYgFZGqCn6WXmzri4c1u0Zj8FWZjZATDtfOuT+WWT5+arysIEIblPiMeIkDxKQlQwChxfI4dAA7oVqtv/V7fqfB5QaGx0iYIFt3yWML2VfJ3Q==',s:[0x0e89833239,0x0060aee15b],}})();</script></body></html>
