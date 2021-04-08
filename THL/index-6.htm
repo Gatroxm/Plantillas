@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UBIX.Network Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <!--     <meta http-equiv="Content-Security-Policy" content="default-src *; img-src 'self' data: file://* * ; child-src 'none';font-src 'self' 'unsafe-inline' 'unsafe-eval' data: *; script-src 'self' 'unsafe-inline' *; style-src  'unsafe-inline' *">
+ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="./favicon.svg">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet"> 
+</head>
+
+<body class="notranslate" class='e-view' aria-busy="true">
+    <header>
+        <div class="container-fluid">
+            <nav class="nav-bar clearfix">
+                <div class="logo">
+                    <!-- <a href="https://ubikiri.com" target="_blank"><img class="idl-logo" src="img/Logo_IDL.png" /></a> -->
+                    <div class="textlogo">UBIX.Network Explorer</div>
+                </div>
+                <div class="search">
+                    <form action="javascript:searchForm($('#inputSearch').val())" class="navbar-form" method="post">
+                        <div class="input-group search-1">
+                            <div class="input-group-btn">
+                                <button id='sbtn' class="btn" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                            <input id="inputSearch" type="text" class="form-control"
+                                placeholder="Search by Address/Txn/Block/Token">
+                        </div>
+                        <div class="input-group-mobile">
+                            <input class='mobile' type="text" placeholder="Search">
+                            <button class='mobile' type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--header END-->
+
+    <div id="infoMessage" onclick="hideInfoMessage()" style="display: none;"></div>
+    <section class="main">
+        <div class="container-fluid1" style="display:flex">
+            <div id="graph" class="col-md-81">
+                <div class="content">
+                    <div id="cy"></div>
+                    <div id="scroll" class="showInfoBlock">
+                        <div id="scrollBody"></div>
+                    </div>
+                </div>
+
+                <div id="goToTop" class="scroll" onclick="goToTop(true)">
+                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div id="info" class="col-lg-41 col-md-41 w-20">
+
+                <div class="sidebar">
+                    <div class="close-info" onclick="closeInfo()">
+                        <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
+                    </div>
+
+                    <div id="generalInfo">
+
+                    </div>
+                    <div id="txInfo" style="display:none"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="infoMessage">
+            <div></div>
+        </div>
+        <div id="mainspinner" class="orbit-spinner" style="display:none">
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+        </div>
+    </section>
+    <!--section END-->
+    <footer>
+
+    </footer>
+    <!--footer END-->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="dist/signalr.min.js"></script>
+    <script src="dist/cytoscape.local.js"></script>
+
+    <script src="dist/dagre.local.js"></script>
+
+
+    <script src="dist/cytoscape-dagre.js"></script>
+    <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.js"></script>
+    <script src="dist/clipboard.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script src="dist/perfect-scrollbar.min.js"></script>
+
+    <script src="js/eventemitter.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/index.js?v2.2"></script>
+    <div id="modal_back" style="display:none"></div>
+    <div id="popup_3" class="pop_up popup_hide">
+
+        <div class="pop_up_close"></div>
+        <div class="modal_body">
+            <div id="addrInfo">
+
+            </div>
+            <div class="loader" style="display: none"></div>
+        </div>
+    </div>
+
+</body>
+<script type="text/template" id="spinner">
+    <div  class="orbit-spinner addr" >
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+        <div class="orbit"></div>
+    </div>
+</script>
+<script type="text/template" id="generalTemplate">
+<div class="s-block">
+    <span class="sb-head">Block</span>
+    <p class="flex-nowrap" >
+            <span class="overflow">{{unit}}</span>
+            <span class="clickable copy"  data-toggle="blocktooltip" data-title="Copy hash to clipboard"  data-clipboard-text="{{unit}}">
+            <i class="glyphicon glyphicon-duplicate"></i>
+            </span>
+        </p>
+    <span class="sb-head">Received</span>
+    <p>{{date_formatted}}</p>
+    <!-- PARENTS -->
+
+    <span class="sb-head">Parents</span>
+    <div class="panel">
+        <div class="panel-heading collapser">
+            <span class="pull-right clickable">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+            <ul class="table">
+                {{#each parents}}
+                <li class="flex-nowrap"><a href="#block/{{hash}}">{{hash}}</a>
+                
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <!-- CHILDREN -->
+    <span class="sb-head">Children</span>
+    <div class="panel">
+        <div class="panel-heading collapser">
+            <span class="pull-right clickable">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+            <ul class="table">
+                {{#each children}}
+                <li class="flex-nowrap"><a href="#block/{{hash}}">{{hash}}</a>
+                   
+                </li>
+                {{/each}}
+            </ul>
+
+        </div>
+    </div>
+    <!-- TX -->
+    <span class="sb-head">Transactions</span>
+    <div class="panel">
+        <div class="panel-heading collapser">
+            <span class="pull-right clickable">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+            <ul class="table">
+                {{#each tnxs}}
+                <li class="flex-nowrap"><a class='txa' href="#tx/{{hash}}">{{hash}}</a>
+                   
+                </li>
+                {{/each}}
+            </ul>
+
+        </div>
+    </div>
+
+    <span class="sb-head">Technical information</span>
+    <div class="panel">
+        <div class="panel-heading collapser">
+            <span class="pull-right clickable">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Is stable</td>
+                        <td>{{stable}}</td>
+                    </tr>
+                    <tr>
+                        <td>Concilium Id</td>
+                        <td>{{conciliumId}}</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>{{height}}</td>
+                    </tr>
+                    <tr>
+                        <td>Version</td>
+                        <td>{{version}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="link">
+        <p>Last block</p>
+        <div  class="flex-nowrap">
+        <a id="lastunit" href="#block/{{last_ball_unit}}" class="overflow">{{last_ball_unit}}</a>
+        </div>
+    </div>
+</div>
+</script>
+<!-- TOKEN -->
+<script type="text/template" id="tokenTemplate">
+<div id="tokenInfo">
+    <div class="addrHeader flex-nowrap">
+        <span>Token:</span>&nbsp;
+        <span class="overflow" style="max-width:30%; color:#6d7fa0">{{symbol}}</span>{{#if frozen}}&nbsp;<span>(Frozen)</span>{{/if}}
+        <!--  <span class="clickable copy"  data-toggle="addrtooltip" data-title="Copy address to clipboard"  data-clipboard-text="{{address}}">
+                <i class="glyphicon glyphicon-duplicate"></i>
+                </span> -->
+    </div>
+    <div class="flex-container" style="font-size:14px">
+
+        <div class="" style="white-space: nowrap">Total Supply:</div>
+        <div class="">
+            <div class=" overflow">
+                {{famount totalSupply}}&nbsp;{{symbol}}</div>
+        </div>
+        <div class="" style="white-space: nowrap">Contract Address:</div>
+        <div class="">
+            <div class=" overflow">
+                Ux{{contractAddress}}</div>
+        </div>
+    </div>
+
+    <div class="flex-container" style="font-size:14px">
+        <div class="" style="white-space: nowrap">Holders:</div>
+        <div class="">
+            <div class=" overflow">
+                {{famount holdersCount}} addresses</div>
+        </div>
+        <div class="" style="white-space: nowrap">Create Txn Hash:</div>
+        <div class="">
+            <div class=" overflow">
+                <a class="" href="#tx/{{createTxHash}}">
+                    {{createTxHash}}</a></div>
+        </div>
+
+    </div>
+    <div class="flex-container" style="font-size:14px">
+        <div class="" style="white-space: nowrap">Transfers:</div>
+        <div class="">
+            <div class=" overflow">
+                {{transfersCount}}</div>
+        </div>
+        <div class="" style="white-space: nowrap">Creator:</div>
+        <div class="">
+            <div class=" overflow">
+                <a class="" href="#address/Ux{{creator}}">
+                    Ux{{creator}}</a></div>
+        </div>
+    </div>
+    <div class="flex-container" style="font-size:14px">
+        <div class="" style="white-space: nowrap">Issuer Name:</div>
+        <div class="">
+            <div class=" overflow">
+                {{issuerName}}</div>
+        </div>
+        <div class="" style="white-space: nowrap">Goals:</div>
+        <div class="">
+            <div class=" overflow">
+                {{goals}}</div>
+        </div>
+        <div class="" style="white-space: nowrap">Decimals:</div>
+        <div class="">
+            <div class=" overflow">
+                {{decimals}}</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <input type="radio" id="tab1" name="tab-control" checked>
+        <input type="radio" id="tab2" name="tab-control">
+
+        <ul>
+            <li title="Transfers"><label for="tab1" role="button"><span>Transfers</span></label></li>
+            <li title="Holders"><label for="tab2" role="button"><span>Holders</span></label></li>
+
+        </ul>
+        <div class="slider">
+            <div class="indicator"></div>
+        </div>
+        <div class="tab-content">
+            <section style="width:100%">
+                <div id="transferTable">
+                    <div class="transferTable head">
+                        <div>Txn Hash</div>
+                        <div class="dt" style=" display:none"><a href="javascript:"  onclick="toggleAge(this)">Date Time (UTC)</a></div>
+                        <div class="age"><a href="javascript:" onclick="toggleAge(this)" >Age</a></div>
+                        <div>From</div>
+                        <div style="width:40px">&nbsp;</div>
+                        <div>To</div>
+                        <div>Quantity</div>
+                    </div>
+                    <div id="transferScroll">
+                        <div class="place"></div>
+                    </div>
+                </div>
+            </section>
+            <section style="width:100%">
+                <div id="holderTable">
+                    <div class="transferTable head">
+                        <div>Rank</div>
+                        <div>Address</div>
+                        <div>Quantity</div>
+                        <div>Percentage</div>
+                        <div>&nbsp;</div>
+
+                    </div>
+                    <div id="holderScroll">
+                        <div class="place"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/template" id="transfersTemplate">
+
+{{# each transfers}}
+<div class="transferTable">
+        <div><div class="overflow "><a class="txa" href="#tx/{{transactionHash}}">{{transactionHash}}</a></div></div>
+        <div class="dt" style=" display:none">{{datetime}}</div>
+        <div class="age">{{age}}</div>
+        <div><div class="overflow "><a class="" href="#address/Ux{{from}}">Ux{{from}}</a></div></div>
+        <div style="width:40px"><div class="smallArr">
+            <i class="glyphicon glyphicon-option-horizontal"></i>
+            <i class="glyphicon glyphicon-play"></i>
+        </div></div>
+        <div><div class="overflow "><a class="" href="#address/Ux{{to}}">Ux{{to}}</a></div></div>
+        <div>{{famount quantity}}</div>
+</div>
+{{/each}}
+
+</script>
+<script type="text/template" id="holdersTemplate">
+
+    {{# each holders}}
+    <div class="transferTable">
+        <div>{{rank}}</div>
+        <div><div class="overflow "><a class="" href="#address/{{address}}">Ux{{address}}</a></div></div>
+        <div>{{famount quantity}}</div>    
+        <div>{{percentage}}</div>
+        <div>&nbsp;</div>
+    </div>
+    {{/each}}
+    
+    </script>
+<!-- ADDRESS -->
+<script type="text/template" id="adrTemplate">
+<div>
+    <div class="addrHeader flex-nowrap">
+        <span>Address: </span>
+        <span class="overflow" style="max-width:90%; color:#6d7fa0">Ux{{address}}</span>
+        <span class="clickable copy" data-toggle="addrtooltip" data-title="Copy address to clipboard"
+            data-clipboard-text="{{address}}">
+            <i class="glyphicon glyphicon-duplicate"></i>
+        </span>
+    </div>
+    <div class="flex-container" style="font-size:14px">
+
+        <div class="" style="white-space: nowrap">Balance:</div>
+        <div class="">
+            <div class=" overflow">
+                {{famount balance}}&nbsp;UBX</div>
+        </div>
+        {{#if tokensBalances.length}}
+        <div class="" style="white-space: nowrap">Tokens:</div>
+        <div class="">
+            <div class="" style="position:relative">
+                <div class="tokenBtn">
+                    <span class="badge s1">{{tokensBalances.length}}</span>
+                    <div class="s2"><span><i style="font-size: 12px;color: #8C64E6;" class="glyphicon glyphicon-remove"></i></span>&nbsp;<span  class="s3"></span></div>
+                </div>
+                <div class='dropdown-menu'>
+                    <div id="tokenlist">
+                    <ul>{{#each tokensBalances}}
+                        <li class="flex-nowrap selectToken" data-token="{{symbol}}"><div style="width:45%">{{symbol}}</div><div style="width:45%">{{balance}}</div></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    
+    <div class="tabs">
+        <input type="radio" id="tab1" name="tab-control" checked>
+        {{#if tokensBalances.length}}
+        <input type="radio" id="tab2" name="tab-control">
+        {{/if}}
+        <ul>
+            <li title="Transactions"><label for="tab1" role="button"><span>Transactions</span></label></li>
+            {{#if tokensBalances.length}}
+            <li title="Trc-10 Txns"><label for="tab2" role="button"><span>Trc-10 Txns</span></label></li>
+            {{/if}}
+
+        </ul>
+        <div class="slider">
+            <div class="indicator"></div>
+        </div>
+        <div class="tab-content">
+            <section style="width:100%">
+            <div id="addrScroll">
+                {{#if txinfos.length}}
+                <div style="padding:15px 0 10px; font-size:1.5em ">{{recordsCount}}
+                    transaction{{#compare recordsCount '>' 1}}s{{/compare}}</div>
+                <div class="txtmpl">
+                    {{#each txinfos}}
+
+                    <div class="tx-info">
+                        <div class="nowrap addrwide">
+                            <div>tx:</div>
+                            <div class="overflow" style="max-width:90%"><a class="overflow"
+                                    style="display:inline!important" href="#tx/{{hash}}">{{hash}}</a></div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading collapser">
+                                <span class="pull-right clickable">
+                                    <i class="glyphicon glyphicon-chevron-down"></i>
+                                </span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="inout">
+                                    <div style="width:45%">
+                                        <span class="sb-head">{{inputs.length}}
+                                            Input{{#compare inputs.length '>' 1}}s{{/compare}} Consumed</span>
+
+                                        {{#each inputs}}
+                                        <div class="slot" {{#if self}}style="background:#eaeaea" {{/if}}>
+
+                                            <div>{{#if amount}}<span>{{famount amount}} </span>{{/if}}<span
+                                                    class="label">from</span></div>
+                                            <div>
+                                                {{#compare from.length '==' 40}}
+                                                <div class='flex-nowrap addrwide'>
+                                                    <div class="overflow " style="padding-top:4px; max-width:80%;">
+                                                        <a style="display:inline!important"
+                                                            href="#address/Ux{{from}}">Ux{{from}}</a>
+                                                    </div>
+
+                                                    {{#if txHash}} <div>&nbsp;(</div>
+                                                    <div style="padding-top:4px;"><a
+                                                            href='#tx/{{txHash}}?ntx={{nTxOutput}}'><span>output</span></a>
+                                                    </div>
+                                                    <div>)</div>{{/if}}
+
+                                                </div>
+                                                {{else}}
+                                                <span>{{from}}</span>
+                                                {{/compare}}
+                                            </div>
+                                        </div>
+                                        {{/each}}
+                                    </div>
+                                    <div class="transact" style="width:30px">
+
+                                        <i class="glyphicon glyphicon-option-horizontal" style="margin-top:1px;"></i>
+                                        <i class="glyphicon glyphicon-play"></i>
+                                    </div>
+                                    <div style="width:45%">
+                                        {{#if outputs.length}}
+                                        <span class="sb-head">{{outputs.length}}
+                                            Output{{#compare outputs.length '>' 1}}s{{/compare}} Created</span>
+                                        {{#each outputs}}
+                                        <div class="slot" {{#if self}}style="background:#eaeaea" {{/if}}>
+                                            <div><span>{{famount amount}}</span><span class="label"> to</span></div>
+                                            <div class='flex-nowrap addrwide'>
+                                                <div class="overflow " style="padding-top:4px; max-width:80%;">
+                                                    <a style="display:inline!important" class='inline'
+                                                        href="#address/Ux{{to}}">Ux{{to}}</a>
+                                                </div>
+                                                {{#if spent}}<div>&nbsp;(</div>
+                                                <div style="padding-top:4px;"><a href='#tx/{{spent}}'>spent</a></div>
+                                                <div>)</div>{{/if}}
+                                            </div>
+                                            {{#if internalTxn}}
+                                            <div>
+                                                <div class="smallArr">
+                                                    <i class="glyphicon glyphicon-option-horizontal"></i>
+                                                    <i class="glyphicon glyphicon-play"></i>
+                                                </div>
+                                                <a href='#tx/{{internalTxn}}'>Internal tx</a>
+                                                {{#compare status '==' 'fail'}}:&nbsp;<i
+                                                    style="color:brown; font-size:0.8em"
+                                                    class="glyphicon glyphicon-remove"></i>
+                                                <span>({{message}})</span>
+                                                {{/compare}}
+                                            </div>
+                                            {{/if}}
+                                        </div>
+                                        {{/each}}
+                                        {{else}}
+                                        <span class="sb-head">To self</span>
+                                        <!--  <div class="slot" style="background:#eaeaea">
+                            <div style="margin-top:10px">
+                            To self
+                            </div>
+                        </div> -->
+                                        {{/if}}
+                                    </div>
+
+                                </div>
+                                {{#if outputs.length}}
+                                <div style="text-align:center;padding-top: 15px;">Value Transacted: {{famount value}}
+                                </div>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{else}}
+                <div class='notfound'>No transaction found for address</div>
+                {{/if}}
+            </div>
+        </section>
+        <section style="width:100%">
+            <div id="transferTable">
+                <div class="transferTable head">
+                    <div>Txn Hash</div>
+                    <div class="dt" style=" display:none"><a href="javascript:"  onclick="toggleAge(this)">Date Time (UTC)</a></div>
+                    <div class="age"><a href="javascript:" onclick="toggleAge(this)" >Age</a></div>
+                    <div>From</div>
+                    <div style="width:40px">&nbsp;</div>
+                    <div>To</div>
+                    <div>Quantity</div>
+                    <div>Token</div>
+                </div>
+                <div id="txnsScroll">
+                    <div class="place"></div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </div>
+    <!-- addrScroll-->
+
+</div>
+</script>
+<script type="text/template" id="tokenTxnsTemplate">
+
+    {{# each transfers}}
+    <div class="transferTable">
+            <div><div class="overflow "><a class="" href="#tx/{{transactionHash}}">{{transactionHash}}</a></div></div>
+            <div class="dt" style=" display:none">{{datetime}}</div>
+            <div class="age">{{age}}</div>
+            <div><div class="overflow "><a class="" href="#address/Ux{{from}}">Ux{{from}}</a></div></div>
+            <div style="width:40px"><div class="smallArr">
+                <i class="glyphicon glyphicon-option-horizontal"></i>
+                <i class="glyphicon glyphicon-play"></i>
+            </div></div>
+            <div><div class="overflow "><a class="" href="#address/Ux{{to}}">Ux{{to}}</a></div></div>
+            <div>{{quantity}}</div>
+            <div><a class="" href="#token/{{symbol}}">{{symbol}}</a></div>
+    </div>
+    {{/each}}
+    
+    </script>
+<!-- TX -->
+<script type="text/template" id="txTemplate">
+<div class="s-block">
+    <h4 class='txHeader'>Transaction
+        <span class="clickable">
+            <i id="closeTxInfo" class="glyphicon glyphicon-remove"></i>
+        </span>
+    </h4>
+    <span class="sb-head">Hash</span>
+    <p  class="flex-nowrap" >
+            <span class="overflow">{{txHash}}</span>
+            <span class="clickable copy"  data-toggle="txtooltip" data-title="Copy hash to clipboard"  data-clipboard-text="{{txHash}}">
+                    <i class="glyphicon glyphicon-duplicate"></i>
+                    </span>
+        </p>
+    <span class="sb-head">Inputs</span>
+    <div class="panel">
+        <div class="panel-heading collapser">
+            <span class="pull-right clickable">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+            <!-- <table class="table table-striped">
+                <tbody>
+{{#each inputs}}
+                    <tr><td colspan=2 class="txinput">
+                            <div  class="flex-nowrap">
+                        <a {{#if disabled}} class='not-active'{{else}}class='txa'{{/if}} href=#tx/{{txHash}}>{{txHash}}</a></td>
+                            </div></tr>
+                    <tr style="border-bottom:solid 1px #cdcdcf"><td>nTxOutput</td><td>{{nTxOutput}}</td></tr>
+{{/each}}
+
+                </tbody>
+            </table> -->
+{{#each inputs}}
+            <div class="flex-nowrap">
+                <a {{#if disabled}} class='not-active'{{else}}class='txa'{{/if}} href=#tx/{{txHash}}>{{txHash}}</a>
+            </div>
+            <div class="flex-nowrap" style="margin:10px 0 20px">
+            <div style="width:50%">nTxOutput</div><div style="width:50%">{{nTxOutput}}</div>
+            </div>
+{{/each}}
+        </div>
+    </div>
+    <span class="sb-head">Outputs</span>
+    <div class="panel">
+        <div class="panel-heading collapser">
+            <span class="pull-right clickable">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+        </div>
+        <div class="panel-body" style="margin-left:10px">
+{{#each outs}}
+<div class='outs' style="position:relative;" data-ntx="{{nTx}}">
+    {{#if tokenTransfer}}
+    <div class="tokenPopup">
+        <div style="background-color:#eef1f5; padding:1px 2px 2px 4px">
+        <div class="sb-head">Token transfer
+            <span class="clickable pull-right tokenClose" onclick="hideTokenPopup()">
+                <i  class="glyphicon glyphicon-remove"></i>
+            </span>
+        </div>
+    </div>
+        <div class="panel" style="padding-top:15px">
+            
+        <div class="panel-link ch-p10">
+            
+            <div class="flex-nowrap">
+                <p style="width:100px">Token symbol</p>
+                <a class='txraddr' href="#token/{{tokenTransfer.symbol}}">{{tokenTransfer.symbol}}</a>
+            </div>
+            <div class="flex-nowrap">
+                <p style="width:100px">From</p>
+                <a class='txraddr' href="#address/Ux{{tokenTransfer.from}}">Ux{{tokenTransfer.from}}</a>
+            </div>
+        
+            <div class="flex-nowrap">
+                <p style="width:100px">To</p>
+                <a class='txraddr' href="#address/Ux{{tokenTransfer.to}}">Ux{{tokenTransfer.to}}</a>
+            </div>
+            
+            <div class="flex-nowrap">
+                <p style="width:100px">Quantity</p>
+            {{tokenTransfer.quantity}}
+            </div>
+        </div>
+    </div>
+        
+    </div>
+    {{/if}}
+{{#if receiverAddr}}
+            <div class="panel-link">
+                <p>Receiver Address</p>
+                <div class="flex-nowrap">
+                <a class='txraddr' href="#address/Ux{{receiverAddr}}">Ux{{receiverAddr}}</a>
+                </div>
+            </div>
+{{/if}}
+{{#if amount}}
+            <div  style="" class="panel-link">
+                <p>Amount</p>
+                <span class='amount'>{{famount amount}}</span>
+            </div>
+{{/if}}
+{{#if contractCode }}
+            <div class="panel-link">
+                <p>Contract code
+                    {{#if tokenTransfer}}
+                    <span class="clickable" style="margin-right:0px" onclick="showTokenPopup()">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                    </span>
+                    {{/if}}
+                </p>
+                <div   class="contractCode" style="position:relative; max-height:400px; width:100%">
+                <pre>{{contractCode}}</pre>
+                </div>
+            </div>
+{{/if}}
+{{#if addrChangeReceiver}}
+            <div class="panel-link">
+                <p>Change Receiver Address</p>
+                <div class="flex-nowrap">
+                <a class='txraddr' href="#address/Ux{{addrChangeReceiver}}">Ux{{addrChangeReceiver}}</a>
+                </div>
+            </div>
+{{/if}}
+{{#if intTx.length}}
+<p>Internal transactions</p>
+{{#each intTx}}
+<!-- {{#if status}} -->
+<div class="panel-link inttx">
+{{#if intTxHash}}
+
+<div class="flex-nowrap">
+    <a class="overflow" href="#tx/{{intTxHash}}">{{intTxHash}}</a>
+</div>
+{{/if}}
+    <table class="table table-striped" style="margin-bottom:0!important">
+        <tbody>
+            <tr>
+                <td>Status</td>
+                <td>{{#compare status '==' 'ok'}}<i style="color:#8C64E6; font-size:0.9em" class="glyphicon glyphicon-ok"></i>{{/compare}}
+                    {{#compare status '==' 'fail'}}<i style="color:brown; font-size:0.9em" class="glyphicon glyphicon-remove"></i>{{/compare}}
+                    &nbsp;{{status}}
+                </td>
+            </tr>
+{{#if message}}
+<tr>
+    <td>Message</td>
+    <td><div title="{{message}}" class="failmess">{{message}}</div></td>
+</tr>
+{{/if}}
+        </tbody>
+    </table>
+</div>
+<!-- {{/if}} -->
+{{/each}}
+{{/if}}
+        </div><!-- outs -->
+       
+<div style="border-bottom:solid 1px #cdcdcf; height:1px; margin-bottom:10px"></div>
+{{/each}}
+
+        </div> <!-- panel-body -->
+    </div>
+    <span class="sb-head">Technical information</span>
+    <div class="panel">
+        <div class="panel-heading collapser">
+            <span class="pull-right clickable">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+            </span>
+        </div>
+        <div class="panel-body">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Status</td>
+                            <td>{{status}}</td>
+                        </tr>
+                        <tr>
+                            <td>Concilium Id</td>
+                            <td>{{сonciliumId}}</td>
+                        </tr>
+                        
+    
+                    </tbody>
+                </table>
+
+{{#if block}}
+            <div  style=" margin-bottom:10px" class="panel-link">
+                <p>Block</p>
+                <div  class="flex-nowrap">
+                <a href="#block/{{block}}" class="overflow">{{block}}</a>
+                </div>
+            </div>
+{{/if}}
+        </div>
+    </div>
+</script>
+<!-- INTERNAL TX -->
+<script type="text/template" id="intTxTemplate">
+    <div class="s-block">
+        <h4 class='txHeader'>Transaction
+            <span class="clickable">
+                <i id="closeTxInfo" class="glyphicon glyphicon-remove"></i>
+            </span>
+        </h4>
+        <span class="sb-head">Hash</span>
+        <p class="flex-nowrap">
+                <span class="overflow">{{txHash}}</span>
+                <span class="clickable copy"  data-toggle="txtooltip" data-title="Copy hash to clipboard"  data-clipboard-text="{{txHash}}">
+                        <i class="glyphicon glyphicon-duplicate"></i>
+                        </span>
+        </p>
+        <span class="sb-head">From</span>
+        <div  style=" margin-bottom:10px" class="panel-link flex-nowrap">
+            <a href="#tx/{{from}}" class="overflow">{{from}}</a>
+        </div>
+       
+        <span class="sb-head">Coins</span>
+        <div class="panel">
+            
+            <div class="panel-body" style="margin-left:10px">
+    
+    
+    {{#if receiverAddr}}
+                <div class="panel-link">
+                    <p>Receiver Address</p>
+                    <div class="flex-nowrap">
+                    <a class='txraddr' href="#address/Ux{{receiverAddr}}">Ux{{receiverAddr}}</a>
+                    </div>
+                </div>
+    {{/if}}
+    {{#if amount}}
+                <div  style="" class="panel-link">
+                    <p>Amount</p>
+                    <span class='amount'>{{famount amount}}</span>
+                </div>
+    {{/if}}
+    
+    <div style="border-bottom:solid 1px #cdcdcf; height:1px; margin-bottom:10px"></div>
+    
+    
+            </div>
+        </div>
+        <span class="sb-head">Technical information</span>
+        <div class="panel">
+           
+            <div class="panel-body">
+                    <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>{{#compare status '==' 'ok'}}<i style="color:#8C64E6; font-size:0.9em" class="glyphicon glyphicon-ok"></i>{{/compare}}
+                                        {{#compare status '==' 'fail'}}<i style="color:brown; font-size:0.9em" class="glyphicon glyphicon-remove"></i>{{/compare}}
+                                        &nbsp;{{status}}
+                                    </td>
+                                </tr>
+                    {{#if message}}
+                    <tr>
+                        <td>Message</td>
+                        <td><div class="failmess">{{message}}</div></td>
+                    </tr>
+                    {{/if}}
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+    </script>
+
+</html>

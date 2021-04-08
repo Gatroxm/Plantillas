@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[28],{THoP:function(n,_,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/[lang]",function(){return o("ssaF")}])},ssaF:function(n,_,o){"use strict";o.r(_);var s=o("RNiq");_.default=s.default}},[["THoP",0,1,7,8,22,2,3,4,5,6,9,10,11,12,13,14,24]]]);

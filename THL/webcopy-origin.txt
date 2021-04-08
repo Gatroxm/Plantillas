@@ -1,0 +1,360 @@
+Uri: https://ubix.network/
+File Name: C:\Downloaded Web Sites\ubix.network\index.htm
+Content Type: text/html
+
+Uri: https://ubix.network/images/favicon.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\favicon.png
+Content Type: image/png
+
+Uri: https://ubix.network/css/plugins.css
+File Name: C:\Downloaded Web Sites\ubix.network\css\plugins.css
+Content Type: text/css
+
+Uri: https://ubix.network/css/style.css
+File Name: C:\Downloaded Web Sites\ubix.network\css\style.css
+Content Type: text/css
+
+Uri: https://twitter.com/UBIX_Network
+File Name: C:\Downloaded Web Sites\ubix.network\UBIX_Network.html
+Content Type: text/html
+
+Uri: https://ubikiri.com/
+File Name: C:\Downloaded Web Sites\ubix.network\index-1.htm
+Content Type: text/html
+
+Uri: https://ubikiri.com/sandbox
+File Name: C:\Downloaded Web Sites\ubix.network\sandbox.html
+Content Type: text/html
+
+Uri: https://silentnotary.com/
+File Name: C:\Downloaded Web Sites\ubix.network\index-3.htm
+Content Type: text/html
+
+Uri: https://personal.silentnotary.io/
+File Name: C:\Downloaded Web Sites\ubix.network\index-4.htm
+Content Type: text/html
+
+Uri: https://coinmarketcap.com/currencies/ubix-network/
+File Name: C:\Downloaded Web Sites\ubix.network\currencies\ubix-network\index.htm
+Content Type: text/html
+
+Uri: https://www.coingecko.com/en/coins/ubix-network
+File Name: C:\Downloaded Web Sites\ubix.network\en\coins\ubix-network.html
+Content Type: text/html
+
+Uri: https://trade.kucoin.com/UBX-ETH
+File Name: C:\Downloaded Web Sites\ubix.network\UBX-ETH.html
+Content Type: text/html
+
+Uri: https://exmarkets.com/trade/ubx-usdt
+File Name: C:\Downloaded Web Sites\ubix.network\trade\ubx-usdt.html
+Content Type: text/html
+
+Uri: https://exchange.pancakeswap.finance/
+File Name: C:\Downloaded Web Sites\ubix.network\index-5.htm
+Content Type: text/html
+
+Uri: https://ubix.network/bridge/
+File Name: C:\Downloaded Web Sites\ubix.network\bridge\index.htm
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Uniswap_pools
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\Uniswap_pools.html
+Content Type: text/html
+
+Uri: https://kb.stackofstake.com/cryptocurrencies/ubx
+File Name: C:\Downloaded Web Sites\ubix.network\cryptocurrencies\ubx.html
+Content Type: text/html
+
+Uri: https://ubikiri.com/sandbox/19
+File Name: C:\Downloaded Web Sites\ubix.network\sandbox\19.html
+Content Type: text/html
+
+Uri: https://ubikiri.com/sandbox/2
+File Name: C:\Downloaded Web Sites\ubix.network\sandbox\2.html
+Content Type: text/html
+
+Uri: https://ubikiri.com/sandbox/10
+File Name: C:\Downloaded Web Sites\ubix.network\sandbox\10.html
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Main_Page
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\Main_Page.html
+Content Type: text/html
+
+Uri: https://explorer.ubikiri.com/
+File Name: C:\Downloaded Web Sites\ubix.network\index-6.htm
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Tokenomics
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\Tokenomics.html
+Content Type: text/html
+
+Uri: https://github.com/SilentNotaryEcosystem/Cil-core
+File Name: C:\Downloaded Web Sites\ubix.network\SilentNotaryEcosystem\Cil-core.html
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Launch_a_Masternode
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\Launch_a_Masternode.html
+Content Type: text/html
+
+Uri: https://play.google.com/store/apps/details?id=com.silentnotary
+File Name: C:\Downloaded Web Sites\ubix.network\store\apps\details.html
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Roadmap
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\Roadmap.html
+Content Type: text/html
+
+Uri: https://www.coingecko.com/en/glossary/emission
+File Name: C:\Downloaded Web Sites\ubix.network\en\glossary\emission.html
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Wrap_UBX_to_ERC20_UBX_token
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\Wrap_UBX_to_ERC20_UBX_token.html
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Create_ETH/UBX_wallet
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\Create_ETH\UBX_wallet.html
+Content Type: text/html
+
+Uri: https://ubix.wiki/index.php/Special:AllPages
+File Name: C:\Downloaded Web Sites\ubix.network\index.php\SpecialAllPages.html
+Content Type: text/html
+
+Uri: https://ubix-network.medium.com/ubi-long-term-payout-program-149e92b21279
+File Name: C:\Downloaded Web Sites\ubix.network\ubi-long-term-payout-program-149e92b21279.html
+Content Type: text/html
+
+Uri: https://ubix-network.medium.com/ubix-exchange-presale-is-closing-57f953f76dae
+File Name: C:\Downloaded Web Sites\ubix.network\ubix-exchange-presale-is-closing-57f953f76dae.html
+Content Type: text/html
+
+Uri: https://ubix-network.medium.com/choosing-a-method-for-providing-liquidity-to-the-crypto-economic-system-e733687f2372
+File Name: C:\Downloaded Web Sites\ubix.network\choosing-a-method-for-providing-liquidity-to-the-crypto-economic-system-e733687f2372.html
+Content Type: text/html
+
+Uri: https://ubix-network.medium.com/ubx-sntr-t10-swap-is-open-7bdc4717af88
+File Name: C:\Downloaded Web Sites\ubix.network\ubx-sntr-t10-swap-is-open-7bdc4717af88.html
+Content Type: text/html
+
+Uri: https://www.facebook.com/UbixNetwork
+File Name: C:\Downloaded Web Sites\ubix.network\UbixNetwork.html
+Content Type: text/html
+
+Uri: https://ubikiri.com/ubix-exchange
+File Name: C:\Downloaded Web Sites\ubix.network\ubix-exchange.html
+Content Type: text/html
+
+Uri: https://www.googletagmanager.com/gtag/js?id=UA-178736431-1
+File Name: C:\Downloaded Web Sites\ubix.network\gtag\js.js
+Content Type: application/javascript
+
+Uri: https://web.webpushs.com/js/push/f37a8de88fe04d42db46e49419ca8412_1.js
+File Name: C:\Downloaded Web Sites\ubix.network\js\push\f37a8de88fe04d42db46e49419ca8412_1.js
+Content Type: application/javascript
+
+Uri: https://ubix.network/images/blog/thumbnail/ubi.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\blog\thumbnail\ubi.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/blog/thumbnail/exchange.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\blog\thumbnail\exchange.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/blog/thumbnail/liquidity.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\blog\thumbnail\liquidity.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/blog/thumbnail/swap.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\blog\thumbnail\swap.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/team/max.jpg
+File Name: C:\Downloaded Web Sites\ubix.network\images\team\max.jpg
+Content Type: image/jpeg
+
+Uri: https://ubix.network/images/team/alexey.jpg
+File Name: C:\Downloaded Web Sites\ubix.network\images\team\alexey.jpg
+Content Type: image/jpeg
+
+Uri: https://ubix.network/images/team/alexander.jpg
+File Name: C:\Downloaded Web Sites\ubix.network\images\team\alexander.jpg
+Content Type: image/jpeg
+
+Uri: https://ubix.network/images/team/oleg.jpg
+File Name: C:\Downloaded Web Sites\ubix.network\images\team\oleg.jpg
+Content Type: image/jpeg
+
+Uri: https://ubix.network/images/team/Denis_Sedlenko.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\team\Denis_Sedlenko.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/team/boris.jpg
+File Name: C:\Downloaded Web Sites\ubix.network\images\team\boris.jpg
+Content Type: image/jpeg
+
+Uri: https://ubix.network/js/jquery.js
+File Name: C:\Downloaded Web Sites\ubix.network\js\jquery.js
+Content Type: application/javascript
+
+Uri: https://ubix.network/js/plugins.js
+File Name: C:\Downloaded Web Sites\ubix.network\js\plugins.js
+Content Type: application/javascript
+
+Uri: https://ubix.network/js/functions.js
+File Name: C:\Downloaded Web Sites\ubix.network\js\functions.js
+Content Type: application/javascript
+
+Uri: https://static.zdassets.com/ekr/snippet.js?key=e19105cb-e7e9-44ef-bb48-095b781469e3
+File Name: C:\Downloaded Web Sites\ubix.network\ekr\snippet.js
+Content Type: application/javascript
+
+Uri: https://ubix.network/webfonts/fa-brands-400.eot
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-brands-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://ubix.network/webfonts/fa-brands-400.eot?
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-brands-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://ubix.network/webfonts/fa-brands-400.woff2
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-brands-400.woff2
+Content Type: 
+
+Uri: https://ubix.network/webfonts/fa-brands-400.woff
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-brands-400.woff
+Content Type: application/font-woff
+
+Uri: https://ubix.network/webfonts/fa-brands-400.ttf
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-brands-400.ttf
+Content Type: application/font-sfnt
+
+Uri: https://ubix.network/webfonts/fa-brands-400.svg
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-brands-400.svg
+Content Type: image/svg+xml
+
+Uri: https://ubix.network/webfonts/fa-regular-400.eot
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-regular-400.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://ubix.network/webfonts/fa-regular-400.eot?
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-regular-400-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://ubix.network/webfonts/fa-regular-400.woff2
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-regular-400.woff2
+Content Type: 
+
+Uri: https://ubix.network/webfonts/fa-regular-400.woff
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-regular-400.woff
+Content Type: application/font-woff
+
+Uri: https://ubix.network/webfonts/fa-regular-400.ttf
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-regular-400.ttf
+Content Type: application/font-sfnt
+
+Uri: https://ubix.network/webfonts/fa-regular-400.svg
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-regular-400.svg
+Content Type: image/svg+xml
+
+Uri: https://ubix.network/webfonts/fa-solid-900.eot
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-solid-900.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://ubix.network/webfonts/fa-solid-900.eot?
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-solid-900-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://ubix.network/webfonts/fa-solid-900.woff2
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-solid-900.woff2
+Content Type: 
+
+Uri: https://ubix.network/webfonts/fa-solid-900.woff
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-solid-900.woff
+Content Type: application/font-woff
+
+Uri: https://ubix.network/webfonts/fa-solid-900.ttf
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-solid-900.ttf
+Content Type: application/font-sfnt
+
+Uri: https://ubix.network/webfonts/fa-solid-900.svg
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\fa-solid-900.svg
+Content Type: image/svg+xml
+
+Uri: https://fonts.googleapis.com/css?family=Poppins:100,200,400,500,600,700,800|Nunito:300,400,600,700,800
+File Name: C:\Downloaded Web Sites\ubix.network\css.css
+Content Type: text/css
+
+Uri: https://ubix.network/images/expand.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\expand.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/overlay-pattern/gplay.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\overlay-pattern\gplay.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/overlay-pattern/3px-tile.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\overlay-pattern\3px-tile.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/overlay-pattern/asfalt-dark.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\overlay-pattern\asfalt-dark.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/overlay-pattern/axiom-pattern.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\overlay-pattern\axiom-pattern.png
+Content Type: image/png
+
+Uri: https://ubix.network/webfonts/inspiro-icons.ttf?ijzgpf
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\inspiro-icons.ttf
+Content Type: application/font-sfnt
+
+Uri: https://ubix.network/webfonts/inspiro-icons.woff?ijzgpf
+File Name: C:\Downloaded Web Sites\ubix.network\webfonts\inspiro-icons.woff
+Content Type: application/font-woff
+
+Uri: https://ubix.network/images/triangle-divider-down.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\triangle-divider-down.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/triangle-divider-top.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\triangle-divider-top.png
+Content Type: image/png
+
+Uri: https://ubix.network/images/dropdown-arrow.png
+File Name: C:\Downloaded Web Sites\ubix.network\images\dropdown-arrow.png
+Content Type: image/png
+
+Uri: https://www.instagram.com/ubixnetwork/
+File Name: C:\Downloaded Web Sites\ubix.network\ubixnetwork\index.htm
+Content Type: text/html
+
+Uri: https://exchange.ubix.network/
+File Name: C:\Downloaded Web Sites\ubix.network\index-2.htm
+Content Type: text/html
+
+Uri: https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700
+File Name: C:\Downloaded Web Sites\ubix.network\css-1.css
+Content Type: text/css
+
+Uri: https://ubix.network/bridge/_nuxt/237a658.js
+File Name: C:\Downloaded Web Sites\ubix.network\bridge\_nuxt\237a658.js
+Content Type: application/javascript
+
+Uri: https://ubix.network/bridge/_nuxt/e6f0944.js
+File Name: C:\Downloaded Web Sites\ubix.network\bridge\_nuxt\e6f0944.js
+Content Type: application/javascript
+
+Uri: https://ubix.network/bridge/_nuxt/96c7527.js
+File Name: C:\Downloaded Web Sites\ubix.network\bridge\_nuxt\96c7527.js
+Content Type: application/javascript
+
+Uri: https://ubix.network/bridge/_nuxt/f0aa92d.js
+File Name: C:\Downloaded Web Sites\ubix.network\bridge\_nuxt\f0aa92d.js
+Content Type: application/javascript
+
+Uri: https://www.dextools.io/app/uniswap/pair-explorer/0xb62a74f8be38cef3b00455b9989637349d4a1bc3
+File Name: C:\Downloaded Web Sites\ubix.network\app\uniswap\pair-explorer\0xb62a74f8be38cef3b00455b9989637349d4a1bc3.html
+Content Type: text/html
+
