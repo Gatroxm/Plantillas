@@ -20490,6 +20490,12 @@ Lables & Badgets
     
     .card-thl:hover .icon {
         color: #fff;
+        -ms-transform: rotateY( 180deg);
+        -webkit-transform: rotateY( 180deg);
+        transform: rotateY( 180deg);
+        -webkit-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
     }
     
     .card-thl:hover .texto {
@@ -20501,4 +20507,21 @@ Lables & Badgets
         -ms-transform-style: preserve-3d;
         transform-style: preserve-3d;
         color: #fff !important;
+    }
+    
+    .content-logo {
+        height: 75px;
+        display: inline-block;
+        width: 115px;
+        margin-top: 0;
+    }
+    
+    .content-logo .img-general {
+        display: block !important;
+        height: 100%;
+        margin: 0 auto;
+    }
+    
+    .header-sticky .header-inner {
+        background-color: rgb(192 192 192 / 21%) !important;
     }
