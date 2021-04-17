@@ -12490,8 +12490,8 @@ a.btn:not([href]):not([tabindex]) {
     padding: 12px 18px;
     position: relative;
     text-transform: uppercase;
-    background-color: #2250fc;
-    border-color: #2250fc;
+    background-color: #0f2123;
+    border-color: #0f2123;
     border-width: 1px;
     border-style: solid;
     color: #ffffff;
@@ -12559,8 +12559,8 @@ a.btn:not([href]):not([tabindex]):hover,
 a.btn:not([href]):not([tabindex]):focus,
 a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled):active,
 a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled).active {
-    background-color: #0333e8;
-    border-color: #0333e8;
+    background-color: #0f2123;
+    border-color: #0f2123;
     color: #ffffff;
     text-decoration: none;
 }
@@ -19887,14 +19887,25 @@ Team
     width: 100%;
 }
 
-.team .team-item>img {
+.team .team-item .cotent-img {
+    height: 120px;
+    margin: 0 auto 10px;
     border-radius: 90%;
+    width: 120px;
     display: block;
     float: none;
-    height: 72px;
-    margin: 0 auto 10px;
-    width: 72px;
+    overflow: hidden;
 }
+
+.team .team-item .cotent-img img {
+    transition: all 0.5s
+}
+
+.team .team-item:hover .cotent-img img {
+    transform: scale(1.5)
+}
+
+.team .team-item>img {}
 
 .team .team-item>p {
     font-size: 15px;
