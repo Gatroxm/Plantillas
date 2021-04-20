@@ -1427,7 +1427,7 @@ Header
 
 #header .header-inner,
 #header #header-wrap {
-    height: 80px;
+    height: 95px;
     background-color: #fff;
     /*         backface-visibility: hidden;
 -webkit-backface-visibility: hidden; */
@@ -4666,6 +4666,10 @@ h6:not(:last-child),
     font-weight: 400;
 }
 
+.team .team-item>p {
+    color: rgb(5 24 28);
+}
+
 p {
     font-size: 1rem;
     font-style: normal;
@@ -4673,8 +4677,12 @@ p {
     text-transform: none;
     line-height: 1.7;
     letter-spacing: 0;
-    color: #777777;
+    color: rgb(5 24 28);
     font-family: "Poppins", sans-serif;
+}
+
+.background-grey p {
+    color: #777777;
 }
 
 ul.bullets {
@@ -7779,7 +7787,7 @@ FOOTER
 #footer .copyright-content {
     min-height: 80px;
     padding: 30px 0;
-    background-color: #eff1f4;
+    background-color: #000000;
     font-size: 13px;
 }
 
@@ -7806,6 +7814,11 @@ FOOTER
 #footer.inverted p,
 #footer.dark p {
     color: #999;
+}
+
+.copyright-text,
+.copyright-text a {
+    color: #adafaf !important;
 }
 
 .dark #footer a:not(.btn),
@@ -10132,7 +10145,7 @@ Helpers
 }
 
 .background-grey {
-    background-color: #F7F9FB !important;
+    background-color: #000000 !important;
 }
 
 .background-dark {
@@ -12613,8 +12626,8 @@ button.btn.btn-light,
 .btn:not(.close):not(.mfp-close).btn-light,
 a.btn:not([href]):not([tabindex]).btn-white,
 a.btn:not([href]):not([tabindex]).btn-light {
-    background-color: #fff;
-    border-color: #e6e8eb;
+    background-color: #adafaf;
+    border-color: #adafaf;
     color: #4c5667;
 }
 
@@ -13704,6 +13717,7 @@ Headings
     font-size: 48px;
     line-height: 56px;
     margin-bottom: 60px;
+    color: #b6b8b8;
 }
 
 .heading-text.heading-section h2:before {
@@ -13711,7 +13725,7 @@ Headings
     position: absolute;
     height: 2px;
     width: 100px;
-    background-color: #2250fc;
+    background-color: #b6b8b8;
     bottom: -30px;
     left: 0;
     right: 0;
@@ -14274,9 +14288,9 @@ Progress Bar
 }
 
 .social-icons.social-icons-light li a {
-    background: #fff;
+    background: #adafaf;
     color: #333;
-    border: 1px solid #eee;
+    border: 1px solid #adafaf;
 }
 
 .social-icons.social-icons-rounded li a {
@@ -17751,8 +17765,9 @@ Forms
 -------------------------------------------------------------------------*/
 
 .form-control {
-    border: 1px solid #e6e8eb;
+    border: 1px solid #adafaf;
     border-radius: 5px;
+    background-color: #adafaf;
 }
 
 form .btn {
@@ -19933,7 +19948,7 @@ Team
 
 .team.team-box .team-item {
     padding: 46px;
-    background-color: #ffffff;
+    background-color: #a9abab;
     border-radius: 8px;
 }
 
@@ -20802,9 +20817,9 @@ body[data-bg-image] {
 }
 
 .content-logo {
-    height: 75px;
+    height: 90px;
     display: inline-block;
-    width: 115px;
+    width: 141px;
     margin-top: 0;
 }
 
@@ -20907,7 +20922,8 @@ body[data-bg-image] {
 }
 
 .header-sticky .header-inner {
-    background-color: rgb(5 24 28) !important;
+    /* background-color: rgb(5 24 28) !important; */
+    background-color: rgb(173 175 175) !important;
 }
 
 .header-sticky .header-inner #mainMenu nav ul.dropdown-menu li a {
@@ -20920,12 +20936,13 @@ body[data-bg-image] {
 
 .submenu-light .header-inner #logo a.content-logo {
     background-image: url('../images/01.png');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
 .header-sticky .header-inner #logo a.content-logo {
-    background-image: url('../images/logo-darck.jpg');
+    /* background-image: url('../images/logo-darck.jpg'); */
+    background-image: url('../images/01.png');
 }
 
 .arrowScrollDown {
