@@ -20818,12 +20818,14 @@ body[data-bg-image] {
 }
 
 .content-logo {
-    height: 90px;
+    height: 98px;
     display: inline-block;
-    width: 141px;
+    width: 168px;
     margin-top: 0;
 }
-
+.sticky-active .content-logo {
+    height: 100%;
+}
 .box-content {
     width: 33.33%;
     float: left;
@@ -20939,6 +20941,7 @@ body[data-bg-image] {
     background-image: url('../images/01.png');
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .header-sticky .header-inner #logo a.content-logo {
