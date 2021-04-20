@@ -220,7 +220,7 @@ Page title
 
 #page-title[data-bg-parallax],
 #page-title[data-bg-video] {
-    background-color: #1f1f1f;
+    background-color: #adafaf;
 }
 
 #header[data-transparent="true"]+#page-title {
@@ -237,22 +237,22 @@ Page title
 
 .dark #page-title .page-title>h1,
 #page-title.dark .page-title>h1 {
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .dark #page-title .page-title>span,
 #page-title.dark .page-title>span {
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .dark #page-title .breadcrumb ul li+li:before,
 #page-title.dark .breadcrumb ul li+li:before {
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .dark #page-title .breadcrumb ul li a,
 #page-title.dark .breadcrumb ul li a {
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 @media (max-width: 1024px) {
@@ -900,7 +900,7 @@ Grid Filter
 }
 
 .grid-filter.gf-dark li a {
-    color: #1f1f1f;
+    color: #adafaf;
     background-color: transparent;
 }
 
@@ -912,8 +912,8 @@ Grid Filter
 .grid-filter.gf-dark li:hover a,
 .grid-filter.gf-dark li.active a {
     background-color: transparent;
-    color: #1f1f1f;
-    border-color: #1f1f1f;
+    color: #adafaf;
+    border-color: #adafaf;
 }
 
 .grid-filter.gf-default li a {
@@ -934,7 +934,7 @@ Grid Filter
 }
 
 .grid-filter.gf-creative li a:after {
-    background: #1f1f1f;
+    background: #adafaf;
     content: "";
     height: 2px;
     left: 0;
@@ -1163,7 +1163,7 @@ Topbar
 }
 
 #topbar.dark {
-    background-color: #1f1f1f;
+    background-color: #adafaf;
 }
 
 #topbar.dark .top-menu>li>a,
@@ -1473,7 +1473,7 @@ Header
 #header #header-wrap #logo a span {
     font-family: "Poppins", sans-serif;
     font-size: 40px;
-    color: #1f1f1f;
+    color: #adafaf;
     font-weight: 800;
     letter-spacing: 1.5px;
 }
@@ -3290,7 +3290,7 @@ Main Menu: Responsive
     line-height: inherit !important;
     letter-spacing: 1px;
     padding: 0;
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .header-extras .topbar-dropdown .dropdown-list {
@@ -3549,7 +3549,7 @@ Side Push Panel
     height: 40px;
     font-size: 18px;
     line-height: 40px;
-    color: #1f1f1f;
+    color: #adafaf;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 0 0 0 2px;
@@ -4224,7 +4224,7 @@ Page Menu
 }
 
 .page-menu.menu-creative nav>ul>li>a:after {
-    background: #1f1f1f;
+    background: #adafaf;
     content: "";
     height: 2px;
     left: 0;
@@ -4529,7 +4529,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: "Poppins", sans-serif;
-    color: #484848;
+    color: #b6b8b8;
 }
 
 h1,
@@ -4545,7 +4545,7 @@ h6,
 .h5,
 .h6 {
     font-family: "Poppins", sans-serif;
-    color: #1f1f1f;
+    color: #adafaf;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -4682,7 +4682,7 @@ p {
 }
 
 .background-grey p {
-    color: #777777;
+    color: #b6b8b8;
 }
 
 ul.bullets {
@@ -6627,7 +6627,7 @@ Blog
     line-height: 38px;
     margin-bottom: 12px;
     margin-top: 8px;
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .single-post .post-item .post-item-description .post-meta-date,
@@ -9179,11 +9179,11 @@ Play Button
 }
 
 .play-button.dark {
-    border-color: #1f1f1f;
+    border-color: #adafaf;
 }
 
 .play-button.dark>i {
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .play-button:hover {
@@ -9583,7 +9583,7 @@ td.fc-today {
     line-height: inherit !important;
     letter-spacing: 1px;
     padding: 0;
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .simple-dropdown .dropdown-list {
@@ -14316,7 +14316,7 @@ Progress Bar
 }
 
 .dark .social-icons:not(.social-icons-colored):not(.social-icons-colored-hover) li a:hover {
-    background-color: #1f1f1f;
+    background-color: #adafaf;
 }
 
 .social-icons li:hover i {
@@ -15982,7 +15982,7 @@ div.icon-box:before {
 .text-box.text-box-light h3,
 .text-box.text-box-light h5,
 .text-box.text-box-light p {
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .text-box.text-box-light:hover {
@@ -16105,7 +16105,7 @@ Featured Boxes
 
 .icon-boxx .icon-box-content h3 {
     font-size: 20px;
-    color: #1f1f1f;
+    color: #adafaf;
     font-weight: 400;
 }
 
@@ -16219,7 +16219,7 @@ Carousels
 }
 
 .flickity-button:before {
-    color: #1f1f1f;
+    color: #adafaf;
 }
 
 .flickity-button:hover {
@@ -16684,7 +16684,7 @@ Counters
 .countdown.circle .countdown-box {
     border: 3px solid #9896a6;
     border-radius: 50%;
-    color: #1f1f1f;
+    color: #adafaf;
     height: 160px;
     padding: 34px 5px 0 0;
     width: 160px;
@@ -19271,7 +19271,7 @@ call-to-action (call to action)
 }
 
 .call-to-action.call-to-action-dark {
-    background-color: #1f1f1f;
+    background-color: #adafaf;
 }
 
 .call-to-action.call-to-action-dark h3,
@@ -19936,6 +19936,7 @@ Team
     font-size: 15px;
     display: block;
     line-height: 22px;
+    color: #0d2024;
 }
 
 .team .team-item>span~span {
@@ -20656,7 +20657,7 @@ body[data-bg-image] {
     position: absolute;
     top: 0;
     left: 0;
-    color: #1f1f1f;
+    color: #adafaf;
     font-weight: 600;
 }
 
