@@ -20823,9 +20823,11 @@ body[data-bg-image] {
     width: 168px;
     margin-top: 0;
 }
+
 .sticky-active .content-logo {
     height: 100%;
 }
+
 .box-content {
     width: 33.33%;
     float: left;
