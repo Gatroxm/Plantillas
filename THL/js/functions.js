@@ -2893,6 +2893,28 @@ var INSPIRO = {},
         }
         //Load Functions on document ready
     $(document).ready(function() {
+            const arrImagenes = {
+                'box-instagram': {
+                    'url': '../images/fondos/intagram-destacada.jpg',
+                    'link': './campaing-strategy.html'
+                },
+                'box-facebook': {
+                    'url': '../images/fondos/facebook-destacada.jpg',
+                    'link': './production_content_creation.htm'
+                },
+                'box-twitter': {
+                    'url': '../images/fondos/twitter-destacada.jpg',
+                    'link': './digital_data_marketing.htm'
+                },
+                'box-youtube': {
+                    'url': '../images/fondos/youtube-destacada.jpg',
+                    'link': './brand_talent_relations.htm'
+                },
+                'box-soudcould': {
+                    'url': '../images/fondos/soudcould-destacada.jpg',
+                    'link': './legal_compliance.htm'
+                }
+            }
             INSPIRO.core.functions();
             INSPIRO.header.functions();
             INSPIRO.slider.functions();
@@ -2907,6 +2929,14 @@ var INSPIRO = {},
                 }, 1000);
 
             });
+            $('.mouse_hover').mouseenter(function() {
+                    $('#url').attr('href', arrImagenes[$(this).attr('data-imagen')]['link'])
+                    $('#imeg').attr('src', arrImagenes[$(this).attr('data-imagen')]['url'])
+                        // console.log(arrImagenes[$(this).attr('data-imagen')])
+                })
+                .mouseleave(function() {
+                    console.log($(this).attr('data-imagen'))
+                });
         })
         //Recall Functions on window scroll
     $window.on("scroll", function() {

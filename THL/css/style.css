@@ -237,22 +237,22 @@ Page title
 
 .dark #page-title .page-title>h1,
 #page-title.dark .page-title>h1 {
-    color: #adafaf;
+    color: #ffffff;
 }
 
 .dark #page-title .page-title>span,
 #page-title.dark .page-title>span {
-    color: #adafaf;
+    color: #ffffff;
 }
 
 .dark #page-title .breadcrumb ul li+li:before,
 #page-title.dark .breadcrumb ul li+li:before {
-    color: #adafaf;
+    color: #ffffff;
 }
 
 .dark #page-title .breadcrumb ul li a,
 #page-title.dark .breadcrumb ul li a {
-    color: #adafaf;
+    color: #ffffff;
 }
 
 @media (max-width: 1024px) {
@@ -900,7 +900,7 @@ Grid Filter
 }
 
 .grid-filter.gf-dark li a {
-    color: #adafaf;
+    color: #ffffff;
     background-color: transparent;
 }
 
@@ -912,7 +912,7 @@ Grid Filter
 .grid-filter.gf-dark li:hover a,
 .grid-filter.gf-dark li.active a {
     background-color: transparent;
-    color: #adafaf;
+    color: #ffffff;
     border-color: #adafaf;
 }
 
@@ -4545,7 +4545,7 @@ h6,
 .h5,
 .h6 {
     font-family: "Poppins", sans-serif;
-    color: #adafaf;
+    color: #ffffff;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -4682,7 +4682,7 @@ p {
 }
 
 .background-grey p {
-    color: #b6b8b8;
+    color: #ffffff;
 }
 
 ul.bullets {
@@ -15982,7 +15982,7 @@ div.icon-box:before {
 .text-box.text-box-light h3,
 .text-box.text-box-light h5,
 .text-box.text-box-light p {
-    color: #adafaf;
+    color: #ffffff;
 }
 
 .text-box.text-box-light:hover {
@@ -16105,7 +16105,7 @@ Featured Boxes
 
 .icon-boxx .icon-box-content h3 {
     font-size: 20px;
-    color: #adafaf;
+    color: #ffffff;
     font-weight: 400;
 }
 
@@ -16219,7 +16219,7 @@ Carousels
 }
 
 .flickity-button:before {
-    color: #adafaf;
+    color: #ffffff;
 }
 
 .flickity-button:hover {
@@ -16684,7 +16684,7 @@ Counters
 .countdown.circle .countdown-box {
     border: 3px solid #9896a6;
     border-radius: 50%;
-    color: #adafaf;
+    color: #ffffff;
     height: 160px;
     padding: 34px 5px 0 0;
     width: 160px;
@@ -20657,7 +20657,7 @@ body[data-bg-image] {
     position: absolute;
     top: 0;
     left: 0;
-    color: #adafaf;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -21052,4 +21052,9 @@ section#constact:before {
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+span.url {
+    font-size: 1.5rem;
+    color: #ccc;
 }
