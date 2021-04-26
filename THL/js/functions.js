@@ -2930,11 +2930,19 @@ var INSPIRO = {},
 
             });
             $('.mouse_hover').mouseenter(function() {
-                    $('#url').attr('href', arrImagenes[$(this).attr('data-imagen')]['link'])
-                    $('#imeg').attr('src', arrImagenes[$(this).attr('data-imagen')]['url'])
-                        // console.log(arrImagenes[$(this).attr('data-imagen')])
+                    $('#url').attr('href', arrImagenes[$(this).attr('data-imagen')]['link']);
+                    $('#imeg').attr('src', arrImagenes[$(this).attr('data-imagen')]['url']);
+                    setTimeout(() => {
+                        $('#imeg').css({
+                            'display': 'block'
+                        });
+                    }, 100);
+                    // console.log(arrImagenes[$(this).attr('data-imagen')])
                 })
                 .mouseleave(function() {
+                    $('#imeg').css({
+                        'display': 'none'
+                    });
                     console.log($(this).attr('data-imagen'))
                 });
         })
@@ -2949,4 +2957,4 @@ var INSPIRO = {},
         INSPIRO.header.logoStatus();
         INSPIRO.header.stickyHeader();
     })
-})(jQuery)
+})(jQuery);
