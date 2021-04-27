@@ -2893,6 +2893,17 @@ var INSPIRO = {},
         }
         //Load Functions on document ready
     $(document).ready(function() {
+            // const mainContainer = document.querySelector('.body');
+            // mainContainer.addEventListener("mousemove", runEvent);
+
+            // function runEvent(e) {
+            //     e.preventDefault();
+            //     //print Coordinates of the mouse on move on the targeted element: 
+            //     // console.log(`MouseX: ,  MouseY: `);
+            //     //change body background color taking the coordinates as values of rgb:
+            //     $("body .edgtf-visible").css({ 'transform': `translate3d(${e.offsetX}px, ${e.offsetY}px, 0px)` })
+            //         // document.body.style.backgroundColor = `rgb(${e.offsetX}, 180, ${e.offsetY})`;
+            // }
             const arrImagenes = {
                 'box-instagram': {
                     'url': '../images/fondos/intagram-destacada.jpg',
@@ -2958,3 +2969,11 @@ var INSPIRO = {},
         INSPIRO.header.stickyHeader();
     })
 })(jQuery);
+const cursor = document.querySelector(".cursor");
+
+function myFunction(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    cursor.style.left = x + "px";
+    cursor.style.top = y + "px";
+}
