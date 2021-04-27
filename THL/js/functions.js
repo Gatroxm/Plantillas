@@ -733,13 +733,13 @@ var INSPIRO = {},
                         containerFullscreen = elem.find(".container").first().outerHeight(),
                         contentCrop;
 
-                    if (containerFullscreen >= windowHeight) {
-                        contentCrop = true;
-                        var sliderMinHeight = containerFullscreen;
-                        elem.css("min-height", sliderMinHeight + 100);
-                        $sliderClassSlide.css("min-height", sliderMinHeight + 100);
-                        elem.find(".flickity-viewport").css("min-height", sliderMinHeight + 100);
-                    }
+                    // if (containerFullscreen >= windowHeight) {
+                    //     contentCrop = true;
+                    //     var sliderMinHeight = containerFullscreen;
+                    //     elem.css("min-height", sliderMinHeight + 100);
+                    //     $sliderClassSlide.css("min-height", sliderMinHeight + 100);
+                    //     elem.find(".flickity-viewport").css("min-height", sliderMinHeight + 100);
+                    // }
 
                     sliderElementsHeight("null");
 
@@ -749,9 +749,9 @@ var INSPIRO = {},
                             $sliderClassSlide.css("height", "");
                             elem.find(".flickity-viewport").css("height", "");
                         } else {
-                            elem.css("height", height);
-                            $sliderClassSlide.css("height", height);
-                            elem.find(".flickity-viewport").css("height", height);
+                            // elem.css("height", height);
+                            // $sliderClassSlide.css("height", height);
+                            // elem.find(".flickity-viewport").css("height", height);
                         }
                     }
                     if (customHeight) {
