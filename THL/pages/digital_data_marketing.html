@@ -16,13 +16,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>The Hidden London - Digital Data & Marketing
-        <</title>
+    </title>
 
-            <link href="../css/plugins.css" rel="stylesheet">
-            <link href="../css/style.css" rel="stylesheet">
-            <link rel="canonical" href="index.htm">
+    <link href="../css/plugins.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="canonical" href="index.htm">
 
-            <script charset="UTF-8" src="../js/push/f37a8de88fe04d42db46e49419ca8412_1.js" async=""></script>
+    <script charset="UTF-8" src="../js/push/f37a8de88fe04d42db46e49419ca8412_1.js" async=""></script>
+    <style>
+        #logo {
+            margin-top: -27px;
+        }
+        
+        .sticky-active #logo {
+            margin-top: 0;
+        }
+        
+        .submenu-light .header-inner #logo a.content-logo {
+            background-image: url(../images/01.png);
+        }
+        
+        .header-sticky .header-inner #logo a.content-logo {
+            background-image: url(../images/02.png);
+        }
+        
+        section {
+            background-color: transparent !important;
+        }
+        
+        #Services::before,
+        body::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -1px;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width:780px) {
+            #Services::before,
+            body::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 95.2%;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+        
+        .seccion-trasparente::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 100%;
+        }
+        
+        #slider,
+        #Services {
+            background: transparent !important;
+        }
+        
+        body {
+            background-image: url('../images/fondos/twitter-banner.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 
 <body onmousemove="myFunction(event)">
@@ -78,19 +152,11 @@
                         <div class="container">
                             <nav>
                                 <ul>
-                                    <li><a style="color:#314145" href="../index.htm">Home</a></li>
-                                    <li><a style="color:#314145" href="./services.html" class="dropdown">Services</a>
-                                        <!-- <ul class="dropdown-menu">
-                                            <li><a style="color:#314145" href="./instagram.html">Instagram</a></li>
-                                            <li><a style="color:#314145" href="./facebook.html">Facebook</a></li>
-                                            <li><a style="color:#314145" href="./twitter.html">Twitter</a></li>
-                                            <li><a style="color:#314145" href="./youtube.html">Youtube</a></li>
-                                            <li><a style="color:#314145" href="./tiktok.html">Tik Tok</a></li>
-                                            <li><a style="color:#314145" href="./soundcloud.html">Soundcloud</a></li>
-                                        </ul> -->
+                                    <li><a href="../index.htm">Home</a></li>
+                                    <li><a href="./services.html" class="dropdown">Services</a>
                                     </li>
-                                    <li><a style="color:#314145" href="../pages/contacto.html">Contact</a></li>
-                                    <li><a style="color:#314145" href="../pages/about-me.html">About Us</a></li>
+                                    <li><a href="../pages/contacto.html">Contact</a></li>
+                                    <li><a href="../pages/about-me.html">About Us</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -101,7 +167,7 @@
         </header>
         <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
             <!-- Slide 1 -->
-            <div class="slide kenburns" data-bg-parallax="../images/fondos/twitter-banner.jpg">
+            <div class="slide kenburns">
                 <!-- <div class="bg-overlay"></div> -->
                 <div class="container">
                     <div class="slide-captions text-light">
@@ -122,7 +188,7 @@
             <!-- end: Slide 1 -->
         </div>
         <!-- Container -->
-        <section id="section" class="background-grey">
+        <section id="section" class="seccion-trasparente">
             <div class="container">
                 <div class="heading-text heading-section">
                     <!-- <h2 id="ecosystem">Campaing Strategy</h2> -->
@@ -134,7 +200,7 @@
                         <img src="../images/fondos/twitter-destacada.jpg" alt="" class="img-fluid">
                     </div>
                     <div class="col-lg-6 col-12">
-                        <p><span class="lead"> We pride ourselves on being data-driven as it is the best way to ensure results. We use measurable information to track the effectiveness of each influencer and their engagement. Promotion via digital platforms is the new age approach and has proven to be the most effective method.</span></p>
+                        <p><span class="lead" style="color: #fff;"> We pride ourselves on being data-driven as it is the best way to ensure results. We use measurable information to track the effectiveness of each influencer and their engagement. Promotion via digital platforms is the new age approach and has proven to be the most effective method.</span></p>
                     </div>
                 </div>
             </div>

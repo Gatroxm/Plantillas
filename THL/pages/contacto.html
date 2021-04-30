@@ -22,6 +22,41 @@
     <link rel="canonical" href="index.htm">
 
     <script charset="UTF-8" src="../js/push/f37a8de88fe04d42db46e49419ca8412_1.js" async=""></script>
+    <style>
+        .bg-transparent {
+            background: transparent;
+        }
+        
+        #slider,
+        #Services {
+            background: transparent !important;
+        }
+        
+        body {
+            background-image: url('../images/fondos/constact.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        a.btn-thl:hover {
+            background-color: #000;
+        }
+        
+        a.btn-thl {
+            transition: all 1s;
+            border: 10px solid #000;
+            padding: 15px 17px;
+            font-size: 2rem;
+            color: #fff !important;
+            border-radius: 9px;
+            background-color: transparent;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body onmousemove="myFunction(event)">
@@ -76,19 +111,10 @@
                         <div class="container">
                             <nav>
                                 <ul>
-                                    <li><a style="color:#314145" href="../index.htm">Home</a></li>
-                                    <li><a style="color:#314145" href="./services.html" class="dropdown">Services</a>
-                                        <!-- <ul class="dropdown-menu">
-                                            <li><a style="color:#314145" href="./instagram.html">Instagram</a></li>
-                                            <li><a style="color:#314145" href="./facebook.html">Facebook</a></li>
-                                            <li><a style="color:#314145" href="./twitter.html">Twitter</a></li>
-                                            <li><a style="color:#314145" href="./youtube.html">Youtube</a></li>
-                                            <li><a style="color:#314145" href="./tiktok.html">Tik Tok</a></li>
-                                            <li><a style="color:#314145" href="./soundcloud.html">Soundcloud</a></li>
-                                        </ul> -->
-                                    </li>
-                                    <li><a style="color:#314145" href="../pages/contacto.html">Contact</a></li>
-                                    <li><a style="color:#314145" href="../pages/about-me.html">About Us</a></li>
+                                    <li><a href="../index.htm">Home</a></li>
+                                    <li><a href="./services.html" class="dropdown">Services</a></li>
+                                    <li><a href="../pages/contacto.html">Contact</a></li>
+                                    <li><a href="../pages/about-me.html">About Us</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -97,17 +123,16 @@
                 </div>
             </div>
         </header>
-        <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
+        <div id="slider" class="bg-transparent inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
             <!-- Slide 1 -->
-            <div class="slide kenburns" data-bg-parallax="../images/fondos/constact.jpg">
-                <div class="bg-overlay"></div>
+            <div class="slide kenburns">
                 <div class="container">
                     <div class="slide-captions text-light">
                         <!-- Captions -->
                         <!-- <span data-animate="fadeInUp" data-animate-delay="300" class="strong"><a href="#" class="business"><span class="business">Blockchain 3.0</span></a>
                         </span> -->
 
-                        <h1 data-animate="fadeInUp" data-animate-delay="600">Get in contact
+                        <h1 data-animate="fadeInUp" data-animate-delay="600">Contact Us
                             <font color="#0f2123">.</font>
                         </h1>
                     </div>
@@ -120,46 +145,36 @@
             <!-- end: Slide 1 -->
         </div>
         <!-- Contact -->
-        <section id="constact" class="p-t-150 p-b-150 background-grey" data-bg-parallax="../images/fondos/Start_Here.jpg">
+        <section id="constact" class=" bg-transparent p-t-150 p-b-150">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 col-lg-12 mb-5">
-                                    <h2 class="mb-5" style="color: #fff">Start Here</h2>
-                                </div>
-                                <div class="col-12 col-lg-4 text-center">
-                                    <h5 style="color: #fff">Brand</h5>
-                                    <hr>
-                                    <a href="./brand.html" class="btn btn-thl">Find the rigth  talent</a>
-                                </div>
-                                <div class="col-12 col-lg-4 text-center">
-                                    <h5 style="color: #fff">Talent</h5>
-                                    <hr>
-                                    <a href="./talent.html" class="btn btn-thl">Brand partnership SingUp</a>
-                                </div>
-                                <div class="col-12 col-lg-4 text-center">
-                                    <h5 style="color: #fff">General enquires</h5>
-                                    <hr>
-                                    <a href="./general_equires.html" class="btn btn-thl">Find the rigth  General enquires</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-12 col-lg-4 text-center" data-animate="fadeInUp" data-animate-delay="600">
+                        <!-- <h5 style="color: #fff">Brand</h5> -->
+                        <a href="./brand.html" class="btn-thl">Brand</a>
                     </div>
+                    <div class="col-12 col-lg-4 text-center" data-animate="fadeInUp" data-animate-delay="600">
+                        <!-- <h5 style="color: #fff">Talent</h5> -->
+                        <a href="./talent.html" class="btn-thl">Talent</a>
+                    </div>
+                    <div class="col-12 col-lg-4 text-center" data-animate="fadeInUp" data-animate-delay="600">
+                        <!-- <h5 style="color: #fff">General enquires</h5> -->
+                        <a href="./general_equires.html" class="btn-thl">General enquires</a>
+                    </div>
+
                 </div>
             </div>
-        </section>
-        <!-- end: Contact -->
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="copyright-content">
-                <div class="container">
-                    <div class="copyright-text text-center">&copy; 2021 The Hidden Londons. All Rights Reserved. <a href="" rel="noopener">Privacy Policy</a></div>
-                </div>
+    </div>
+    </section>
+    <!-- end: Contact -->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="copyright-content">
+            <div class="container">
+                <div class="copyright-text text-center">&copy; 2021 The Hidden Londons. All Rights Reserved. <a href="" rel="noopener">Privacy Policy</a></div>
             </div>
-        </footer>
-        <!-- end: Footer -->
+        </div>
+    </footer>
+    <!-- end: Footer -->
 
     </div>
 
