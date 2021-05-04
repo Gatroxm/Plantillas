@@ -211,6 +211,8 @@
                     <div class="col-lg-5 offset-1">
 
                         <form class="widget-contact-form" novalidate="" action="include/contact-form.php" role="form" method="post">
+
+                            <input type="hidden" name="type-form" class="type-form" value="general-enquires">
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name" style="color: #fff;">Name</label>
@@ -257,6 +259,7 @@
     <script src="../js/plugins.js"></script>
 
     <!--Template functions-->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="../js/functions.js"></script>
 
     <!-- Start of ubixnetwork Zendesk Widget script -->

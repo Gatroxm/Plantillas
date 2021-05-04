@@ -1197,43 +1197,33 @@ var INSPIRO = {},
                         } else {
                             $(elem).removeClass("was-validated")
                             button.html('<i class="icon-loader fa-spin"> </i> Sending...')
-                            $.ajax({
-                                url: post_url,
-                                type: request_method,
-                                data: new FormData(this),
-                                cache: false,
-                                contentType: false,
-                                processData: false,
-                                success: function(text) {
-                                    if (text.response == "success") {
-                                        if (elem.find(".g-recaptcha").children("div").length > 0) {
-                                            grecaptcha.reset();
-                                        }
-                                        $(elem)[0].reset();
-                                        button.html(buttonText)
-                                        if (elemCustomRedirectPage) {
-                                            window.location.href = elemCustomRedirectPage
-                                        } else {
-                                            $.notify({
-                                                message: text.message
-                                            }, {
-                                                type: "success",
-                                                delay: elem.attr("data-success-message-delay") || 20000
-                                            })
-                                        }
+                            var template = getTemplace();
+                            Email.send({
+                                    Host: "smtp.gmail.com",
+                                    Username: "the.hl.info@gmail.com",
+                                    Password: "London2021*",
+                                    To: 'Info@thehiddenlondon.com',
+                                    From: "the.hl.info@gmail.com",
+                                    Subject: getSubject(),
+                                    Body: template,
+                                })
+                                .then(function(message) {
+                                    if (elem.find(".g-recaptcha").children("div").length > 0) {
+                                        grecaptcha.reset();
+                                    }
+                                    $(elem)[0].reset();
+                                    button.html(buttonText)
+                                    if (elemCustomRedirectPage) {
+                                        window.location.href = elemCustomRedirectPage
                                     } else {
                                         $.notify({
-                                            message: elem.attr("data-error-message") || text.message,
+                                            message: 'Successfully sent'
                                         }, {
-                                            type: "danger",
-                                            delay: elem.attr("data-error-message-delay") || 20000
+                                            type: "success",
+                                            delay: elem.attr("data-success-message-delay") || 20000
                                         })
-                                        var t = setTimeout(function() {
-                                            button.html(buttonText)
-                                        }, 1000)
                                     }
-                                }
-                            })
+                                });
                         }
                     });
                 });
@@ -2976,4 +2966,42 @@ function myFunction(e) {
     var y = e.clientY;
     cursor.style.left = x + "px";
     cursor.style.top = y + "px";
+}
+
+function getTemplace() {
+    var type = $('.type-form').val();
+    var template = '';
+    if (type === 'general-enquires') {
+        template = generalEnquires();
+    } else if (type === 'talent') {
+        template = talent();
+    } else if (type === 'brand') {
+        template = brand();
+    }
+    return template;
+}
+
+function getSubject() {
+    var type = $('.type-form').val();
+    var subject = '';
+    if (type === 'general-enquires') {
+        subject = 'A person filled the form of contact us.';
+    } else if (type === 'talent') {
+        subject = 'A new talent has filled the form of contact us.';
+    } else if (type === 'brand') {
+        subject = 'A brand has filled the form of contact us.';
+    }
+    return subject;
+}
+
+function talent() {
+    return '<h1>A new talent wants to get in contact with a Talent Resources team member.</h1><label><b> Information contact </b></label><hr/><table><tr><td>First name:</td><td>' + $("input[name='widget-contact-form-name']").val() + '</td></tr><tr><td>Last name:</td><td> ' + $("input[name='widget-contact-form-last-name']").val() + ' </td></tr><tr><td>Email:</td><td> ' + $("input[name='widget-contact-form-email']").val() + ' </td></tr><tr><td>Phone:</td><td> ' + $("input[name='widget-contact-form-Phone']").val() + ' </td></tr><tr><td>Where are you based?:</td><td> ' + $("input[name='widget-contact-form-based']").val() + ' </td></tr><tr><td>Categories of interest?:</td><td> ' + $("input[name='widget-contact-form-interest']").val() + ' </td></tr><tr><td>Social Platform Handles (Instagram, YouTube, Twitter, TikTok):</td><td> ' + $("textarea[name='widget-contact-form-message']").val() + '  </td></tr></table><br><label>Sincerely, IT team.</label>';
+}
+
+function brand() {
+    return '<h1>A new brand wants to get in contact with a team member.</h1><label><b> Information contact </b></label><hr/><table><tr><td>First name:</td><td>' + $("input[name='widget-contact-form-name']").val() + '</td></tr><tr><td>Last name:</td><td>' + $("input[name='widget-contact-form-last-name']").val() + '</td></tr><tr><td>Email:</td><td>' + $("input[name='widget-contact-form-email']").val() + '</td></tr><tr><td>Option chosen:</td><td>' + $("select[name='widget-contact-form-last-option']").val() + '</td></tr><tr><td>Company:</td><td>' + $("input[name='widget-contact-form-company']").val() + '</td></tr><tr><td>Monthly Social Media Marketing Budget:</td><td>' + $("input[name='widget-contact-form-Monthly']").val() + '</td></tr><tr><td>Message:</td><td>' + $("textarea[name='widget-contact-form-message']").val() + '</td></tr></table><br><label>Sincerely, IT team.</label>';
+}
+
+function generalEnquires() {
+    return '<h1>A new person wants to get in contact with our team.</h1><label><b> Information contact </b></label><hr/><table><tr><td>Name:</td><td>' + $("input[name='widget-contact-form-name']").val() + '</td></tr><tr><td>Email:</td><td> ' + $("input[name='widget-contact-form-email']").val() + ' </td></tr><tr><td>Message:</td><td> ' + $("textarea[name='widget-contact-form-message']").val() + ' </td></tr></table><br><label>Sincerely, IT team.</label>';
 }
