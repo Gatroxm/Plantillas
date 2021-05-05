@@ -1878,7 +1878,7 @@ Main Menu
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.6px;
-    color: #000000;
+    color: white;
     border-radius: 0;
     border-width: 0;
     border-style: solid;
@@ -3035,6 +3035,7 @@ Main Menu: Responsive
         font-size: 14px;
         border: 0;
         border-radius: 0;
+		color: black
     }
     #mainMenu:not(.menu-overlay) nav>ul>li>a:after {
         display: none;
@@ -9264,7 +9265,7 @@ Play Button
 .lines,
 .lines:before,
 .lines:after {
-    background-color: #111;
+    background-color: white;
 }
 
 .toggle-active .lines {
@@ -14135,7 +14136,7 @@ Progress Bar
 
 .social-icons.social-icons-colored .social-tiktok a,
 .social-icons.social-icons-colored-hover .social-tiktok a:hover {
-    background-color: #010101;
+    background-color: #e53d00;
 }
 
 .social-icons.social-icons-colored .social-instagram a,
@@ -20967,11 +20968,11 @@ body[data-bg-image] {
 }
 
 .header-sticky .header-inner #mainMenu nav ul li a {
-    /* color: #fff !important; */
+     color: black !important; 
 }
 
 .submenu-light .header-inner #logo a.content-logo {
-    background-image: url('../images/01.png');
+    background-image: url('../images/02.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -21303,3 +21304,34 @@ a.link-item {
         transform: scale3d(1, 1, 1);
     }
 }
+
+html {
+  height: 100%; /* requires for stable body height */
+}
+
+body {
+  min-height: 100%; /* requires for 'mix-blend-mode' */
+  cursor: none;
+  color: #000;
+  background-color: #fff; /* requires for 'mix-blend-mode' */
+}
+
+.cursor {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.my-fixed-item {
+    position: fixed;
+    text-align: center;
+    word-wrap: break-word;
+}
+

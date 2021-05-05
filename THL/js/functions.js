@@ -2896,23 +2896,23 @@ var INSPIRO = {},
             // }
             const arrImagenes = {
                 'box-instagram': {
-                    'url': '../images/fondos/intagram-destacada.jpg',
+                    'url': '../images/Nuevas/campaign_straregy.jpg',
                     'link': './campaing-strategy.html'
                 },
                 'box-facebook': {
-                    'url': '../images/fondos/facebook-destacada.jpg',
+                    'url': '../images/Nuevas/production_content.jpg',
                     'link': './production_content_creation.htm'
                 },
                 'box-twitter': {
-                    'url': '../images/fondos/twitter-destacada.jpg',
+                    'url': '../images/Nuevas/digital_marketing.jpg',
                     'link': './digital_data_marketing.htm'
                 },
                 'box-youtube': {
-                    'url': '../images/fondos/youtube-destacada.jpg',
+                    'url': '../images/Nuevas/brand_talent.jpg',
                     'link': './brand_talent_relations.htm'
                 },
                 'box-soudcould': {
-                    'url': '../images/fondos/soudcould-destacada.jpg',
+                    'url': '../images/fondos/soudcould-banner.jpg',
                     'link': './legal_compliance.htm'
                 }
             }
@@ -3004,4 +3004,9 @@ function brand() {
 
 function generalEnquires() {
     return '<h1>A new person wants to get in contact with our team.</h1><label><b> Information contact </b></label><hr/><table><tr><td>Name:</td><td>' + $("input[name='widget-contact-form-name']").val() + '</td></tr><tr><td>Email:</td><td> ' + $("input[name='widget-contact-form-email']").val() + ' </td></tr><tr><td>Message:</td><td> ' + $("textarea[name='widget-contact-form-message']").val() + ' </td></tr></table><br><label>Sincerely, IT team.</label>';
+}
+
+document.body.onmousemove = function(e) {
+    document.documentElement.style.setProperty('--x', (e.clientX + window.scrollX) + 'px');
+    document.documentElement.style.setProperty('--y', (e.clientY + window.scrollY) + 'px');
 }
