@@ -35,22 +35,17 @@
             background-image: url(../images/02.png);
         }
         
-        #Services::before,
-        body::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -1px;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
+        .sombra,
+        header.dark,
+        #topbar.dark.topbar-transparent {
             background-color: rgba(0, 0, 0, 0.3);
         }
         
-        @media (max-width:780px) {
-            #Services::before,
-            body::before {
+        #topbar.dark.topbar-transparent {
+            border: 0
+        }
+        /* @media (max-width:780px) {
+            .sombra {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -61,7 +56,7 @@
                 height: 95.2%;
                 background-color: rgba(0, 0, 0, 0.3);
             }
-        }
+        } */
         
         #slider,
         #Services {
@@ -201,71 +196,73 @@
         </header>
         <!-- Container -->
         <!-- Our Ecosystem -->
-        <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
-            <!-- Slide 1 -->
-            <div class="slide kenburns">
-                <!-- <div class="bg-overlay"></div> -->
-                <div class="container">
-                    <div class="slide-captions text-light">
-                        <!-- Captions -->
-                        <!-- <span data-animate="fadeInUp" data-animate-delay="300" class="strong"><a href="#" class="business"><span class="business">Blockchain 3.0</span></a>
-                        </span> -->
+        <div class="sombra">
+            <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
+                <!-- Slide 1 -->
+                <div class="slide kenburns">
+                    <!-- <div class="bg-overlay"></div> -->
+                    <div class="container">
+                        <div class="slide-captions text-light">
+                            <!-- Captions -->
+                            <!-- <span data-animate="fadeInUp" data-animate-delay="300" class="strong"><a href="#" class="business"><span class="business">Blockchain 3.0</span></a>
+                            </span> -->
 
-                        <h1 data-animate="fadeInUp" data-animate-delay="600">About us
-                            <font color="#0f2123">.</font>
-                        </h1>
-                    </div>
-                </div>
-                <a class="arrowScrollDown ancla" href="#section">
-
-                    <div class="arrowScrollDownInner"><img src="../images/fondos/arrow_white_down@2x.png" alt="arrow down"></div>
-                </a>
-            </div>
-            <!-- end: Slide 1 -->
-        </div>
-
-        <section id="Services" class="p-t-100 p-b-50 background-grey" style="font-weight: bold">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-1"></div>
-                    <div class="col-12 col-lg-10">
-                        <h1 id="wiki" style="color: #fff;    font-size: 80px;font-weight: bold; text-align:center">Who we are</h1>
-                        <p style="font-size: 1.3rem;font-weight: bold" class="mb-5">In this new era of digital media, new methods of marketing are needed to evoke responses from consumers. The Hidden London is a UK based marketing, talent and creative production agency with a new gen approach to digital marketing
-                            campaigns. We provide clients with the strategies that help to connect brands to culture. By aiding in influencer selection, and providing creative production, we offer a full in-house service. Our aim is to help brands run
-                            successful campaigns across numerous platforms and to create long lasting partnerships.
-                        </p>
-
-                        <h1 id="wiki" style="color: #fff;    font-size: 80px;font-weight: bold; text-align:center">What we do</h1>
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <h3 style="font-weight: bold">Talent</h3>
-                                <p style="font-size: 1.3rem;font-weight: bold">We utilise our unique access to an extensive catalog of diverse talent with a combined following of 20+ million.
-                                    <a onclick="vermas('mas', 'uno')" class="ancla_mas" id="mas1">... [more]</a></p>
-                                <p class="hidde" id="desplegar1" style="font-size: 1.3rem;font-weight: bold">We have created special relationships with our talent which sets us apart and gives us the advantage of being able to match clients with the right brands ensuring the most compatible representation for campaigns.
-                                    <a onclick="vermas('menos', 'uno')" class="ancla_mas" id="menos1">... [less]</a></p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h3 style="font-weight: bold">Marketing</h3>
-                                <p style="font-size: 1.3rem;font-weight: bold">The old restrictive, oppressive methods of marketing are now outdated. We have adopted a new method of approaching
-                                    <a onclick="vermas('mas', 'dos')" class="ancla_mas" id="mas2">... [more]</a></p>
-                                <p class="hidde" id="desplegar2" style="font-size: 1.3rem;font-weight: bold">projects with a forward thinking style, that allows a much more inclusive and impactful result for a brands longevity. Being immersed within the culture has allowed us to establish a rapport with key influencers, this way
-                                    we can gain a broader perspective which gives insight to understanding consumer behavioral patterns in the right context, leading to more captivating brand experiences. We pride ourselves on being data-driven as it
-                                    is the best way to ensure results. We use measurable information to track the effectiveness of each influencer and their engagement.
-                                    <a onclick="vermas('menos', 'dos')" class="ancla_mas" id="menos2">... [less]</a></p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h3 style="font-weight: bold">Creative production</h3>
-                                <p style="font-size: 1.3rem;font-weight: bold">We are able to produce influential campaigns from start to finish, using our in-house creative production team. Whether a brand wants
-                                    <a onclick="vermas('mas', 'tres')" class="ancla_mas" id="mas3">... [more]</a></p>
-                                <p class="hidde" id="desplegar3" style="font-size: 1.3rem;font-weight: bold"> full creative control or needs someone to take control of the creative process The Hidden London are able to create engaging content, ensuring we reach your goals.
-                                    <a onclick="vermas('menos', 'tres')" class="ancla_mas" id="menos3">... [less]</a></p>
-                            </div>
+                            <h1 data-animate="fadeInUp" data-animate-delay="600">About us
+                                <font color="#0f2123">.</font>
+                            </h1>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-1"></div>
+                    <a class="arrowScrollDown ancla" href="#section">
+
+                        <div class="arrowScrollDownInner"><img src="../images/fondos/arrow_white_down@2x.png" alt="arrow down"></div>
+                    </a>
                 </div>
+                <!-- end: Slide 1 -->
             </div>
-        </section>
+
+            <section id="Services" class="p-t-100 p-b-50 background-grey" style="font-weight: bold">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-lg-1"></div>
+                        <div class="col-12 col-lg-10">
+                            <h1 id="wiki" style="color: #fff;    font-size: 80px;font-weight: bold; text-align:center">Who we are</h1>
+                            <p style="font-size: 1.3rem;font-weight: bold" class="mb-5">In this new era of digital media, new methods of marketing are needed to evoke responses from consumers. The Hidden London is a UK based marketing, talent and creative production agency with a new gen approach to digital marketing
+                                campaigns. We provide clients with the strategies that help to connect brands to culture. By aiding in influencer selection, and providing creative production, we offer a full in-house service. Our aim is to help brands
+                                run successful campaigns across numerous platforms and to create long lasting partnerships.
+                            </p>
+
+                            <h1 id="wiki" style="color: #fff;    font-size: 80px;font-weight: bold; text-align:center">What we do</h1>
+                            <div class="row">
+                                <div class="col-12 col-lg-4">
+                                    <h3 style="font-weight: bold">Talent</h3>
+                                    <p style="font-size: 1.3rem;font-weight: bold">We utilise our unique access to an extensive catalog of diverse talent with a combined following of 20+ million.
+                                        <a onclick="vermas('mas', 'uno')" class="ancla_mas" id="mas1">... [more]</a></p>
+                                    <p class="hidde" id="desplegar1" style="font-size: 1.3rem;font-weight: bold">We have created special relationships with our talent which sets us apart and gives us the advantage of being able to match clients with the right brands ensuring the most compatible representation for campaigns.
+                                        <a onclick="vermas('menos', 'uno')" class="ancla_mas" id="menos1">... [less]</a></p>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <h3 style="font-weight: bold">Marketing</h3>
+                                    <p style="font-size: 1.3rem;font-weight: bold">The old restrictive, oppressive methods of marketing are now outdated. We have adopted a new method of approaching
+                                        <a onclick="vermas('mas', 'dos')" class="ancla_mas" id="mas2">... [more]</a></p>
+                                    <p class="hidde" id="desplegar2" style="font-size: 1.3rem;font-weight: bold">projects with a forward thinking style, that allows a much more inclusive and impactful result for a brands longevity. Being immersed within the culture has allowed us to establish a rapport with key influencers, this
+                                        way we can gain a broader perspective which gives insight to understanding consumer behavioral patterns in the right context, leading to more captivating brand experiences. We pride ourselves on being data-driven
+                                        as it is the best way to ensure results. We use measurable information to track the effectiveness of each influencer and their engagement.
+                                        <a onclick="vermas('menos', 'dos')" class="ancla_mas" id="menos2">... [less]</a></p>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <h3 style="font-weight: bold">Creative production</h3>
+                                    <p style="font-size: 1.3rem;font-weight: bold">We are able to produce influential campaigns from start to finish, using our in-house creative production team. Whether a brand wants
+                                        <a onclick="vermas('mas', 'tres')" class="ancla_mas" id="mas3">... [more]</a></p>
+                                    <p class="hidde" id="desplegar3" style="font-size: 1.3rem;font-weight: bold"> full creative control or needs someone to take control of the creative process The Hidden London are able to create engaging content, ensuring we reach your goals.
+                                        <a onclick="vermas('menos', 'tres')" class="ancla_mas" id="menos3">... [less]</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-1"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
         <!-- end: Our Ecosystem -->
         <!-- Fin Container -->
         <!-- Footer -->
