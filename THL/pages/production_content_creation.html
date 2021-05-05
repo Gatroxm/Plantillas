@@ -42,6 +42,7 @@
         
         section {
             background-color: transparent !important;
+            padding: 0;
         }
         
         #Services::before,
@@ -54,7 +55,7 @@
             bottom: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: transparent;
         }
         
         @media (max-width:780px) {
@@ -68,7 +69,7 @@
                 bottom: 0;
                 width: 100%;
                 height: 95.2%;
-                background-color: rgba(0, 0, 0, 0.3);
+                background-color: transparent;
             }
         }
         
@@ -79,7 +80,7 @@
             right: 0;
             top: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: transparent;
             width: 100%;
             height: 100%;
         }
@@ -91,10 +92,22 @@
         
         body {
             background-image: url('../images/Nuevas/production_content.jpg');
+            background-color: #000;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
+        }
+        
+        .cta.open {
+            position: fixed;
+            width: 330px;
+            top: 35%;
+            transition: all 1.5s;
+        }
+        
+        .card {
+            border: 0;
         }
     </style>
 </head>
@@ -171,15 +184,13 @@
                 </div>
             </div>
         </header>
-        <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
-            <!-- Slide 1 -->
+        <!-- <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-height-xs="360">
+            
             <div class="slide kenburns">
-                <!-- <div class="bg-overlay"></div> -->
+                
                 <div class="container">
                     <div class="slide-captions text-light">
-                        <!-- Captions -->
-                        <!-- <span data-animate="fadeInUp" data-animate-delay="300" class="strong"><a href="#" class="business"><span class="business">Blockchain 3.0</span></a>
-                        </span> -->
+                        
 
                         <h1 data-animate="fadeInUp" data-animate-delay="600">Production & content creation
                             <font color="#0f2123">.</font>
@@ -191,15 +202,29 @@
                     <div class="arrowScrollDownInner"><img src="../images/fondos/arrow_white_down@2x.png" alt="arrow down"></div>
                 </a>
             </div>
-            <!-- end: Slide 1 -->
-        </div>
+            
+        </div> -->
         <!-- Container -->
-        <section id="section" class="seccion-trasparente">
+        <section>
             <div class="container">
                 <div class="heading-text heading-section">
-                    <!-- <h2 id="ecosystem">Campaing Strategy</h2> -->
-                    <!-- <span class="lead">There are people who have a good number of followers, all of them interested in knowing their daily life through a social network, as is the case of Production & Content Creation.</span> -->
+                    <div class="col-12">
+                        <h1 data-animate="fadeInUp" data-animate-delay="600">Production & content creation
+                            <font color="#0f2123">.</font>
+                        </h1>
+                    </div>
                 </div>
+            </div>
+        </section>
+        <section id="section" class="seccion-trasparente">
+            <div class="container">
+                <!-- <div class="heading-text heading-section">
+                    <div class="col-12">
+                        <h1 data-animate="fadeInUp" data-animate-delay="600">Production & content creation
+                            <font color="#0f2123">.</font>
+                        </h1>
+                    </div>
+                </div> -->
 
                 <!-- <div class="row">
                     <div class="col-lg-6 col-12">
@@ -213,35 +238,35 @@
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <div class="card-columns">
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/2E6F8D46-C38E-4635-A822-76522D5E1EE8.JPG" alt="" class="img-fluid">
                             </div>
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/6AFF675A-20DF-45D9-955A-264EA145C46F.JPG" alt="" class="img-fluid">
                             </div>
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/7801A0E8-2FF3-4230-931D-4A0EA8922740.JPG" alt="" class="img-fluid">
                             </div>
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/E429BADD-9B25-40ED-86AA-AF44FB5CFFDB.JPG" alt="" class="img-fluid">
                             </div>
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/PHOTO-2021-04-21-13-53-48.jpg" alt="" class="img-fluid">
                             </div>
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/PHOTO-2021-04-21-13-53-50.jpg" alt="" class="img-fluid">
                             </div>
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/PHOTO-2021-04-21-13-53-50[1].jpg" alt="" class="img-fluid">
                             </div>
-                            <div class="card">
+                            <div class="card" data-animate="fadeInUp" data-animate-delay="600">
                                 <img src="../images/img-prodution/PHOTO-2021-04-21-13-53-51.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
-                        <div class="et-divi-sticky-header">
-                            <p><span class="lead" style="color:#fff; font-weight: bold;">We stay innovative by keeping creative and forward thinking. Always remaining ‘ahead of the curb’ to influence the latest trends and iconic fashion statements. Curating sets from the ground up, and having the best team of content/ creative directors, graphic designers, animators, photographers, videographers, editors and stylists on board means that brands have one less thing to worry about, as we have all the necessary tools needed to execute a vision, whether big or small - the possibilities are endless.</span></p>
+                        <div class="cta open" id="open">
+                            <p data-animate="fadeInUp" data-animate-delay="600"><span class="lead" style="color:#fff; font-weight: bold;">We stay innovative by keeping creative and forward thinking. Always remaining ‘ahead of the curb’ to influence the latest trends and iconic fashion statements. Curating sets from the ground up, and having the best team of content/ creative directors, graphic designers, animators, photographers, videographers, editors and stylists on board means that brands have one less thing to worry about, as we have all the necessary tools needed to execute a vision, whether big or small - the possibilities are endless.</span></p>
                         </div>
                     </div>
                 </div>
@@ -277,7 +302,23 @@
     <!-- <script id="ze-snippet" src="ekr/snippet.js?key=e19105cb-e7e9-44ef-bb48-095b781469e3"> -->
     <!-- </script> -->
     <!-- End of ubixnetwork Zendesk Widget script -->
+    <script>
+        var x = 2;
 
+        function myFunctionScroll() {
+
+            console.log(top)
+                // console.log()
+        }
+        $(window).scroll(function(event) {
+            var scrollTop = $(window).scrollTop();
+            var top = `${12}%`;
+            if (scrollTop === 0) {
+                top = `${35}%`;
+            }
+            document.getElementById('open').style.top = top;
+        });
+    </script>
 </body>
 
 </html>
