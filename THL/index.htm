@@ -42,8 +42,51 @@
                 width: 100%;
             }
         }
+        
+        .hidde {
+            display: none
+        }
+        
+        .ancla_mas {
+            color: #ff00d2 !important;
+        }
     </style>
 </head>
+<script>
+    function vermas(id, elemento) {
+        if (id == "mas") {
+            switch (elemento) {
+                case 'uno':
+                    document.getElementById("desplegar1").style.display = "block";
+                    document.getElementById("mas1").style.display = "none";
+                    break
+                case 'dos':
+                    document.getElementById("desplegar2").style.display = "block";
+                    document.getElementById("mas2").style.display = "none";
+                    break
+                case 'tres':
+                    document.getElementById("desplegar3").style.display = "block";
+                    document.getElementById("mas3").style.display = "none";
+                    break
+            }
+        } else {
+            switch (elemento) {
+                case 'uno':
+                    document.getElementById("desplegar1").style.display = "none";
+                    document.getElementById("mas1").style.display = "inline";
+                    break
+                case 'dos':
+                    document.getElementById("desplegar2").style.display = "none";
+                    document.getElementById("mas2").style.display = "inline";
+                    break
+                case 'tres':
+                    document.getElementById("desplegar3").style.display = "none";
+                    document.getElementById("mas3").style.display = "inline";
+                    break
+            }
+        }
+    }
+</script>
 
 <body class="body" onmousemove="myFunction(event)">
     <!-- Inner body -->
@@ -169,25 +212,28 @@
                         <div class="row">
                             <div class="col-12 col-lg-4">
                                 <h3 style="color:#ff00d2;font-size: 40px;" data-animate-delay="600" data-animate="fadeInUp">Creativity</h3>
-                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500;" data-animate-delay="600" data-animate="fadeInUp">We stay innovative by keeping creative and forward thinking. Always remaining ‘ahead of the curb’ to influence the latest trends and iconic fashion statements. Curating sets from the ground up, and having the best team
-                                    of photographers and videographers on board means that brands have one less thing to worry about, as we have all the necessary tools needed to execute a vision, whether big or small - the possibilities are endless.</p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h3 style="color:#ff00d2;font-size: 40px;" data-animate-delay="600" data-animate="fadeInUp">Connection</h3>
-                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500;" data-animate-delay="600" data-animate="fadeInUp">Focusing on representation and building connections individually and as partnerships is our number one priority as an agency. To create harmonious relationships ensures the best results for successful campaigns and enables
-                                    longevity investments.
+                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500;" data-animate-delay="600" data-animate="fadeInUp">We stay innovative by keeping creative and forward Always remaining ‘ahead of the curb’ to influence the latest trends and iconic fashion statements. <a onclick="vermas('mas', 'uno')" class="ancla_mas" id="mas1">... [more]</a></p>
                                 </p>
-                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500;" data-animate-delay="600" data-animate="fadeInUp">We have established relationships with a network of pioneering talents within an influential culture. This has given us a competitive advantage to create strategic partnerships. We aim to bridge the gap between brands and
-                                    the culture, creating new sustainable connections.</p>
+                                <p class="hidde" id="desplegar1" style=" color: #fff;font-size: 1.5rem;font-weight: 500; " data-animate-delay="600 " data-animate="fadeInUp
+                                    "> Curating sets from the ground up, and having the best team of photographers and videographers on board means that brands have one less thing to worry about, as we have all the necessary tools needed to execute a vision,
+                                    whether big or small - the possibilities are endless.<a onclick="vermas( 'menos', 'uno') " class="ancla_mas " id="menos1 ">... [less]</a></p>
                             </div>
-                            <div class="col-12 col-lg-4">
-                                <h3 style="color:#ff00d2;font-size: 40px;" data-animate-delay="600" data-animate="fadeInUp">Culture</h3>
-                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500;" data-animate-delay="600" data-animate="fadeInUp">Having an anthropologist amongst our team ensures a greater understanding in the importance of culture and representation, making sure all cultures feel enriched and not exploited through our marketing and featured campaigns.</p>
-                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500;" data-animate-delay="600" data-animate="fadeInUp">We take a holistic approach by combining measurable data with culturally informed human insights to ensure we can communicate better with the target audience. </p>
+                            <div class="col-12 col-lg-4 ">
+                                <h3 style="color:#ff00d2;font-size: 40px; " data-animate-delay="600 " data-animate="fadeInUp ">Connection</h3>
+                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500; " data-animate-delay="600 " data-animate="fadeInUp ">Focusing on representation and building connections individually and as partnerships is our number one priority as an agency. To create harmonious <a onclick="vermas('mas', 'dos')" class="ancla_mas" id="mas2">... [more]</a>
+                                </p>
+                                <p class="hidde" id="desplegar2" style="color: #fff;font-size: 1.5rem;font-weight: 500; " data-animate-delay="600 " data-animate="fadeInUp ">relationships ensures the best results for successful campaigns and enables longevity investments. We have established relationships with a network of pioneering talents within an influential culture. This has given us
+                                    a competitive advantage to create strategic partnerships. We aim to bridge the gap between brands and the culture, creating new sustainable connections. <a onclick="vermas( 'menos', 'dos') " class="ancla_mas " id="menos2 ">... [less]</a></p>
                             </div>
-                            <div class="col-12">
-                                <button type="button" class="btn btn-rounded btn-reveal btn-reveal-left btn-nuevo-color" data-animate-delay="600" data-animate="fadeInUp"><span>
-                                    <a href="./pages/about-me.html" style="color: #fff;font-size: 1.5rem;">Find out more</a></span><i class="fa fa-arrow-right"></i></button>
+                            <div class="col-12 col-lg-4 ">
+                                <h3 style="color:#ff00d2;font-size: 40px; " data-animate-delay="600 " data-animate="fadeInUp ">Culture</h3>
+                                <p style="color: #fff;font-size: 1.5rem;font-weight: 500; " data-animate-delay="600 " data-animate="fadeInUp ">Having an anthropologist amongst our team ensures a greater understanding in the importance of culture and representation, making sure all cultures feel enriched <a onclick="vermas('mas', 'tres')" class="ancla_mas" id="mas3">... [more]</a></p>
+                                <p class="hidde" id="desplegar3" style="color: #fff;font-size: 1.5rem;font-weight: 500; " data-animate-delay="600 " data-animate="fadeInUp ">and not exploited through our marketing and featured campaigns. We take a holistic approach by combining measurable data with culturally informed human insights to ensure we can communicate better with the target audience.
+                                    <a onclick="vermas( 'menos', 'tres') " class="ancla_mas " id="menos3 ">... [less]</a></p>
+                            </div>
+                            <div class="col-12 ">
+                                <button type="button " class="btn btn-rounded btn-reveal btn-reveal-left btn-nuevo-color " data-animate-delay="600 " data-animate="fadeInUp "><span>
+                                    <a href="./pages/about-me.html " style="color: #fff;font-size: 1.5rem; ">Find out more</a></span><i class="fa fa-arrow-right "></i></button>
                             </div>
                         </div>
                     </div>
@@ -199,70 +245,70 @@
         <!-- end: Our numbers -->
 
         <!-- More -->
-        <section class="seccion-trasparente p-b-120">
+        <section class="seccion-trasparente p-b-120 ">
 
-            <div class="container">
+            <div class="container ">
 
-                <div class="col-lg-8 m-b-100 center">
-                    <div class="heading-text heading-section text-center">
-                        <h2 id="text-center wiki" style="color: #fff;    text-align: center;" data-animate-delay="600" data-animate="flipInX">Services </h2>
+                <div class="col-lg-8 m-b-100 center ">
+                    <div class="heading-text heading-section text-center ">
+                        <h2 id="text-center wiki " style="color: #fff; text-align: center; " data-animate-delay="600 " data-animate="flipInX ">Services </h2>
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <!-- <div class="text-center" id="team">Our team currently consists of <b>17 members</b>...and growing!</div> -->
+            <div class="container-fluid ">
+                <!-- <div class="text-center " id="team ">Our team currently consists of <b>17 members</b>...and growing!</div> -->
                 <!-- Team -->
-                <div class="carousel equalize team team-box" data-margin="20" data-arrows="true" data-items="5" data-items-sm="2" data-items-xxs="1" data-equalize-item=".team-item">
+                <div class="carousel equalize team team-box " data-margin="20 " data-arrows="true " data-items="5 " data-items-sm="2 " data-items-xxs="1 " data-equalize-item=".team-item ">
 
                     <!-- Team -->
-                    <div class="team-item">
-                        <a class="link-item" href="./pages/campaing-strategy.html"></a>
-                        <div class="cotent-img mt-5 mb-5">
+                    <div class="team-item ">
+                        <a class="link-item " href="./pages/campaing-strategy.html "></a>
+                        <div class="cotent-img mt-5 mb-5 ">
 
-                            <img src="./images/Nuevas/campaign_straregy.jpg" alt="Actores">
+                            <img src="./images/Nuevas/campaign_straregy.jpg " alt="Actores ">
                         </div>
                         <span>CAMPAIGN STRATEGY</span>
                     </div>
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item">
-                        <a class="link-item" href="./pages/production_content_creation.html"></a>
-                        <div class="cotent-img mt-5 mb-5">
-                            <img src="./images/Nuevas/production_content.jpg" alt="Musicos">
+                    <div class="team-item ">
+                        <a class="link-item " href="./pages/production_content_creation.html "></a>
+                        <div class="cotent-img mt-5 mb-5 ">
+                            <img src="./images/Nuevas/production_content.jpg " alt="Musicos ">
                         </div>
                         <span>PRODUCTION & <br>CONTENT CREATION</span>
                     </div>
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item">
-                        <a class="link-item" href="./pages/digital_data_marketing.html"></a>
-                        <div class="cotent-img mt-5 mb-5">
+                    <div class="team-item ">
+                        <a class="link-item " href="./pages/digital_data_marketing.html "></a>
+                        <div class="cotent-img mt-5 mb-5 ">
 
-                            <img src="./images/Nuevas/digital_marketing.jpg" alt="Youtubers">
+                            <img src="./images/Nuevas/digital_marketing.jpg " alt="Youtubers ">
                         </div>
-                        <span>DIGITAL DATA & <br> MARKETINGs</span>
+                        <span>DIGITAL DATA & <br> MARKETING</span>
                     </div>
 
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item">
-                        <a class="link-item" href="./pages/brand_talent_relations.html"></a>
-                        <div class="cotent-img mt-5 mb-5">
-                            <img src="images/Nuevas/brand_talent.jpg" alt="Reporteros">
+                    <div class="team-item ">
+                        <a class="link-item " href="./pages/brand_talent_relations.html "></a>
+                        <div class="cotent-img mt-5 mb-5 ">
+                            <img src="images/Nuevas/brand_talent.jpg " alt="Reporteros ">
                         </div>
                         <span>BRAND & <br> TALENT RELATIONS</span>
                     </div>
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item">
-                        <a class="link-item" href="./pages/legal_compliance.html"></a>
-                        <div class="cotent-img mt-5 mb-5">
-                            <img src="images/fondos/soudcould-banner.jpg" alt="Escritores">
+                    <div class="team-item ">
+                        <a class="link-item " href="./pages/legal_compliance.html "></a>
+                        <div class="cotent-img mt-5 mb-5 ">
+                            <img src="images/fondos/soudcould-banner.jpg " alt="Escritores ">
                         </div>
                         <span>LEGAL & <br>COMPLIANCE</span>
                     </div>
@@ -279,32 +325,32 @@
 
 
         <!-- Footer -->
-        <footer id="footer">
-            <div class="copyright-content">
-                <div class="container">
-                    <div class="copyright-text text-center">&copy; 2021 The Hidden Londons. All Rights Reserved. <a href="" rel="noopener">Privacy Policy</a></div>
+        <footer id="footer ">
+            <div class="copyright-content ">
+                <div class="container ">
+                    <div class="copyright-text text-center ">&copy; 2021 The Hidden Londons. All Rights Reserved. <a href=" " rel="noopener ">Privacy Policy</a></div>
                 </div>
             </div>
         </footer>
         <!-- end: Footer -->
-        <div class="cursor"></div>
+        <div class="cursor "></div>
 
     </div>
 
 
     <!-- end: Body Inner -->
     <!-- Scroll top -->
-    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <a id="scrollTop "><i class="icon-chevron-up "></i><i class="icon-chevron-up "></i></a>
 
     <!--Plugins-->
-    <script src="js/jquery.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="js/jquery.js "></script>
+    <script src="js/plugins.js "></script>
 
     <!--Template functions-->
-    <script src="js/functions.js"></script>
+    <script src="js/functions.js "></script>
 
     <!-- Start of THLnetwork Zendesk Widget script -->
-    <!-- <script id="ze-snippet" src="ekr/snippet.js?key=e19105cb-e7e9-44ef-bb48-095b781469e3"> -->
+    <!-- <script id="ze-snippet " src="ekr/snippet.js?key=e19105cb-e7e9-44ef-bb48-095b781469e3 "> -->
     <!-- </script> -->
     <!-- End of THLnetwork Zendesk Widget script -->
 
