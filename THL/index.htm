@@ -50,6 +50,10 @@
         .ancla_mas {
             color: #ff00d2 !important;
         }
+        
+        body .body-inner {
+            height: 100vh;
+        }
     </style>
 </head>
 <script>
@@ -90,9 +94,7 @@
 
 <body class="body" onmousemove="myFunction(event)">
     <!-- Inner body -->
-    <script>
-        AOS.init();
-    </script>
+
     <div class="body-inner">
         <section data-bg-video="./video/videoHom.mp4" class="w-100 section-video"></section>
 
@@ -251,7 +253,8 @@
 
                 <div class="col-lg-8 m-b-100 center ">
                     <div class="heading-text heading-section text-center ">
-                        <h2 id="text-center wiki " style="color: #fff; text-align: center; " data-animate-delay="600 " data-animate="flipInX ">Services </h2>
+                        <h2 id="text-center wiki " style="color: #fff; text-align: center; " data-animate-delay="600 " data-animate="flipInX ">
+                            Services </h2>
                     </div>
                 </div>
             </div>
@@ -259,10 +262,10 @@
             <div class="container-fluid ">
                 <!-- <div class="text-center " id="team ">Our team currently consists of <b>17 members</b>...and growing!</div> -->
                 <!-- Team -->
-                <div class="carousel equalize team team-box " data-margin="20 " data-arrows="true " data-items="5 " data-items-sm="2 " data-items-xxs="1 " data-equalize-item=".team-item ">
+                <div class="carousel equalize team team-box " data-margin="20" data-arrows="true " data-items="5" data-items-sm="2" data-items-xxs="1" data-equalize-item=".team-item">
 
                     <!-- Team -->
-                    <div class="team-item ">
+                    <div class="team-item">
                         <a class="link-item " href="./pages/campaing-strategy.html "></a>
                         <div class="cotent-img mt-5 mb-5 ">
 
@@ -273,8 +276,8 @@
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item ">
-                        <a class="link-item " href="./pages/production_content_creation.html "></a>
+                    <div class="team-item">
+                        <a class="link-item" href="./pages/production_content_creation.html "></a>
                         <div class="cotent-img mt-5 mb-5 ">
                             <img src="./images/Nuevas/production_content.jpg " alt="Musicos ">
                         </div>
@@ -283,8 +286,8 @@
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item ">
-                        <a class="link-item " href="./pages/digital_data_marketing.html "></a>
+                    <div class="team-item">
+                        <a class="link-item" href="./pages/digital_data_marketing.html "></a>
                         <div class="cotent-img mt-5 mb-5 ">
 
                             <img src="./images/Nuevas/digital_marketing.jpg " alt="Youtubers ">
@@ -295,8 +298,8 @@
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item ">
-                        <a class="link-item " href="./pages/brand_talent_relations.html "></a>
+                    <div class="team-item">
+                        <a class="link-item" href="./pages/brand_talent_relations.html "></a>
                         <div class="cotent-img mt-5 mb-5 ">
                             <img src="images/Nuevas/brand_talent.jpg " alt="Reporteros ">
                         </div>
@@ -305,8 +308,8 @@
                     <!-- end: Team item-->
 
                     <!-- Team item -->
-                    <div class="team-item ">
-                        <a class="link-item " href="./pages/legal_compliance.html "></a>
+                    <div class="team-item">
+                        <a class="link-item" href="./pages/legal_compliance.html "></a>
                         <div class="cotent-img mt-5 mb-5 ">
                             <img src="images/fondos/soudcould-banner.jpg " alt="Escritores ">
                         </div>
@@ -325,7 +328,7 @@
 
 
         <!-- Footer -->
-        <footer id="footer ">
+        <footer id="footer">
             <div class="copyright-content ">
                 <div class="container ">
                     <div class="copyright-text text-center ">&copy; 2021 The Hidden Londons. All Rights Reserved. <a href=" " rel="noopener ">Privacy Policy</a></div>
@@ -353,7 +356,9 @@
     <!-- <script id="ze-snippet " src="ekr/snippet.js?key=e19105cb-e7e9-44ef-bb48-095b781469e3 "> -->
     <!-- </script> -->
     <!-- End of THLnetwork Zendesk Widget script -->
-
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
