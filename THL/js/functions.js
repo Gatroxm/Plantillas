@@ -172,7 +172,7 @@ var INSPIRO = {},
             if ($customHeight.length > 0) {
                 $customHeight.each(function() {
                     var elem = $(this),
-                        elemHeight = elem.attr("data-height") || 100,
+                        elemHeight = elem.attr("data-height") || 400,
                         elemHeightLg = elem.attr("data-height-lg") || elemHeight,
                         elemHeightMd = elem.attr("data-height-md") || elemHeightLg,
                         elemHeightSm = elem.attr("data-height-sm") || elemHeightMd,
