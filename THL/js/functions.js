@@ -2671,7 +2671,7 @@ var INSPIRO = {},
                     } else {
                         elem.options.controls = ""
                     }
-                    elem.prepend('<div class="html5vid" id="video-' + elem.options.randomId + '">' + "<video playsinline " + elem.options.controls + ' loop="' + elem.options.loop + '" muted="' + elem.options.muted + '" poster="' + elem.options.poster + '" preload="' + elem.options.preload + '">' + '<source src="' + elem.options.src + '" type="video/mp4">' + "</video>" + "</div>")
+                    elem.prepend('<div class="html5vid" id="video-' + elem.options.randomId + '">' + "<video loop autoplay playsinline " + elem.options.controls + ' loop="' + true + '" muted="' + elem.options.muted + '" poster="' + elem.options.poster + '" preload="' + elem.options.preload + '">' + '<source src="' + elem.options.src + '" type="video/mp4">' + "</video>" + "</div>")
                     if (elem.options.autoplay) {
                         setTimeout(function() {
 

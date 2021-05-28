@@ -13910,7 +13910,7 @@ Headings
     .heading-text.heading-light p,
     .heading-text.heading-section p {
         font-size: 16px;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
     }
 }
 
@@ -21335,4 +21335,19 @@ body {
     position: fixed;
     text-align: center;
     word-wrap: break-word;
+}
+
+@media (max-width:780px) {
+    .fuente-banner {
+        font-size: 0.8rem;
+    }
+    .mobile-title {
+        font-size: 1.3rem !important;
+    }
+    .mobile-text {
+        font-size: 0.8rem !important;
+    }
+    .lh-mobile {
+        line-height: 1rem !important;
+    }
 }
