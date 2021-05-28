@@ -172,7 +172,7 @@ var INSPIRO = {},
             if ($customHeight.length > 0) {
                 $customHeight.each(function() {
                     var elem = $(this),
-                        elemHeight = elem.attr("data-height") || 400,
+                        elemHeight = elem.attr("data-height") || 100,
                         elemHeightLg = elem.attr("data-height-lg") || elemHeight,
                         elemHeightMd = elem.attr("data-height-md") || elemHeightLg,
                         elemHeightSm = elem.attr("data-height-sm") || elemHeightMd,
@@ -1020,6 +1020,7 @@ var INSPIRO = {},
 
                     //Initializing plugin and passing the options
                     var $carouselElem = $(elem);
+                    console.log(elem.options.adaptiveHeight)
                     $carouselElem.imagesLoaded(function() {
                         // init Isotope after all images have loaded
                         $carouselElem.flickity({
@@ -1033,7 +1034,7 @@ var INSPIRO = {},
                             groupCells: elem.options.groupCells,
                             autoPlay: Number(elem.options.autoPlay),
                             pauseAutoPlayOnHover: elem.options.pauseAutoPlayOnHover,
-                            adaptiveHeight: elem.options.adaptiveHeight,
+                            adaptiveHeight: true,
                             asNavFor: elem.options.asNavFor,
                             initialIndex: elem.options.initialIndex,
                             accessibility: elem.options.accessibility,
