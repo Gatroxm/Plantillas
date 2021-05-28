@@ -3035,7 +3035,7 @@ Main Menu: Responsive
         font-size: 14px;
         border: 0;
         border-radius: 0;
-		color: black
+        color: black
     }
     #mainMenu:not(.menu-overlay) nav>ul>li>a:after {
         display: none;
@@ -20212,7 +20212,6 @@ team - Responsive
 }
 
 .html5vid video {
-    max-width: none !important;
     border: none;
     object-fit: cover;
     background-size: cover;
@@ -20968,7 +20967,7 @@ body[data-bg-image] {
 }
 
 .header-sticky .header-inner #mainMenu nav ul li a {
-     color: black !important; 
+    color: black !important;
 }
 
 .submenu-light .header-inner #logo a.content-logo {
@@ -21306,27 +21305,30 @@ a.link-item {
 }
 
 html {
-  height: 100%; /* requires for stable body height */
+    height: 100%;
+    /* requires for stable body height */
 }
 
 body {
-  min-height: 100%; /* requires for 'mix-blend-mode' */
-  cursor: none;
-  color: #000;
-  background-color: #fff; /* requires for 'mix-blend-mode' */
+    min-height: 100%;
+    /* requires for 'mix-blend-mode' */
+    cursor: none;
+    color: #000;
+    background-color: #fff;
+    /* requires for 'mix-blend-mode' */
 }
 
 .cursor {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: #fff;
-  border-radius: 50%;
-  top: var(--y, 0);
-  left: var(--x, 0);
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  mix-blend-mode: difference;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    top: var(--y, 0);
+    left: var(--x, 0);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    mix-blend-mode: difference;
 }
 
 .my-fixed-item {
@@ -21334,4 +21336,3 @@ body {
     text-align: center;
     word-wrap: break-word;
 }
-
